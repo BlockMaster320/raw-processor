@@ -1,0 +1,17 @@
+C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/raw-processor.dir
+C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/edit_cache.dir
+C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/rebuild_cache.dir
+C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/list_install_components.dir
+C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/install.dir
+C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/install/local.dir
+C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/install/strip.dir
+C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/raw-processor_autogen_timestamp_deps.dir
+C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/raw-processor_autogen.dir
+C:/Storage/FIT/BP/raw-processor/build/libraw/CMakeFiles/raw.dir
+C:/Storage/FIT/BP/raw-processor/build/libraw/CMakeFiles/raw_r.dir
+C:/Storage/FIT/BP/raw-processor/build/libraw/CMakeFiles/edit_cache.dir
+C:/Storage/FIT/BP/raw-processor/build/libraw/CMakeFiles/rebuild_cache.dir
+C:/Storage/FIT/BP/raw-processor/build/libraw/CMakeFiles/list_install_components.dir
+C:/Storage/FIT/BP/raw-processor/build/libraw/CMakeFiles/install.dir
+C:/Storage/FIT/BP/raw-processor/build/libraw/CMakeFiles/install/local.dir
+C:/Storage/FIT/BP/raw-processor/build/libraw/CMakeFiles/install/strip.dir

@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Qt Application (MinGW + CMake)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${command:cmake.launchTargetPath}",
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:/msys64/ucrt64/bin/gdb.exe",
+            "environment": [
+                {
+                    "name": "PATH",
+                    "value": "${workspaceFolder}/build;${workspaceFolder}/build/libraw;C:/Programs/Qt/6.9.3/mingw_64/bin;C:/Programs/Qt/Tools/mingw1310_64/bin;${env:PATH}"
+                },
+                {
+                    "name": "QT_QPA_PLATFORM_PLUGIN_PATH",
+                    "value": "C:/Programs/Qt/6.9.3/mingw_64/plugins/platforms"
+                }
+            ],
+            "setupCommands": [
+                {
+                    "description": "Enable gdb pretty printing",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+
+    ]
+}
