@@ -17,6 +17,12 @@ qt_add_executable(raw-processor
     mainwindow.ui
     utility.h
     utility.cpp
+    image.h
+    image.cpp
+    imageviewer.h
+    imageviewer.cpp
+    imageprocessor.h
+    imageprocessor.cpp
 
     stb_image.h
     PieMenu.h

@@ -338,6 +338,24 @@
 			null
 		],
 		[
+			"C:/Storage/FIT/BP/raw-processor/image.h",
+			"MU",
+			"EWIEGA46WW/moc_image.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/imageprocessor.h",
+			"MU",
+			"EWIEGA46WW/moc_imageprocessor.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/imageviewer.h",
+			"MU",
+			"EWIEGA46WW/moc_imageviewer.cpp",
+			null
+		],
+		[
 			"C:/Storage/FIT/BP/raw-processor/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -432,6 +450,9 @@
 	"SOURCES" : 
 	[
 		[ "C:/Storage/FIT/BP/raw-processor/PieMenu.cpp", "MU", null ],
+		[ "C:/Storage/FIT/BP/raw-processor/image.cpp", "MU", null ],
+		[ "C:/Storage/FIT/BP/raw-processor/imageprocessor.cpp", "MU", null ],
+		[ "C:/Storage/FIT/BP/raw-processor/imageviewer.cpp", "MU", null ],
 		[ "C:/Storage/FIT/BP/raw-processor/main.cpp", "MU", null ],
 		[ "C:/Storage/FIT/BP/raw-processor/mainwindow.cpp", "MU", null ],
 		[ "C:/Storage/FIT/BP/raw-processor/utility.cpp", "MU", null ]

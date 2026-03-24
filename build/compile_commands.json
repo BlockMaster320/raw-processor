@@ -25,6 +25,24 @@
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\image.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\image.cpp",
+  "file": "C:\\Storage\\FIT\\BP\\raw-processor\\image.cpp",
+  "output": "CMakeFiles\\raw-processor.dir\\image.cpp.obj"
+},
+{
+  "directory": "C:/Storage/FIT/BP/raw-processor/build",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\imageviewer.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\imageviewer.cpp",
+  "file": "C:\\Storage\\FIT\\BP\\raw-processor\\imageviewer.cpp",
+  "output": "CMakeFiles\\raw-processor.dir\\imageviewer.cpp.obj"
+},
+{
+  "directory": "C:/Storage/FIT/BP/raw-processor/build",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\imageprocessor.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\imageprocessor.cpp",
+  "file": "C:\\Storage\\FIT\\BP\\raw-processor\\imageprocessor.cpp",
+  "output": "CMakeFiles\\raw-processor.dir\\imageprocessor.cpp.obj"
+},
+{
+  "directory": "C:/Storage/FIT/BP/raw-processor/build",
   "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\PieMenu.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\PieMenu.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\PieMenu.cpp",
   "output": "CMakeFiles\\raw-processor.dir\\PieMenu.cpp.obj"

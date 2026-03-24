@@ -175,10 +175,12 @@ raw-processor_autogen/timestamp: \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/qxptype_traits.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/qyieldcpu.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/QKeyEvent \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/QMatrix3x3 \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/QOpenGLFunctions \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/QPainterPath \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/QSurfaceFormat \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/QTransform \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/QVector4D \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qaction.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qbitmap.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qbrush.h \
@@ -691,6 +693,12 @@ raw-processor_autogen/timestamp: \
 	C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/3.29.5-msvc4/CMakeRCCompiler.cmake \
 	C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/3.29.5-msvc4/CMakeSystem.cmake \
 	C:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/moc_predefs.h \
+	C:/Storage/FIT/BP/raw-processor/image.cpp \
+	C:/Storage/FIT/BP/raw-processor/image.h \
+	C:/Storage/FIT/BP/raw-processor/imageprocessor.cpp \
+	C:/Storage/FIT/BP/raw-processor/imageprocessor.h \
+	C:/Storage/FIT/BP/raw-processor/imageviewer.cpp \
+	C:/Storage/FIT/BP/raw-processor/imageviewer.h \
 	C:/Storage/FIT/BP/raw-processor/main.cpp \
 	C:/Storage/FIT/BP/raw-processor/mainwindow.cpp \
 	C:/Storage/FIT/BP/raw-processor/mainwindow.h \
