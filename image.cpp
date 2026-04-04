@@ -7,7 +7,7 @@
 
 #include <QDebug>
 
-Image::Image(const std::string& path)
+Image::Image(const QString& path)
 	: imagePath(path), rawPixels(), rawWidth(0), rawHeight(0), imageWidth(0), imageHeight(0),
 	  leftMargin(0), topMargin(0), blackLevels(), wbMultipliers(), camToSrgbMat(), camToXyzMat(),
 	  referencePixels(), referenceWidth(0), referenceHeight(0), thumbnail(), isLoaded(false) {}
@@ -17,11 +17,11 @@ bool Image::loadRawData()
 	qDebug() << "----------------- START -----------------";
 
 	clearLoadedData();
-	if (imagePath.empty())
+	if (imagePath.isEmpty())
 		return false;
 
 	LibRaw rawProcessor;
-	int ret = rawProcessor.open_file(imagePath.c_str());
+	int ret = rawProcessor.open_file(imagePath.toStdWString().c_str());
 	if (ret != LIBRAW_SUCCESS)
 		return false;
 
@@ -99,31 +99,6 @@ bool Image::loadRawData()
 	return true;
 }
 
-bool Image::loadThumbnail()
-{
-	thumbnail.clear();
-	if (imagePath.empty())
-		return false;
-
-	LibRaw thumbProcessor;
-	int ret = thumbProcessor.open_file(imagePath.c_str());
-	if (ret != LIBRAW_SUCCESS)
-		return false;
-
-	ret = thumbProcessor.unpack_thumb();
-	if (ret != LIBRAW_SUCCESS)
-		return false;
-
-	libraw_processed_image_t* thumb = thumbProcessor.dcraw_make_mem_thumb(&ret);
-	if (!thumb || ret != LIBRAW_SUCCESS)
-		return false;
-
-	thumbnail.assign(thumb->data, thumb->data + thumb->data_size);
-	LibRaw::dcraw_clear_mem(thumb);
-
-	return true;
-}
-
 // Builds a reference RGB image using LibRaw's internal processing pipeline (on CPU) with settings chosen to best match the GPU pipeline's output for direct pixel comparison.
 bool Image::buildReferenceImage()
 {
@@ -131,11 +106,11 @@ bool Image::buildReferenceImage()
 	referenceWidth = 0;
 	referenceHeight = 0;
 
-	if (imagePath.empty())
+	if (imagePath.isEmpty())
 		return false;
 
 	LibRaw referenceProcessor;
-	int ret = referenceProcessor.open_file(imagePath.c_str());
+	int ret = referenceProcessor.open_file(imagePath.toStdWString().c_str());
 	if (ret == LIBRAW_SUCCESS)
 		ret = referenceProcessor.unpack();
 
@@ -193,9 +168,6 @@ bool Image::buildReferenceImage()
 // Getters & setters
 bool Image::getIsLoaded() const { return isLoaded; }
 
-void Image::setPath(const std::string& path) { imagePath = path; }
-const std::string& Image::getPath() const { return imagePath; }
-
 const uint16_t* Image::getRawData() const{ return rawPixels.empty() ? nullptr : rawPixels.data(); }
 int Image::getRawWidth() const { return rawWidth; }
 int Image::getRawHeight() const { return rawHeight; }
@@ -213,7 +185,6 @@ const uint16_t* Image::getReferenceData() const { return referencePixels.empty()
 
 int Image::getReferenceWidth() const { return referenceWidth; }
 int Image::getReferenceHeight() const { return referenceHeight; }
-const std::vector<unsigned char>& Image::getThumbnailBytes() const { return thumbnail; }
 
 void Image::clearLoadedData()
 {

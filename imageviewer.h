@@ -1,5 +1,4 @@
-#ifndef IMAGEVIEWER_H
-#define IMAGEVIEWER_H
+#pragma once
 
 #include "image.h"
 #include "imageprocessor.h"
@@ -53,5 +52,3 @@ private:
     QPointF imgOffset;
     float imgZoom;
 };
-
-#endif // IMAGEVIEWER_H

@@ -1,10 +1,12 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#pragma once
 
 #include "PieMenu.h"
 #include "image.h"
 #include "imageprocessor.h"
 #include "imageviewer.h"
+#include "imagemanager.h"
+#include "gallerywidget.h"
+#include "thumbnailloader.h"
 
 #include <memory>
 
@@ -38,7 +40,10 @@ public slots:
     void onButtonClicked();
 
 private:
-    ImageViewer *canvas;
+    ImageViewer* imageViewer;
+    GalleryWidget* gallery;
+    std::shared_ptr<ImageManager> imageManager;
+    std::shared_ptr<ThumbnailLoader> thumbnailLoader;
 
     QPushButton *btn;
     QProgressBar *pbar;
@@ -50,5 +55,3 @@ private:
 
     PieMenu *pieMenu;
 };
-
-#endif // MAINWINDOW_H

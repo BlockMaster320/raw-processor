@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef IMAGE_H
 #define IMAGE_H
 
@@ -6,20 +8,17 @@
 
 #include <QMatrix3x3>
 #include <QVector4D>
+#include <QImage>
 
 class Image {
 public:
-    explicit Image(const std::string& path = "");
+    explicit Image(const QString& path);
 
     bool loadRawData();
-    bool loadThumbnail();
     bool buildReferenceImage();
 
     // Getters & setters
     bool getIsLoaded() const;
-
-    void setPath(const std::string& path);
-    const std::string& getPath() const;
 
     const uint16_t* getRawData() const;
     int getRawWidth() const;
@@ -40,10 +39,15 @@ public:
     int getReferenceWidth() const;
     int getReferenceHeight() const;
 
+
+    QString imagePath;
+
+    QImage thumbnail;
+    std::atomic<bool> thumbnailLoaded = false;
+    std::atomic<bool> thumbnailLoading = false;
+
 private:
     void clearLoadedData();
-
-    std::string imagePath;
 
     std::vector<uint16_t> rawPixels;
     int rawWidth;
@@ -61,8 +65,6 @@ private:
     std::vector<uint16_t> referencePixels;
     int referenceWidth;
     int referenceHeight;
-
-    std::vector<unsigned char> thumbnail;
 
     bool isLoaded;
 };

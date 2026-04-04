@@ -102,12 +102,12 @@ void ImageProcessor::initializeGL()
 
 // Main processing function. Uploads the loaded image to GPU (if it's a new image) and runs the shader passes to produce the final processed texture.
 // If the image is unchanged and the passes are not marked dirty, does nothing.
-void ImageProcessor::process(std::shared_ptr<Image> image)
+void ImageProcessor::processImage(std::shared_ptr<Image> image)
 {
     if (!initialized || !image || !image->getIsLoaded())
         return;
 
-    if (currentImage.get() != image.get()) // new image, upload and mark passes dirty
+    if (currentImage.get() != image.get()) // new image, upload and mark passes dirty; this check might be ineffective, refactor later
         uploadImage(image);
 
     if (!rawTexture || !fboRawToRGB || !fboAdjustment || textureWidth <= 0 || textureHeight <= 0)
@@ -161,7 +161,7 @@ void ImageProcessor::uploadImage(std::shared_ptr<Image> image)
     rawTexture->setData(QOpenGLTexture::Red, QOpenGLTexture::UInt16, currentImage->getRawData());
 
     // Make sure FBOs are created and have the correct size for the new image.
-    createFbos(textureWidth, textureHeight);
+    setupFbos(textureWidth, textureHeight);
 
     // Set up shader uniforms for raw processing based on the new image metadata.
     rawToRGBProgram.bind();
@@ -176,7 +176,7 @@ void ImageProcessor::uploadImage(std::shared_ptr<Image> image)
 }
 
 // Ensures that the FBOs are created and have the correct size. If they already exist with the correct size, does nothing.
-void ImageProcessor::createFbos(int width, int height)
+void ImageProcessor::setupFbos(int width, int height)
 {
     if (fboRawToRGB && fboAdjustment && fboRawToRGB->size() == QSize(width, height) && fboAdjustment->size() == QSize(width, height))
         return;

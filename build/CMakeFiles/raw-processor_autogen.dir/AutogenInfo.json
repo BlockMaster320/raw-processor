@@ -322,6 +322,23 @@
 		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateAdditionalTargetInfo.cmake",
 		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateVersionlessAliasTargets.cmake",
 		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsVersionlessAliasTargets.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Concurrent/Qt6ConcurrentConfigVersion.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Concurrent/Qt6ConcurrentConfigVersionImpl.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Concurrent/Qt6ConcurrentConfig.cmake",
+		"C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Concurrent/Qt6ConcurrentDependencies.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Concurrent/Qt6ConcurrentTargets.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Concurrent/Qt6ConcurrentTargets-relwithdebinfo.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Concurrent/Qt6ConcurrentAdditionalTargetInfo.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateConfigVersion.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateConfigVersionImpl.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateConfig.cmake",
+		"C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateDependencies.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateTargets.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateAdditionalTargetInfo.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateVersionlessAliasTargets.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Concurrent/Qt6ConcurrentVersionlessAliasTargets.cmake",
 		"C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/GNUInstallDirs.cmake",
 		"C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/GNUInstallDirs.cmake"
 	],
@@ -338,9 +355,21 @@
 			null
 		],
 		[
+			"C:/Storage/FIT/BP/raw-processor/gallerywidget.h",
+			"MU",
+			"EWIEGA46WW/moc_gallerywidget.cpp",
+			null
+		],
+		[
 			"C:/Storage/FIT/BP/raw-processor/image.h",
 			"MU",
 			"EWIEGA46WW/moc_image.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/imagemanager.h",
+			"MU",
+			"EWIEGA46WW/moc_imagemanager.cpp",
 			null
 		],
 		[
@@ -368,6 +397,12 @@
 			null
 		],
 		[
+			"C:/Storage/FIT/BP/raw-processor/thumbnailloader.h",
+			"MU",
+			"EWIEGA46WW/moc_thumbnailloader.cpp",
+			null
+		],
+		[
 			"C:/Storage/FIT/BP/raw-processor/utility.h",
 			"MU",
 			"EWIEGA46WW/moc_utility.cpp",
@@ -380,6 +415,7 @@
 	"MOC_DEFINITIONS" : 
 	[
 		"MINGW_HAS_SECURE_API=1",
+		"QT_CONCURRENT_LIB",
 		"QT_CORE_LIB",
 		"QT_GUI_LIB",
 		"QT_OPENGLWIDGETS_LIB",
@@ -409,6 +445,7 @@
 		"C:/Programs/Qt/6.9.3/mingw_64/include/QtGui",
 		"C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets",
 		"C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL",
+		"C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent",
 		"C:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++",
 		"C:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32",
 		"C:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward",
@@ -450,11 +487,14 @@
 	"SOURCES" : 
 	[
 		[ "C:/Storage/FIT/BP/raw-processor/PieMenu.cpp", "MU", null ],
+		[ "C:/Storage/FIT/BP/raw-processor/gallerywidget.cpp", "MU", null ],
 		[ "C:/Storage/FIT/BP/raw-processor/image.cpp", "MU", null ],
+		[ "C:/Storage/FIT/BP/raw-processor/imagemanager.cpp", "MU", null ],
 		[ "C:/Storage/FIT/BP/raw-processor/imageprocessor.cpp", "MU", null ],
 		[ "C:/Storage/FIT/BP/raw-processor/imageviewer.cpp", "MU", null ],
 		[ "C:/Storage/FIT/BP/raw-processor/main.cpp", "MU", null ],
 		[ "C:/Storage/FIT/BP/raw-processor/mainwindow.cpp", "MU", null ],
+		[ "C:/Storage/FIT/BP/raw-processor/thumbnailloader.cpp", "MU", null ],
 		[ "C:/Storage/FIT/BP/raw-processor/utility.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],

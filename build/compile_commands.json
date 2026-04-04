@@ -1,499 +1,517 @@
 [
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\raw-processor_autogen\\mocs_compilation.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\build\\raw-processor_autogen\\mocs_compilation.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\raw-processor_autogen\\mocs_compilation.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\build\\raw-processor_autogen\\mocs_compilation.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\build\\raw-processor_autogen\\mocs_compilation.cpp",
   "output": "CMakeFiles\\raw-processor.dir\\raw-processor_autogen\\mocs_compilation.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\main.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\main.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\main.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\main.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\main.cpp",
   "output": "CMakeFiles\\raw-processor.dir\\main.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\mainwindow.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\mainwindow.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\mainwindow.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\mainwindow.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\mainwindow.cpp",
   "output": "CMakeFiles\\raw-processor.dir\\mainwindow.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\utility.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\utility.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\utility.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\utility.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\utility.cpp",
   "output": "CMakeFiles\\raw-processor.dir\\utility.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\image.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\image.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\image.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\image.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\image.cpp",
   "output": "CMakeFiles\\raw-processor.dir\\image.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\imageviewer.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\imageviewer.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\imageviewer.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\imageviewer.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\imageviewer.cpp",
   "output": "CMakeFiles\\raw-processor.dir\\imageviewer.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\imageprocessor.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\imageprocessor.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\imageprocessor.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\imageprocessor.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\imageprocessor.cpp",
   "output": "CMakeFiles\\raw-processor.dir\\imageprocessor.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\PieMenu.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\PieMenu.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\thumbnailloader.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\thumbnailloader.cpp",
+  "file": "C:\\Storage\\FIT\\BP\\raw-processor\\thumbnailloader.cpp",
+  "output": "CMakeFiles\\raw-processor.dir\\thumbnailloader.cpp.obj"
+},
+{
+  "directory": "C:/Storage/FIT/BP/raw-processor/build",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\imagemanager.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\imagemanager.cpp",
+  "file": "C:\\Storage\\FIT\\BP\\raw-processor\\imagemanager.cpp",
+  "output": "CMakeFiles\\raw-processor.dir\\imagemanager.cpp.obj"
+},
+{
+  "directory": "C:/Storage/FIT/BP/raw-processor/build",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\gallerywidget.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\gallerywidget.cpp",
+  "file": "C:\\Storage\\FIT\\BP\\raw-processor\\gallerywidget.cpp",
+  "output": "CMakeFiles\\raw-processor.dir\\gallerywidget.cpp.obj"
+},
+{
+  "directory": "C:/Storage/FIT/BP/raw-processor/build",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\PieMenu.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\PieMenu.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\PieMenu.cpp",
   "output": "CMakeFiles\\raw-processor.dir\\PieMenu.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\canon_600.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\canon_600.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\canon_600.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\canon_600.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\canon_600.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\decoders\\canon_600.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\crx.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\crx.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\crx.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\crx.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\crx.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\decoders\\crx.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\decoders_dcraw.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\decoders_dcraw.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\decoders_dcraw.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\decoders_dcraw.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\decoders_dcraw.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\decoders\\decoders_dcraw.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\decoders_libraw.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\decoders_libraw.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\decoders_libraw.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\decoders_libraw.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\decoders_libraw.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\decoders\\decoders_libraw.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\decoders_libraw_dcrdefs.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\decoders_libraw_dcrdefs.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\decoders_libraw_dcrdefs.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\decoders_libraw_dcrdefs.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\decoders_libraw_dcrdefs.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\decoders\\decoders_libraw_dcrdefs.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\dng.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\dng.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\dng.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\dng.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\dng.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\decoders\\dng.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\fp_dng.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\fp_dng.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\fp_dng.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\fp_dng.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\fp_dng.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\decoders\\fp_dng.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\fuji_compressed.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\fuji_compressed.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\fuji_compressed.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\fuji_compressed.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\fuji_compressed.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\decoders\\fuji_compressed.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\generic.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\generic.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\generic.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\generic.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\generic.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\decoders\\generic.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\kodak_decoders.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\kodak_decoders.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\kodak_decoders.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\kodak_decoders.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\kodak_decoders.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\decoders\\kodak_decoders.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\load_mfbacks.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\load_mfbacks.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\load_mfbacks.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\load_mfbacks.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\load_mfbacks.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\decoders\\load_mfbacks.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\smal.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\smal.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\smal.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\smal.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\smal.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\decoders\\smal.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\unpack.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\unpack.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\unpack.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\unpack.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\unpack.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\decoders\\unpack.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\unpack_thumb.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\unpack_thumb.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\decoders\\unpack_thumb.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\unpack_thumb.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\decoders\\unpack_thumb.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\decoders\\unpack_thumb.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\demosaic\\aahd_demosaic.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\demosaic\\aahd_demosaic.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\demosaic\\aahd_demosaic.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\demosaic\\aahd_demosaic.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\demosaic\\aahd_demosaic.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\demosaic\\aahd_demosaic.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\demosaic\\ahd_demosaic.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\demosaic\\ahd_demosaic.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\demosaic\\ahd_demosaic.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\demosaic\\ahd_demosaic.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\demosaic\\ahd_demosaic.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\demosaic\\ahd_demosaic.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\demosaic\\dcb_demosaic.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\demosaic\\dcb_demosaic.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\demosaic\\dcb_demosaic.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\demosaic\\dcb_demosaic.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\demosaic\\dcb_demosaic.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\demosaic\\dcb_demosaic.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\demosaic\\dht_demosaic.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\demosaic\\dht_demosaic.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\demosaic\\dht_demosaic.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\demosaic\\dht_demosaic.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\demosaic\\dht_demosaic.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\demosaic\\dht_demosaic.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\demosaic\\misc_demosaic.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\demosaic\\misc_demosaic.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\demosaic\\misc_demosaic.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\demosaic\\misc_demosaic.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\demosaic\\misc_demosaic.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\demosaic\\misc_demosaic.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\demosaic\\xtrans_demosaic.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\demosaic\\xtrans_demosaic.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\demosaic\\xtrans_demosaic.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\demosaic\\xtrans_demosaic.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\demosaic\\xtrans_demosaic.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\demosaic\\xtrans_demosaic.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\integration\\dngsdk_glue.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\integration\\dngsdk_glue.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\integration\\dngsdk_glue.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\integration\\dngsdk_glue.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\integration\\dngsdk_glue.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\integration\\dngsdk_glue.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\integration\\rawspeed_glue.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\integration\\rawspeed_glue.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\integration\\rawspeed_glue.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\integration\\rawspeed_glue.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\integration\\rawspeed_glue.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\integration\\rawspeed_glue.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\libraw_c_api.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\libraw_c_api.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\libraw_c_api.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\libraw_c_api.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\libraw_c_api.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\libraw_c_api.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\libraw_datastream.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\libraw_datastream.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\libraw_datastream.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\libraw_datastream.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\libraw_datastream.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\libraw_datastream.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\adobepano.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\adobepano.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\adobepano.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\adobepano.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\adobepano.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\metadata\\adobepano.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\canon.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\canon.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\canon.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\canon.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\canon.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\metadata\\canon.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\ciff.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\ciff.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\ciff.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\ciff.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\ciff.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\metadata\\ciff.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\cr3_parser.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\cr3_parser.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\cr3_parser.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\cr3_parser.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\cr3_parser.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\metadata\\cr3_parser.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\epson.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\epson.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\epson.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\epson.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\epson.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\metadata\\epson.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\exif_gps.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\exif_gps.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\exif_gps.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\exif_gps.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\exif_gps.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\metadata\\exif_gps.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\fuji.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\fuji.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\fuji.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\fuji.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\fuji.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\metadata\\fuji.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\hasselblad_model.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\hasselblad_model.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\hasselblad_model.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\hasselblad_model.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\hasselblad_model.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\metadata\\hasselblad_model.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\identify.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\identify.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\identify.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\identify.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\identify.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\metadata\\identify.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\identify_tools.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\identify_tools.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\identify_tools.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\identify_tools.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\identify_tools.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\metadata\\identify_tools.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\kodak.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\kodak.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\kodak.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\kodak.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\kodak.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\metadata\\kodak.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\leica.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\leica.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\leica.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\leica.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\leica.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\metadata\\leica.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\makernotes.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\makernotes.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\makernotes.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\makernotes.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\makernotes.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\metadata\\makernotes.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\mediumformat.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\mediumformat.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\mediumformat.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\mediumformat.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\mediumformat.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\metadata\\mediumformat.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\minolta.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\minolta.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\minolta.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\minolta.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\minolta.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\metadata\\minolta.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\misc_parsers.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\misc_parsers.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\misc_parsers.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\misc_parsers.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\misc_parsers.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\metadata\\misc_parsers.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\nikon.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\nikon.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\nikon.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\nikon.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\nikon.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\metadata\\nikon.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\normalize_model.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\normalize_model.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\normalize_model.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\normalize_model.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\normalize_model.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\metadata\\normalize_model.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\olympus.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\olympus.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\olympus.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\olympus.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\olympus.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\metadata\\olympus.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\p1.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\p1.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\p1.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\p1.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\p1.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\metadata\\p1.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\pentax.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\pentax.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\pentax.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\pentax.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\pentax.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\metadata\\pentax.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\samsung.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\samsung.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\samsung.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\samsung.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\samsung.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\metadata\\samsung.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\sony.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\sony.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\sony.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\sony.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\sony.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\metadata\\sony.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\tiff.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\tiff.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\metadata\\tiff.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\tiff.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\metadata\\tiff.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\metadata\\tiff.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\postprocessing\\aspect_ratio.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\postprocessing\\aspect_ratio.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\postprocessing\\aspect_ratio.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\postprocessing\\aspect_ratio.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\postprocessing\\aspect_ratio.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\postprocessing\\aspect_ratio.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\postprocessing\\dcraw_process.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\postprocessing\\dcraw_process.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\postprocessing\\dcraw_process.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\postprocessing\\dcraw_process.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\postprocessing\\dcraw_process.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\postprocessing\\dcraw_process.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\postprocessing\\mem_image.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\postprocessing\\mem_image.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\postprocessing\\mem_image.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\postprocessing\\mem_image.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\postprocessing\\mem_image.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\postprocessing\\mem_image.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\postprocessing\\postprocessing_aux.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\postprocessing\\postprocessing_aux.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\postprocessing\\postprocessing_aux.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\postprocessing\\postprocessing_aux.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\postprocessing\\postprocessing_aux.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\postprocessing\\postprocessing_aux.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\postprocessing\\postprocessing_utils.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\postprocessing\\postprocessing_utils.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\postprocessing\\postprocessing_utils.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\postprocessing\\postprocessing_utils.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\postprocessing\\postprocessing_utils.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\postprocessing\\postprocessing_utils.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\postprocessing\\postprocessing_utils_dcrdefs.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\postprocessing\\postprocessing_utils_dcrdefs.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\postprocessing\\postprocessing_utils_dcrdefs.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\postprocessing\\postprocessing_utils_dcrdefs.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\postprocessing\\postprocessing_utils_dcrdefs.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\postprocessing\\postprocessing_utils_dcrdefs.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\preprocessing\\ext_preprocess.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\preprocessing\\ext_preprocess.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\preprocessing\\ext_preprocess.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\preprocessing\\ext_preprocess.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\preprocessing\\ext_preprocess.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\preprocessing\\ext_preprocess.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\preprocessing\\raw2image.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\preprocessing\\raw2image.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\preprocessing\\raw2image.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\preprocessing\\raw2image.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\preprocessing\\raw2image.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\preprocessing\\raw2image.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\preprocessing\\subtract_black.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\preprocessing\\subtract_black.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\preprocessing\\subtract_black.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\preprocessing\\subtract_black.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\preprocessing\\subtract_black.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\preprocessing\\subtract_black.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\tables\\cameralist.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\tables\\cameralist.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\tables\\cameralist.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\tables\\cameralist.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\tables\\cameralist.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\tables\\cameralist.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\tables\\colorconst.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\tables\\colorconst.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\tables\\colorconst.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\tables\\colorconst.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\tables\\colorconst.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\tables\\colorconst.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\tables\\colordata.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\tables\\colordata.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\tables\\colordata.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\tables\\colordata.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\tables\\colordata.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\tables\\colordata.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\tables\\wblists.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\tables\\wblists.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\tables\\wblists.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\tables\\wblists.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\tables\\wblists.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\tables\\wblists.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\utils\\curves.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\curves.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\utils\\curves.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\curves.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\curves.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\utils\\curves.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\utils\\decoder_info.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\decoder_info.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\utils\\decoder_info.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\decoder_info.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\decoder_info.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\utils\\decoder_info.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\utils\\init_close_utils.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\init_close_utils.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\utils\\init_close_utils.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\init_close_utils.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\init_close_utils.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\utils\\init_close_utils.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\utils\\open.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\open.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\utils\\open.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\open.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\open.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\utils\\open.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\utils\\phaseone_processing.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\phaseone_processing.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\utils\\phaseone_processing.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\phaseone_processing.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\phaseone_processing.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\utils\\phaseone_processing.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\utils\\read_utils.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\read_utils.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\utils\\read_utils.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\read_utils.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\read_utils.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\utils\\read_utils.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\utils\\thumb_utils.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\thumb_utils.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\utils\\thumb_utils.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\thumb_utils.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\thumb_utils.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\utils\\thumb_utils.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\utils\\utils_dcraw.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\utils_dcraw.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\utils\\utils_dcraw.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\utils_dcraw.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\utils_dcraw.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\utils\\utils_dcraw.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\utils\\utils_libraw.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\utils_libraw.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\utils\\utils_libraw.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\utils_libraw.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\utils\\utils_libraw.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\utils\\utils_libraw.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\write\\apply_profile.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\write\\apply_profile.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\write\\apply_profile.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\write\\apply_profile.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\write\\apply_profile.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\write\\apply_profile.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\write\\file_write.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\write\\file_write.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\write\\file_write.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\write\\file_write.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\write\\file_write.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\write\\file_write.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\write\\tiff_writer.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\write\\tiff_writer.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\write\\tiff_writer.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\write\\tiff_writer.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\write\\tiff_writer.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\write\\tiff_writer.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\x3f\\x3f_parse_process.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\x3f\\x3f_parse_process.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\x3f\\x3f_parse_process.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\x3f\\x3f_parse_process.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\x3f\\x3f_parse_process.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\x3f\\x3f_parse_process.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
-  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -DLIBRAW_NOTHREADS -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\x3f\\x3f_utils_patched.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\x3f\\x3f_utils_patched.cpp",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DLIBRAW_BUILDLIB -DLIBRAW_FORCE_OPENMP -Draw_EXPORTS -IC:/Storage/FIT/BP/raw-processor/build/libraw -IC:/Storage/FIT/BP/raw-processor/libraw -g -std=gnu++17 -fopenmp -o libraw\\CMakeFiles\\raw.dir\\src\\x3f\\x3f_utils_patched.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\x3f\\x3f_utils_patched.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\libraw\\src\\x3f\\x3f_utils_patched.cpp",
   "output": "libraw\\CMakeFiles\\raw.dir\\src\\x3f\\x3f_utils_patched.cpp.obj"
 },

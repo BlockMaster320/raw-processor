@@ -1,5 +1,4 @@
-#ifndef IMAGEPROCESSOR_H
-#define IMAGEPROCESSOR_H
+#pragma once
 
 #include "image.h"
 
@@ -19,7 +18,7 @@ public:
 
     void initializeGL();
     void cleanupGL();
-    void process(std::shared_ptr<Image> image);
+    void processImage(std::shared_ptr<Image> image);
 
     GLuint getProcessedTexture() const;
     int getProcessedWidth() const;
@@ -30,7 +29,7 @@ public:
 
 private:
     void uploadImage(std::shared_ptr<Image> image);
-    void createFbos(int width, int height);
+    void setupFbos(int width, int height);
     void renderRawToRgbPass();
     void renderAdjustmentPass();
 
@@ -55,5 +54,3 @@ private:
 
     std::shared_ptr<Image> currentImage;
 };
-
-#endif // IMAGEPROCESSOR_H

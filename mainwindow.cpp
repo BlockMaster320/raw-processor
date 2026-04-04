@@ -1,26 +1,100 @@
 #include "mainwindow.h"
+#include "imagemanager.h"
+#include "gallerywidget.h"
 #include "utility.h"
+
+#include <QHBoxLayout>
+#include <QSplitter>
 
 #include <iostream>
 #include <cmath>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
-    setFixedSize(1080, 720);
+    setMinimumSize(1080, 720);
 
-    canvas = new ImageViewer(this);
-    canvas->setGeometry(400, 50, 650, 600);
+    // Set up image manager, thumbnail loader and gallery
+    imageManager = std::make_shared<ImageManager>();
+    thumbnailLoader = std::make_shared<ThumbnailLoader>();
 
-    btn = new QPushButton("Button!!!", this);
-    btn->setGeometry(100, 100, 200, 50);
-    btn->setToolTip("HAHAhahahaha something");
+    gallery = new GalleryWidget(this);
+    gallery->setManager(imageManager);
+    gallery->setThumbnailLoader(thumbnailLoader);
 
-    slider = new QSlider(Qt::Horizontal, this);
-    slider->setGeometry(100, 200, 200, 50);
+    connect(gallery, &GalleryWidget::imageSelected, // image selected by user -> sent to image viewer for display and processing
+            this, [this](std::shared_ptr<Image> img) {
+                imageViewer->setImage(img);
+            });
+
+    // Set up image viewer
+    imageViewer = new ImageViewer(this);
+    //imageViewer->setGeometry(400, 50, 650, 600);
+
+
+    // UI layout
+    QWidget* centralWidget = new QWidget(this);
+    setCentralWidget(centralWidget);
+
+    // Set up widgets for sections of the UI
+    QWidget* fileWidget = new QWidget(this);
+    QWidget* adjustmentWidget = new QWidget(this);
+
+    fileWidget->setStyleSheet("background-color: lightgray;");
+    adjustmentWidget->setStyleSheet("background-color: lightgreen;");
+    gallery->setStyleSheet("background-color: lightyellow;");
+    imageViewer->setStyleSheet("background-color: lightblue;");
+
+    // Set size policies for the sections
+    fileWidget->setFixedWidth(200);
+    fileWidget->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
+
+    adjustmentWidget->setFixedWidth(200);
+    adjustmentWidget->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
+
+    gallery->setMinimumHeight(75);
+    gallery->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+
+    imageViewer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
+    // UI layouts
+    QVBoxLayout* fileLayout = new QVBoxLayout;
+    fileLayout->addWidget(fileWidget);
+
+    QVBoxLayout* adjustmentLayout = new QVBoxLayout;
+    adjustmentLayout->addWidget(adjustmentWidget);
+
+    QVBoxLayout* imageLayout = new QVBoxLayout;
+    QSplitter* splitter = new QSplitter(Qt::Vertical);
+    splitter->addWidget(gallery);
+    splitter->addWidget(imageViewer);
+    //splitter->setChildrenCollapsible(false);
+    splitter->setStretchFactor(0, 0);
+    splitter->setStretchFactor(1, 1);
+    //splitter->setSizes({180, 540});
+    imageLayout->addWidget(splitter);
+
+    // Add the layouts to the main layout
+    QHBoxLayout* mainLayout = new QHBoxLayout();
+    mainLayout->addLayout(fileLayout);
+    mainLayout->addLayout(imageLayout);
+    mainLayout->addLayout(adjustmentLayout);
+
+    centralWidget->setLayout(mainLayout);
+    
+
+    
+    btn = new QPushButton("Load images", fileWidget);
+    //btn->setGeometry(100, 100, 200, 50);
+    btn->setToolTip("Select a directory containing raw images to load into the gallery");
+
+    
+    slider = new QSlider(Qt::Horizontal, fileWidget);
+    slider->setGeometry(0, 200, 100, 50);
     slider->setRange(0, 100);
     slider->setValue(50);
 
-    pbar = new QProgressBar(this);
+    /*
+    pbar = new QProgressBar(fileWidget);
     pbar->setGeometry(100, 300, 200, 50);
 
     rBtn1 = new QRadioButton("1", this);
@@ -32,15 +106,16 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     btnGroup = new QButtonGroup(this);
     btnGroup->addButton(rBtn1);
     btnGroup->addButton(rBtn2);
-    btnGroup->addButton(rBtn3);
+    btnGroup->addButton(rBtn3);*/
 
     /*pieMenu = new PieMenu(this);
     pieMenu->setButtonCount(5);*/
 
     QObject::connect(btn, &QPushButton::clicked, this, &MainWindow::onButtonClicked);
     //QObject::connect(btn, &QPushButton::pressed, pieMenu, &PieMenu::display);
-    QObject::connect(slider, &QSlider::valueChanged, pbar, &QProgressBar::setValue);
-    QObject::connect(slider, &QSlider::valueChanged, canvas, &ImageViewer::onSliderChanged);
+    //QObject::connect(slider, &QSlider::valueChanged, pbar, &QProgressBar::setValue);
+    QObject::connect(slider, &QSlider::valueChanged, imageViewer, &ImageViewer::onSliderChanged);
+
 }
 
 MainWindow::~MainWindow() {}
@@ -48,10 +123,9 @@ MainWindow::~MainWindow() {}
 void MainWindow::onButtonClicked()
 {
     btn->setText("Clicked!!!");
-    
-    // Upload image to canvas
-    std::shared_ptr<Image> image = std::make_shared<Image>("./textures/raw-img1.ARW");
-    canvas->setImage(image);
+
+    imageManager->loadGroup(this);  // prompt user to select image directory
+    gallery->update();              // refresh gallery after image list changed
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
@@ -60,11 +134,11 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
         std::cout << "Escape key pressed" << std::endl;
 
     if (event->key() == Qt::Key_0)
-        canvas->setCompareMode(0);
+        imageViewer->setCompareMode(0);
     else if (event->key() == Qt::Key_1)
-        canvas->setCompareMode(1);
+        imageViewer->setCompareMode(1);
     else if (event->key() == Qt::Key_2)
-        canvas->setCompareMode(2);
+        imageViewer->setCompareMode(2);
     else if (event->key() == Qt::Key_3)
-        canvas->setCompareMode(3);
+        imageViewer->setCompareMode(3);
 }

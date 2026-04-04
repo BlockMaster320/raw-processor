@@ -78,11 +78,12 @@ void ImageViewer::initializeGL()
 void ImageViewer::resizeGL(int w, int h)
 {
     glViewport(0, 0, w, h);
+    updateTransform();
 }
 
 void ImageViewer::paintGL()
 {
-    imageProcessor.process(image);
+    imageProcessor.processImage(image);
     const GLuint processedTexture = imageProcessor.getProcessedTexture();
     if (!processedTexture || textureWidth <= 0 || textureHeight <= 0)
         return;
@@ -186,7 +187,7 @@ void ImageViewer::wheelEvent(QWheelEvent *event)
     }
 
     //qDebug() << "Image Zoom: " << imgZoom;
-    imgZoom = std::clamp(imgZoom, 0.01f, 20.f);
+    //imgZoom = std::clamp(imgZoom, 0.01f, 20.f);
 
     updateTransform();
 }
@@ -207,14 +208,14 @@ void ImageViewer::updateTransform()
     float yOffset = (2 / float(height())) * imgOffset.y();
     transformMatrix.translate(xOffset, yOffset, 0.f);
 
-    // Preserve image aspect ratio
-    float textureAspect = float(textureWidth) / float(textureHeight);
-    if (textureAspect > 1.f) {  // texture width > height
-        float scaleY = 1.f / textureAspect;
-        transformMatrix.scale(1.f, scaleY, 1.f);
-    } else {                    // texture height > width
-        float scaleX = textureAspect;
-        transformMatrix.scale(scaleX, 1.f, 1.f);
+    // Preserve image aspect ratio relative to the viewer widget dimensions
+    const float textureAspect = float(textureWidth) / float(textureHeight);
+    const float widgetAspect  = float(width()) / float(height());
+    const float combinedAspect = textureAspect / widgetAspect;
+    if (combinedAspect > 1.f) {  // texture width > height
+        transformMatrix.scale(1.f, 1.f / combinedAspect, 1.f);
+    } else {                     // texture height > width
+        transformMatrix.scale(combinedAspect, 1.f, 1.f);
     }
 
     displayProgram.bind();

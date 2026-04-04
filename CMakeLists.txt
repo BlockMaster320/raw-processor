@@ -4,7 +4,7 @@ project(raw-processor LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Core Widgets OpenGLWidgets)
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets OpenGLWidgets Concurrent)
 
 add_subdirectory(libraw)
 
@@ -23,6 +23,12 @@ qt_add_executable(raw-processor
     imageviewer.cpp
     imageprocessor.h
     imageprocessor.cpp
+    thumbnailloader.h
+    thumbnailloader.cpp
+    imagemanager.h
+    imagemanager.cpp
+    gallerywidget.h
+    gallerywidget.cpp
 
     stb_image.h
     PieMenu.h
@@ -34,6 +40,7 @@ target_link_libraries(raw-processor
         Qt6::Core
         Qt6::Widgets
         Qt6::OpenGLWidgets
+        Qt6::Concurrent
         raw
 )
 
