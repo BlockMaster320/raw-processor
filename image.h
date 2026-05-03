@@ -3,6 +3,9 @@
 #ifndef IMAGE_H
 #define IMAGE_H
 
+#include "adjustment.h"
+#include "adjustmentcell.h"
+
 #include <string>
 #include <vector>
 
@@ -15,7 +18,7 @@ public:
     explicit Image(const QString& path);
 
     bool loadRawData();
-    bool buildReferenceImage();
+    void loadAdjustmentCells();
 
     // Getters & setters
     bool getIsLoaded() const;
@@ -32,19 +35,24 @@ public:
     const QVector4D& getWbMultipliers() const;
     const QMatrix3x3& getCamToSrgb() const;
     const QMatrix3x3& getCamToXyz() const;
+    const QMatrix3x3& getCamToRec2020() const;
+    const QMatrix3x3& getRec2020ToSrgb() const;
 
     const std::vector<unsigned char>& getThumbnailBytes() const;
 
-    const uint16_t* getReferenceData() const;  // reference libraw-processed image
+    // Reference libraw-processed image
+    bool buildReferenceImage();
+    const uint16_t* getReferenceData() const;
     int getReferenceWidth() const;
     int getReferenceHeight() const;
-
 
     QString imagePath;
 
     QImage thumbnail;
     std::atomic<bool> thumbnailLoaded = false;
     std::atomic<bool> thumbnailLoading = false;
+
+    std::vector<AdjustmentCell> adjustmentCells;
 
 private:
     void clearLoadedData();
@@ -61,6 +69,8 @@ private:
     QVector4D wbMultipliers;
     QMatrix3x3 camToSrgbMat;
     QMatrix3x3 camToXyzMat;
+    QMatrix3x3 camToRec2020Mat;
+    QMatrix3x3 rec2020ToSrgbMat;
 
     std::vector<uint16_t> referencePixels;
     int referenceWidth;

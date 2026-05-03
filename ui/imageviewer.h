@@ -1,7 +1,7 @@
 #pragma once
 
-#include "image.h"
-#include "imageprocessor.h"
+#include "../image.h"
+#include "../imageprocessor.h"
 
 #include <QOpenGLWidget>
 #include <QOpenGLFunctions>
@@ -32,7 +32,7 @@ public:
     void setCompareMode(int mode);
 
 public slots:
-    void onSliderChanged(int value);
+    void onAdjustmentChanged();
 
 private:
     QOpenGLShaderProgram displayProgram;
@@ -42,12 +42,14 @@ private:
     std::shared_ptr<Image> image;
     ImageProcessor imageProcessor;
 
-    QOpenGLTexture* referenceTexture;   // libraw-processed reference image for comparison
+    // Libraw-processed reference image for comparison
+    QOpenGLTexture* referenceTexture;
     int textureWidth, textureHeight;
     bool compareWithLibRaw;
     int compareMode;
 
-    bool isMouseDragging;   // viewport interaction
+    // Viewport interaction
+    bool isMouseDragging;
     QPoint mouseLastPos;
     QPointF imgOffset;
     float imgZoom;

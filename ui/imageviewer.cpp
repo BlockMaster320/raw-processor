@@ -1,5 +1,5 @@
 #include "imageviewer.h"
-#include "utility.h"
+#include "../utility.h"
 
 #include <QMouseEvent>
 
@@ -125,12 +125,13 @@ void ImageViewer::setImage(std::shared_ptr<Image> newImage)
         return;
     }
 
+    // Load adjustment cells for the image or generate default ones if not present
+    image->loadAdjustmentCells();
+
     textureWidth = image->getRawWidth();
     textureHeight = image->getRawHeight();
 
-    // Thumbnail loading function exists on the Image model; this call primes it once.
-    //image->loadThumbnail();
-
+    // Create OpenGL texture for libraw-processed reference image if comparison mode enabled
     if (compareWithLibRaw && image->buildReferenceImage()) {
         referenceTexture = new QOpenGLTexture(QOpenGLTexture::Target2D);
         referenceTexture->setSize(image->getReferenceWidth(), image->getReferenceHeight());
@@ -143,6 +144,8 @@ void ImageViewer::setImage(std::shared_ptr<Image> newImage)
 
     updateTransform();
 }
+
+// --- Input event handlers ---
 
 void ImageViewer::mousePressEvent(QMouseEvent *event)
 {
@@ -225,12 +228,10 @@ void ImageViewer::updateTransform()
     update();   // trigger repaint
 }
 
-void ImageViewer::onSliderChanged(int value)
+void ImageViewer::onAdjustmentChanged()
 {
-    float exposure = (float)value / 100.f;
-    imageProcessor.setExposure(exposure);
-
-    update();   // trigger repaint
+    imageProcessor.markAdjustmentDirty();
+    update();
 }
 
 void ImageViewer::setCompareMode(int mode)

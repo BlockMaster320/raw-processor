@@ -65,14 +65,6 @@ build CMakeFiles/raw-processor.dir/main.cpp.obj: CXX_COMPILER__raw-processor_uns
   OBJECT_DIR = CMakeFiles\raw-processor.dir
   OBJECT_FILE_DIR = CMakeFiles\raw-processor.dir
 
-build CMakeFiles/raw-processor.dir/mainwindow.cpp.obj: CXX_COMPILER__raw-processor_unscanned_Debug C$:/Storage/FIT/BP/raw-processor/mainwindow.cpp || cmake_object_order_depends_target_raw-processor
-  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
-  DEP_FILE = CMakeFiles\raw-processor.dir\mainwindow.cpp.obj.d
-  FLAGS = -g -std=gnu++17 -fopenmp
-  INCLUDES = -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent
-  OBJECT_DIR = CMakeFiles\raw-processor.dir
-  OBJECT_FILE_DIR = CMakeFiles\raw-processor.dir
-
 build CMakeFiles/raw-processor.dir/utility.cpp.obj: CXX_COMPILER__raw-processor_unscanned_Debug C$:/Storage/FIT/BP/raw-processor/utility.cpp || cmake_object_order_depends_target_raw-processor
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DEP_FILE = CMakeFiles\raw-processor.dir\utility.cpp.obj.d
@@ -89,14 +81,6 @@ build CMakeFiles/raw-processor.dir/image.cpp.obj: CXX_COMPILER__raw-processor_un
   OBJECT_DIR = CMakeFiles\raw-processor.dir
   OBJECT_FILE_DIR = CMakeFiles\raw-processor.dir
 
-build CMakeFiles/raw-processor.dir/imageviewer.cpp.obj: CXX_COMPILER__raw-processor_unscanned_Debug C$:/Storage/FIT/BP/raw-processor/imageviewer.cpp || cmake_object_order_depends_target_raw-processor
-  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
-  DEP_FILE = CMakeFiles\raw-processor.dir\imageviewer.cpp.obj.d
-  FLAGS = -g -std=gnu++17 -fopenmp
-  INCLUDES = -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent
-  OBJECT_DIR = CMakeFiles\raw-processor.dir
-  OBJECT_FILE_DIR = CMakeFiles\raw-processor.dir
-
 build CMakeFiles/raw-processor.dir/imageprocessor.cpp.obj: CXX_COMPILER__raw-processor_unscanned_Debug C$:/Storage/FIT/BP/raw-processor/imageprocessor.cpp || cmake_object_order_depends_target_raw-processor
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DEP_FILE = CMakeFiles\raw-processor.dir\imageprocessor.cpp.obj.d
@@ -104,6 +88,70 @@ build CMakeFiles/raw-processor.dir/imageprocessor.cpp.obj: CXX_COMPILER__raw-pro
   INCLUDES = -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent
   OBJECT_DIR = CMakeFiles\raw-processor.dir
   OBJECT_FILE_DIR = CMakeFiles\raw-processor.dir
+
+build CMakeFiles/raw-processor.dir/adjustment.cpp.obj: CXX_COMPILER__raw-processor_unscanned_Debug C$:/Storage/FIT/BP/raw-processor/adjustment.cpp || cmake_object_order_depends_target_raw-processor
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\raw-processor.dir\adjustment.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fopenmp
+  INCLUDES = -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent
+  OBJECT_DIR = CMakeFiles\raw-processor.dir
+  OBJECT_FILE_DIR = CMakeFiles\raw-processor.dir
+
+build CMakeFiles/raw-processor.dir/adjustmentcell.cpp.obj: CXX_COMPILER__raw-processor_unscanned_Debug C$:/Storage/FIT/BP/raw-processor/adjustmentcell.cpp || cmake_object_order_depends_target_raw-processor
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\raw-processor.dir\adjustmentcell.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fopenmp
+  INCLUDES = -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent
+  OBJECT_DIR = CMakeFiles\raw-processor.dir
+  OBJECT_FILE_DIR = CMakeFiles\raw-processor.dir
+
+build CMakeFiles/raw-processor.dir/ui/mainwindow.cpp.obj: CXX_COMPILER__raw-processor_unscanned_Debug C$:/Storage/FIT/BP/raw-processor/ui/mainwindow.cpp || cmake_object_order_depends_target_raw-processor
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\raw-processor.dir\ui\mainwindow.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fopenmp
+  INCLUDES = -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent
+  OBJECT_DIR = CMakeFiles\raw-processor.dir
+  OBJECT_FILE_DIR = CMakeFiles\raw-processor.dir\ui
+
+build CMakeFiles/raw-processor.dir/ui/imageviewer.cpp.obj: CXX_COMPILER__raw-processor_unscanned_Debug C$:/Storage/FIT/BP/raw-processor/ui/imageviewer.cpp || cmake_object_order_depends_target_raw-processor
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\raw-processor.dir\ui\imageviewer.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fopenmp
+  INCLUDES = -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent
+  OBJECT_DIR = CMakeFiles\raw-processor.dir
+  OBJECT_FILE_DIR = CMakeFiles\raw-processor.dir\ui
+
+build CMakeFiles/raw-processor.dir/ui/gallerywidget.cpp.obj: CXX_COMPILER__raw-processor_unscanned_Debug C$:/Storage/FIT/BP/raw-processor/ui/gallerywidget.cpp || cmake_object_order_depends_target_raw-processor
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\raw-processor.dir\ui\gallerywidget.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fopenmp
+  INCLUDES = -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent
+  OBJECT_DIR = CMakeFiles\raw-processor.dir
+  OBJECT_FILE_DIR = CMakeFiles\raw-processor.dir\ui
+
+build CMakeFiles/raw-processor.dir/ui/adjustmentcellwidget.cpp.obj: CXX_COMPILER__raw-processor_unscanned_Debug C$:/Storage/FIT/BP/raw-processor/ui/adjustmentcellwidget.cpp || cmake_object_order_depends_target_raw-processor
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\raw-processor.dir\ui\adjustmentcellwidget.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fopenmp
+  INCLUDES = -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent
+  OBJECT_DIR = CMakeFiles\raw-processor.dir
+  OBJECT_FILE_DIR = CMakeFiles\raw-processor.dir\ui
+
+build CMakeFiles/raw-processor.dir/ui/adjustmentpanelwidget.cpp.obj: CXX_COMPILER__raw-processor_unscanned_Debug C$:/Storage/FIT/BP/raw-processor/ui/adjustmentpanelwidget.cpp || cmake_object_order_depends_target_raw-processor
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\raw-processor.dir\ui\adjustmentpanelwidget.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fopenmp
+  INCLUDES = -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent
+  OBJECT_DIR = CMakeFiles\raw-processor.dir
+  OBJECT_FILE_DIR = CMakeFiles\raw-processor.dir\ui
+
+build CMakeFiles/raw-processor.dir/ui/PieMenu.cpp.obj: CXX_COMPILER__raw-processor_unscanned_Debug C$:/Storage/FIT/BP/raw-processor/ui/PieMenu.cpp || cmake_object_order_depends_target_raw-processor
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\raw-processor.dir\ui\PieMenu.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fopenmp
+  INCLUDES = -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent
+  OBJECT_DIR = CMakeFiles\raw-processor.dir
+  OBJECT_FILE_DIR = CMakeFiles\raw-processor.dir\ui
 
 build CMakeFiles/raw-processor.dir/thumbnailloader.cpp.obj: CXX_COMPILER__raw-processor_unscanned_Debug C$:/Storage/FIT/BP/raw-processor/thumbnailloader.cpp || cmake_object_order_depends_target_raw-processor
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
@@ -121,22 +169,6 @@ build CMakeFiles/raw-processor.dir/imagemanager.cpp.obj: CXX_COMPILER__raw-proce
   OBJECT_DIR = CMakeFiles\raw-processor.dir
   OBJECT_FILE_DIR = CMakeFiles\raw-processor.dir
 
-build CMakeFiles/raw-processor.dir/gallerywidget.cpp.obj: CXX_COMPILER__raw-processor_unscanned_Debug C$:/Storage/FIT/BP/raw-processor/gallerywidget.cpp || cmake_object_order_depends_target_raw-processor
-  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
-  DEP_FILE = CMakeFiles\raw-processor.dir\gallerywidget.cpp.obj.d
-  FLAGS = -g -std=gnu++17 -fopenmp
-  INCLUDES = -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent
-  OBJECT_DIR = CMakeFiles\raw-processor.dir
-  OBJECT_FILE_DIR = CMakeFiles\raw-processor.dir
-
-build CMakeFiles/raw-processor.dir/PieMenu.cpp.obj: CXX_COMPILER__raw-processor_unscanned_Debug C$:/Storage/FIT/BP/raw-processor/PieMenu.cpp || cmake_object_order_depends_target_raw-processor
-  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
-  DEP_FILE = CMakeFiles\raw-processor.dir\PieMenu.cpp.obj.d
-  FLAGS = -g -std=gnu++17 -fopenmp
-  INCLUDES = -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent
-  OBJECT_DIR = CMakeFiles\raw-processor.dir
-  OBJECT_FILE_DIR = CMakeFiles\raw-processor.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target raw-processor
@@ -145,7 +177,7 @@ build CMakeFiles/raw-processor.dir/PieMenu.cpp.obj: CXX_COMPILER__raw-processor_
 #############################################
 # Link the executable raw-processor.exe
 
-build raw-processor.exe: CXX_EXECUTABLE_LINKER__raw-processor_Debug CMakeFiles/raw-processor.dir/raw-processor_autogen/mocs_compilation.cpp.obj CMakeFiles/raw-processor.dir/main.cpp.obj CMakeFiles/raw-processor.dir/mainwindow.cpp.obj CMakeFiles/raw-processor.dir/utility.cpp.obj CMakeFiles/raw-processor.dir/image.cpp.obj CMakeFiles/raw-processor.dir/imageviewer.cpp.obj CMakeFiles/raw-processor.dir/imageprocessor.cpp.obj CMakeFiles/raw-processor.dir/thumbnailloader.cpp.obj CMakeFiles/raw-processor.dir/imagemanager.cpp.obj CMakeFiles/raw-processor.dir/gallerywidget.cpp.obj CMakeFiles/raw-processor.dir/PieMenu.cpp.obj | C$:/Programs/Qt/6.9.3/mingw_64/lib/libQt6OpenGLWidgets.a C$:/Programs/Qt/6.9.3/mingw_64/lib/libQt6Concurrent.a libraw/librawd.dll.a C$:/Programs/Qt/6.9.3/mingw_64/lib/libQt6Widgets.a C$:/Programs/Qt/6.9.3/mingw_64/lib/libQt6OpenGL.a C$:/Programs/Qt/6.9.3/mingw_64/lib/libQt6Gui.a C$:/Programs/Qt/6.9.3/mingw_64/lib/libQt6Core.a C$:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/libgomp.dll.a C$:/Programs/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/lib/libmingwthrd.a || libraw/librawd.dll raw-processor_autogen raw-processor_autogen_timestamp_deps
+build raw-processor.exe: CXX_EXECUTABLE_LINKER__raw-processor_Debug CMakeFiles/raw-processor.dir/raw-processor_autogen/mocs_compilation.cpp.obj CMakeFiles/raw-processor.dir/main.cpp.obj CMakeFiles/raw-processor.dir/utility.cpp.obj CMakeFiles/raw-processor.dir/image.cpp.obj CMakeFiles/raw-processor.dir/imageprocessor.cpp.obj CMakeFiles/raw-processor.dir/adjustment.cpp.obj CMakeFiles/raw-processor.dir/adjustmentcell.cpp.obj CMakeFiles/raw-processor.dir/ui/mainwindow.cpp.obj CMakeFiles/raw-processor.dir/ui/imageviewer.cpp.obj CMakeFiles/raw-processor.dir/ui/gallerywidget.cpp.obj CMakeFiles/raw-processor.dir/ui/adjustmentcellwidget.cpp.obj CMakeFiles/raw-processor.dir/ui/adjustmentpanelwidget.cpp.obj CMakeFiles/raw-processor.dir/ui/PieMenu.cpp.obj CMakeFiles/raw-processor.dir/thumbnailloader.cpp.obj CMakeFiles/raw-processor.dir/imagemanager.cpp.obj | C$:/Programs/Qt/6.9.3/mingw_64/lib/libQt6OpenGLWidgets.a C$:/Programs/Qt/6.9.3/mingw_64/lib/libQt6Concurrent.a libraw/librawd.dll.a C$:/Programs/Qt/6.9.3/mingw_64/lib/libQt6Widgets.a C$:/Programs/Qt/6.9.3/mingw_64/lib/libQt6OpenGL.a C$:/Programs/Qt/6.9.3/mingw_64/lib/libQt6Gui.a C$:/Programs/Qt/6.9.3/mingw_64/lib/libQt6Core.a C$:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/libgomp.dll.a C$:/Programs/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/lib/libmingwthrd.a || libraw/librawd.dll raw-processor_autogen raw-processor_autogen_timestamp_deps
   FLAGS = -g
   LINK_LIBRARIES = C:/Programs/Qt/6.9.3/mingw_64/lib/libQt6OpenGLWidgets.a  C:/Programs/Qt/6.9.3/mingw_64/lib/libQt6Concurrent.a  libraw/librawd.dll.a  C:/Programs/Qt/6.9.3/mingw_64/lib/libQt6Widgets.a  C:/Programs/Qt/6.9.3/mingw_64/lib/libQt6OpenGL.a  C:/Programs/Qt/6.9.3/mingw_64/lib/libQt6Gui.a  -ld3d11  -ldxgi  -ldxguid  -ld3d12  C:/Programs/Qt/6.9.3/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lws2_32  C:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/libgomp.dll.a  C:/Programs/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/lib/libmingwthrd.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\raw-processor.dir
@@ -231,7 +263,7 @@ build raw-processor_autogen_timestamp_deps: phony libraw/librawd.dll
 #############################################
 # Utility command for raw-processor_autogen
 
-build raw-processor_autogen: phony CMakeFiles/raw-processor_autogen raw-processor_autogen/include/ui_mainwindow.h raw-processor_autogen/timestamp raw-processor_autogen/mocs_compilation.cpp raw-processor_autogen_timestamp_deps
+build raw-processor_autogen: phony CMakeFiles/raw-processor_autogen raw-processor_autogen/timestamp raw-processor_autogen/mocs_compilation.cpp raw-processor_autogen_timestamp_deps
 
 
 #############################################
@@ -248,7 +280,7 @@ build raw-processor_autogen/timestamp raw-processor_autogen/mocs_compilation.cpp
 #############################################
 # Phony custom command for CMakeFiles\raw-processor_autogen
 
-build CMakeFiles/raw-processor_autogen raw-processor_autogen/include/ui_mainwindow.h | ${cmake_ninja_workdir}CMakeFiles/raw-processor_autogen ${cmake_ninja_workdir}raw-processor_autogen/include/ui_mainwindow.h: phony raw-processor_autogen/timestamp || libraw/librawd.dll raw-processor_autogen_timestamp_deps
+build CMakeFiles/raw-processor_autogen | ${cmake_ninja_workdir}CMakeFiles/raw-processor_autogen: phony raw-processor_autogen/timestamp || libraw/librawd.dll raw-processor_autogen_timestamp_deps
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:

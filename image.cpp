@@ -1,8 +1,10 @@
 #include "image.h"
 
 #include "libraw/libraw.h"
+#include "utility.h"
 
 #include <algorithm>
+#include <cmath>
 #include <utility>
 
 #include <QDebug>
@@ -68,19 +70,35 @@ bool Image::loadRawData()
 
 	wbMultipliers = QVector4D(wbMul[0], wbMul[1], wbMul[2], wbMul[3]);
 
-	// Prepare color space conversion matrices
-	for (int i = 0; i < 3; i++) {
+	// --  Prepare color space conversion matrices --
+
+	// Construct the camera -> Rec.2020 and Rec.2020 -> camera matrices using libraw's
+	// camera->sRGB matrix (the only one provided by libraw which seem to have correct information).
+	// Sequence of conversions: camera -> sRGB -> XYZ -> Rec.2020 -> sRGB
+	for (int i = 0; i < 3; i++) {	// camera -> sRGB matrix
 		camToSrgbMat(i, 0) = rawProcessor.imgdata.color.rgb_cam[i][0];
 		camToSrgbMat(i, 1) = rawProcessor.imgdata.color.rgb_cam[i][1] + rawProcessor.imgdata.color.rgb_cam[i][3];   // merge LibRaw's two green channels (G1+G2) into a 3x3 RGB matrix
 		camToSrgbMat(i, 2) = rawProcessor.imgdata.color.rgb_cam[i][2];
 	}
 
-	for (int i = 0; i < 3; i++) {
-		camToXyzMat(i, 0) = rawProcessor.imgdata.color.cam_xyz[i][0];
-		camToXyzMat(i, 1) = rawProcessor.imgdata.color.cam_xyz[i][1];
-		camToXyzMat(i, 2) = rawProcessor.imgdata.color.cam_xyz[i][2];
-	}
+	QMatrix3x3 srgbToXyzMat;	// sRGB -> XYZ matrix (D65)
+	srgbToXyzMat(0, 0) = 0.4123908f; srgbToXyzMat(0, 1) = 0.3575843f; srgbToXyzMat(0, 2) = 0.1804808f;
+	srgbToXyzMat(1, 0) = 0.2126390f; srgbToXyzMat(1, 1) = 0.7151687f; srgbToXyzMat(1, 2) = 0.0721923f;
+	srgbToXyzMat(2, 0) = 0.0193308f; srgbToXyzMat(2, 1) = 0.1191948f; srgbToXyzMat(2, 2) = 0.9505322f;
 
+	QMatrix3x3 xyzToRec2020Mat;	// XYZ -> Rec2020 matrix
+	xyzToRec2020Mat(0, 0) = 1.7166512f;  xyzToRec2020Mat(0, 1) = -0.3556708f; xyzToRec2020Mat(0, 2) = -0.2533663f;
+	xyzToRec2020Mat(1, 0) = -0.6666844f; xyzToRec2020Mat(1, 1) = 1.6164812f;  xyzToRec2020Mat(1, 2) = 0.0157685f;
+	xyzToRec2020Mat(2, 0) = 0.0176399f;  xyzToRec2020Mat(2, 1) = -0.0427706f; xyzToRec2020Mat(2, 2) = 0.9421031f;
+
+	QMatrix3x3 rec2020ToXyzMat = invert3x3(xyzToRec2020Mat);
+	QMatrix3x3 xyzToSrgbMat = invert3x3(srgbToXyzMat);
+
+	camToXyzMat = srgbToXyzMat * camToSrgbMat;
+	camToRec2020Mat = xyzToRec2020Mat * camToXyzMat;
+	rec2020ToSrgbMat = xyzToSrgbMat * rec2020ToXyzMat;
+
+	
 	qDebug() << "-------------- RAW IMAGE INFO --------------";
 	qDebug() << "CFA pattern: " << rawProcessor.imgdata.idata.cdesc;
 	qDebug() << "Raw image dimensions: " << rawWidth << ", " << rawHeight;
@@ -93,10 +111,16 @@ bool Image::loadRawData()
 			 << wbMul[0] << "," << wbMul[1] << ","
 			 << wbMul[2] << "," << wbMul[3];
 
-	qDebug() << "----------------- END -----------------";
+	qDebug() << "----------------------------------";
 
 	isLoaded = true;
 	return true;
+}
+
+void Image::loadAdjustmentCells()
+{
+	if (adjustmentCells.empty())
+		adjustmentCells.emplace_back("Base");
 }
 
 // Builds a reference RGB image using LibRaw's internal processing pipeline (on CPU) with settings chosen to best match the GPU pipeline's output for direct pixel comparison.
@@ -180,6 +204,8 @@ const QVector4D& Image::getBlackLevels() const { return blackLevels; }
 const QVector4D& Image::getWbMultipliers() const { return wbMultipliers; }
 const QMatrix3x3& Image::getCamToSrgb() const { return camToSrgbMat; }
 const QMatrix3x3& Image::getCamToXyz() const { return camToXyzMat; }
+const QMatrix3x3& Image::getCamToRec2020() const { return camToRec2020Mat; }
+const QMatrix3x3 &Image::getRec2020ToSrgb() const {return rec2020ToSrgbMat; }
 
 const uint16_t* Image::getReferenceData() const { return referencePixels.empty() ? nullptr : referencePixels.data(); }
 
@@ -199,6 +225,8 @@ void Image::clearLoadedData()
 	wbMultipliers = QVector4D();
 	camToSrgbMat = QMatrix3x3();
 	camToXyzMat = QMatrix3x3();
+	camToRec2020Mat = QMatrix3x3();
+	rec2020ToSrgbMat = QMatrix3x3();
 	isLoaded = false;
 }
 

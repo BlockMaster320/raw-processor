@@ -1,7 +1,7 @@
 #include "mainwindow.h"
-#include "imagemanager.h"
+#include "../imagemanager.h"
 #include "gallerywidget.h"
-#include "utility.h"
+#include "../utility.h"
 
 #include <QHBoxLayout>
 #include <QSplitter>
@@ -23,13 +23,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
     connect(gallery, &GalleryWidget::imageSelected, // image selected by user -> sent to image viewer for display and processing
             this, [this](std::shared_ptr<Image> img) {
+                //adjustmentWidget->setImage(nullptr);  // Clear adjustment cell widgets before the old image is potentially destroyed, then set the new image on both viewer (creates default cells) and adjustment UI.
                 imageViewer->setImage(img);
+                adjustmentPanelWidget->setImage(img);
             });
 
     // Set up image viewer
     imageViewer = new ImageViewer(this);
-    //imageViewer->setGeometry(400, 50, 650, 600);
-
 
     // UI layout
     QWidget* centralWidget = new QWidget(this);
@@ -37,19 +37,19 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
     // Set up widgets for sections of the UI
     QWidget* fileWidget = new QWidget(this);
-    QWidget* adjustmentWidget = new QWidget(this);
+    adjustmentPanelWidget = new AdjustmentPanelWidget(this);
 
-    fileWidget->setStyleSheet("background-color: lightgray;");
-    adjustmentWidget->setStyleSheet("background-color: lightgreen;");
-    gallery->setStyleSheet("background-color: lightyellow;");
-    imageViewer->setStyleSheet("background-color: lightblue;");
+    //fileWidget->setStyleSheet("background-color: lightgray;");
+    //adjustmentWidget->setStyleSheet("background-color: lightgreen;");
+    //gallery->setStyleSheet("background-color: lightyellow;");
+    //imageViewer->setStyleSheet("background-color: lightblue;");
 
     // Set size policies for the sections
-    fileWidget->setFixedWidth(200);
+    fileWidget->setFixedWidth(300);
     fileWidget->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
 
-    adjustmentWidget->setFixedWidth(200);
-    adjustmentWidget->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
+    adjustmentPanelWidget->setFixedWidth(300);
+    adjustmentPanelWidget->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
 
     gallery->setMinimumHeight(75);
     gallery->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
@@ -57,13 +57,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     imageViewer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     // UI layouts
-    QVBoxLayout* fileLayout = new QVBoxLayout;
+    QVBoxLayout* fileLayout = new QVBoxLayout;       // file section
     fileLayout->addWidget(fileWidget);
 
-    QVBoxLayout* adjustmentLayout = new QVBoxLayout;
-    adjustmentLayout->addWidget(adjustmentWidget);
+    QVBoxLayout* adjustmentLayout = new QVBoxLayout; // adjustment section
+    adjustmentLayout->addWidget(adjustmentPanelWidget);
 
-    QVBoxLayout* imageLayout = new QVBoxLayout;
+    QVBoxLayout* imageLayout = new QVBoxLayout;      // image display section
     QSplitter* splitter = new QSplitter(Qt::Vertical);
     splitter->addWidget(gallery);
     splitter->addWidget(imageViewer);
@@ -80,18 +80,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     mainLayout->addLayout(adjustmentLayout);
 
     centralWidget->setLayout(mainLayout);
-    
 
     
     btn = new QPushButton("Load images", fileWidget);
     //btn->setGeometry(100, 100, 200, 50);
     btn->setToolTip("Select a directory containing raw images to load into the gallery");
-
-    
-    slider = new QSlider(Qt::Horizontal, fileWidget);
-    slider->setGeometry(0, 200, 100, 50);
-    slider->setRange(0, 100);
-    slider->setValue(50);
 
     /*
     pbar = new QProgressBar(fileWidget);
@@ -113,8 +106,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
     QObject::connect(btn, &QPushButton::clicked, this, &MainWindow::onButtonClicked);
     //QObject::connect(btn, &QPushButton::pressed, pieMenu, &PieMenu::display);
-    //QObject::connect(slider, &QSlider::valueChanged, pbar, &QProgressBar::setValue);
-    QObject::connect(slider, &QSlider::valueChanged, imageViewer, &ImageViewer::onSliderChanged);
+    QObject::connect(adjustmentPanelWidget, &AdjustmentPanelWidget::adjustmentChanged,
+                     imageViewer, &ImageViewer::onAdjustmentChanged);
 
 }
 
@@ -122,8 +115,6 @@ MainWindow::~MainWindow() {}
 
 void MainWindow::onButtonClicked()
 {
-    btn->setText("Clicked!!!");
-
     imageManager->loadGroup(this);  // prompt user to select image directory
     gallery->update();              // refresh gallery after image list changed
 }

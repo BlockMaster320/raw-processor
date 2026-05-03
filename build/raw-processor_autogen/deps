@@ -414,16 +414,24 @@ raw-processor_autogen/timestamp: \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QProgressBar \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QPushButton \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QRadioButton \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QScrollArea \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QSlider \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QVBoxLayout \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QWidget \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractbutton.h \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractscrollarea.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractslider.h \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qboxlayout.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qbuttongroup.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qframe.h \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qgridlayout.h \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qlayout.h \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qlayoutitem.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qmainwindow.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qprogressbar.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qpushbutton.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qradiobutton.h \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qscrollarea.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qsizepolicy.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qslider.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qtabwidget.h \
@@ -1003,28 +1011,36 @@ raw-processor_autogen/timestamp: \
 	C:/Programs/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
 	C:/Programs/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h \
 	C:/Storage/FIT/BP/raw-processor/CMakeLists.txt \
-	C:/Storage/FIT/BP/raw-processor/PieMenu.cpp \
-	C:/Storage/FIT/BP/raw-processor/PieMenu.h \
+	C:/Storage/FIT/BP/raw-processor/adjustment.cpp \
+	C:/Storage/FIT/BP/raw-processor/adjustment.h \
+	C:/Storage/FIT/BP/raw-processor/adjustmentcell.cpp \
+	C:/Storage/FIT/BP/raw-processor/adjustmentcell.h \
 	C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/3.29.5-msvc4/CMakeCXXCompiler.cmake \
 	C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/3.29.5-msvc4/CMakeRCCompiler.cmake \
 	C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/3.29.5-msvc4/CMakeSystem.cmake \
 	C:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/moc_predefs.h \
-	C:/Storage/FIT/BP/raw-processor/gallerywidget.cpp \
-	C:/Storage/FIT/BP/raw-processor/gallerywidget.h \
 	C:/Storage/FIT/BP/raw-processor/image.cpp \
 	C:/Storage/FIT/BP/raw-processor/image.h \
 	C:/Storage/FIT/BP/raw-processor/imagemanager.cpp \
 	C:/Storage/FIT/BP/raw-processor/imagemanager.h \
 	C:/Storage/FIT/BP/raw-processor/imageprocessor.cpp \
 	C:/Storage/FIT/BP/raw-processor/imageprocessor.h \
-	C:/Storage/FIT/BP/raw-processor/imageviewer.cpp \
-	C:/Storage/FIT/BP/raw-processor/imageviewer.h \
 	C:/Storage/FIT/BP/raw-processor/main.cpp \
-	C:/Storage/FIT/BP/raw-processor/mainwindow.cpp \
-	C:/Storage/FIT/BP/raw-processor/mainwindow.h \
 	C:/Storage/FIT/BP/raw-processor/stb_image.h \
 	C:/Storage/FIT/BP/raw-processor/thumbnailloader.cpp \
 	C:/Storage/FIT/BP/raw-processor/thumbnailloader.h \
+	C:/Storage/FIT/BP/raw-processor/ui/PieMenu.cpp \
+	C:/Storage/FIT/BP/raw-processor/ui/PieMenu.h \
+	C:/Storage/FIT/BP/raw-processor/ui/adjustmentcellwidget.cpp \
+	C:/Storage/FIT/BP/raw-processor/ui/adjustmentcellwidget.h \
+	C:/Storage/FIT/BP/raw-processor/ui/adjustmentpanelwidget.cpp \
+	C:/Storage/FIT/BP/raw-processor/ui/adjustmentpanelwidget.h \
+	C:/Storage/FIT/BP/raw-processor/ui/gallerywidget.cpp \
+	C:/Storage/FIT/BP/raw-processor/ui/gallerywidget.h \
+	C:/Storage/FIT/BP/raw-processor/ui/imageviewer.cpp \
+	C:/Storage/FIT/BP/raw-processor/ui/imageviewer.h \
+	C:/Storage/FIT/BP/raw-processor/ui/mainwindow.cpp \
+	C:/Storage/FIT/BP/raw-processor/ui/mainwindow.h \
 	C:/Storage/FIT/BP/raw-processor/utility.cpp \
 	C:/Storage/FIT/BP/raw-processor/utility.h \
 	C:/Program\ Files/Microsoft\ Visual\ Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe

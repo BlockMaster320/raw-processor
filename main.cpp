@@ -1,7 +1,7 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
-#include "mainwindow.h"
+#include "ui/mainwindow.h"
 
 #include <QApplication>
 #include <QPushButton>

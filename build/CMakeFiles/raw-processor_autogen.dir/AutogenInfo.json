@@ -349,15 +349,15 @@
 	"HEADERS" : 
 	[
 		[
-			"C:/Storage/FIT/BP/raw-processor/PieMenu.h",
+			"C:/Storage/FIT/BP/raw-processor/adjustment.h",
 			"MU",
-			"EWIEGA46WW/moc_PieMenu.cpp",
+			"EWIEGA46WW/moc_adjustment.cpp",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/gallerywidget.h",
+			"C:/Storage/FIT/BP/raw-processor/adjustmentcell.h",
 			"MU",
-			"EWIEGA46WW/moc_gallerywidget.cpp",
+			"EWIEGA46WW/moc_adjustmentcell.cpp",
 			null
 		],
 		[
@@ -379,18 +379,6 @@
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/imageviewer.h",
-			"MU",
-			"EWIEGA46WW/moc_imageviewer.cpp",
-			null
-		],
-		[
-			"C:/Storage/FIT/BP/raw-processor/mainwindow.h",
-			"MU",
-			"EWIEGA46WW/moc_mainwindow.cpp",
-			null
-		],
-		[
 			"C:/Storage/FIT/BP/raw-processor/stb_image.h",
 			"MU",
 			"EWIEGA46WW/moc_stb_image.cpp",
@@ -400,6 +388,42 @@
 			"C:/Storage/FIT/BP/raw-processor/thumbnailloader.h",
 			"MU",
 			"EWIEGA46WW/moc_thumbnailloader.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/ui/PieMenu.h",
+			"MU",
+			"UYX5XTB5RZ/moc_PieMenu.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/ui/adjustmentcellwidget.h",
+			"MU",
+			"UYX5XTB5RZ/moc_adjustmentcellwidget.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/ui/adjustmentpanelwidget.h",
+			"MU",
+			"UYX5XTB5RZ/moc_adjustmentpanelwidget.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/ui/gallerywidget.h",
+			"MU",
+			"UYX5XTB5RZ/moc_gallerywidget.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/ui/imageviewer.h",
+			"MU",
+			"UYX5XTB5RZ/moc_imageviewer.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/ui/mainwindow.h",
+			"MU",
+			"UYX5XTB5RZ/moc_mainwindow.cpp",
 			null
 		],
 		[
@@ -486,15 +510,27 @@
 	"SETTINGS_FILE" : "C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/raw-processor_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "C:/Storage/FIT/BP/raw-processor/PieMenu.cpp", "MU", null ],
-		[ "C:/Storage/FIT/BP/raw-processor/gallerywidget.cpp", "MU", null ],
+		[ "C:/Storage/FIT/BP/raw-processor/adjustment.cpp", "MU", null ],
+		[ "C:/Storage/FIT/BP/raw-processor/adjustmentcell.cpp", "MU", null ],
 		[ "C:/Storage/FIT/BP/raw-processor/image.cpp", "MU", null ],
 		[ "C:/Storage/FIT/BP/raw-processor/imagemanager.cpp", "MU", null ],
 		[ "C:/Storage/FIT/BP/raw-processor/imageprocessor.cpp", "MU", null ],
-		[ "C:/Storage/FIT/BP/raw-processor/imageviewer.cpp", "MU", null ],
 		[ "C:/Storage/FIT/BP/raw-processor/main.cpp", "MU", null ],
-		[ "C:/Storage/FIT/BP/raw-processor/mainwindow.cpp", "MU", null ],
 		[ "C:/Storage/FIT/BP/raw-processor/thumbnailloader.cpp", "MU", null ],
+		[ "C:/Storage/FIT/BP/raw-processor/ui/PieMenu.cpp", "MU", null ],
+		[
+			"C:/Storage/FIT/BP/raw-processor/ui/adjustmentcellwidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/ui/adjustmentpanelwidget.cpp",
+			"MU",
+			null
+		],
+		[ "C:/Storage/FIT/BP/raw-processor/ui/gallerywidget.cpp", "MU", null ],
+		[ "C:/Storage/FIT/BP/raw-processor/ui/imageviewer.cpp", "MU", null ],
+		[ "C:/Storage/FIT/BP/raw-processor/ui/mainwindow.cpp", "MU", null ],
 		[ "C:/Storage/FIT/BP/raw-processor/utility.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],

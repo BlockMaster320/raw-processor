@@ -1,12 +1,13 @@
 #pragma once
 
 #include "PieMenu.h"
-#include "image.h"
-#include "imageprocessor.h"
+#include "../image.h"
+#include "../imageprocessor.h"
 #include "imageviewer.h"
-#include "imagemanager.h"
+#include "../imagemanager.h"
 #include "gallerywidget.h"
-#include "thumbnailloader.h"
+#include "../thumbnailloader.h"
+#include "adjustmentpanelwidget.h"
 
 #include <memory>
 
@@ -42,6 +43,7 @@ public slots:
 private:
     ImageViewer* imageViewer;
     GalleryWidget* gallery;
+    AdjustmentPanelWidget* adjustmentPanelWidget;
     std::shared_ptr<ImageManager> imageManager;
     std::shared_ptr<ThumbnailLoader> thumbnailLoader;
 

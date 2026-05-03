@@ -12,27 +12,37 @@ qt_standard_project_setup()
 
 qt_add_executable(raw-processor
     main.cpp
-    mainwindow.cpp
-    mainwindow.h
-    mainwindow.ui
     utility.h
     utility.cpp
     image.h
     image.cpp
-    imageviewer.h
-    imageviewer.cpp
     imageprocessor.h
     imageprocessor.cpp
+
+    adjustment.h
+    adjustment.cpp
+    adjustmentcell.h
+    adjustmentcell.cpp
+
+    ui/mainwindow.cpp
+    ui/mainwindow.h
+    ui/imageviewer.h
+    ui/imageviewer.cpp
+    ui/gallerywidget.h
+    ui/gallerywidget.cpp
+    ui/adjustmentcellwidget.h
+    ui/adjustmentcellwidget.cpp
+    ui/adjustmentpanelwidget.h
+    ui/adjustmentpanelwidget.cpp
+    ui/PieMenu.h
+    ui/PieMenu.cpp
+
     thumbnailloader.h
     thumbnailloader.cpp
     imagemanager.h
     imagemanager.cpp
-    gallerywidget.h
-    gallerywidget.cpp
 
     stb_image.h
-    PieMenu.h
-    PieMenu.cpp
 )
 
 target_link_libraries(raw-processor

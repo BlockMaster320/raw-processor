@@ -12,6 +12,7 @@ uniform ivec2 cfaOffset;
 
 uniform mat3 camToSRGB;	// color conversion matrix
 uniform mat3 camToXYZ;
+uniform mat3 camToRec2020;
 
 out vec4 fragColor;
 
@@ -98,7 +99,7 @@ void main() {
 	vec3 col = vec3(r, g, b);
 
 	// Convert from camera RGB to sRGB
-	col = camToSRGB * col;
+	//col = camToSRGB * col;
 
     // --- Camera to XYZ conversion ---
     //vec3 xyz = camToXYZ * col;
@@ -111,8 +112,8 @@ void main() {
     );
     //col = XYZtoSRGB * xyz;
 
-    // Clamp to [0,1] before writing (not sure if this should be done)
-	col = clamp(col, 0.0, 1.0);
+	// --- Camera to Rec2020 conversion ---
+	col = camToRec2020 * col;
 
-	fragColor = vec4(col, 1.0);
+	fragColor = vec4(max(col, 0.0), 1.0);
 }

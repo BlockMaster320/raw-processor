@@ -1,7 +1,7 @@
 #pragma once
 
-#include "imagemanager.h"
-#include "thumbnailloader.h"
+#include "../imagemanager.h"
+#include "../thumbnailloader.h"
 
 #include <QRect>
 #include <QWidget>
