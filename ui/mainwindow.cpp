@@ -2,6 +2,7 @@
 #include "../imagemanager.h"
 #include "gallerywidget.h"
 #include "../utility.h"
+#include "uiconstants.h"
 
 #include <QHBoxLayout>
 #include <QSplitter>
@@ -44,6 +45,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
     // UI layout
     QWidget* centralWidget = new QWidget(this);
+    centralWidget->setStyleSheet("background-color: " + appBackgroundColor + ";");
     setCentralWidget(centralWidget);
 
     // Set up widgets for sections of the UI
@@ -51,11 +53,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     adjustmentPanelWidget = new AdjustmentPanelWidget(this);
     adjustmentPanelWidget->setAdjustmentCellManager(adjustmentCellManager);
     adjustmentCellManagerWidget = new AdjustmentCellManagerWidget(adjustmentCellManager, this);
-
-    //fileWidget->setStyleSheet("background-color: lightgray;");
-    //adjustmentWidget->setStyleSheet("background-color: lightgreen;");
-    //gallery->setStyleSheet("background-color: lightyellow;");
-    //imageViewer->setStyleSheet("background-color: lightblue;");
 
     // Set size policies for the sections
     fileWidget->setFixedWidth(300);
@@ -71,7 +68,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
     // UI layouts
     QVBoxLayout* fileInnerLayout = new QVBoxLayout;  // layout inside fileWidget
-    fileInnerLayout->setContentsMargins(0, 0, 0, 0);
+    fileInnerLayout->setContentsMargins(10, 8, 10, 10);
     fileInnerLayout->setAlignment(Qt::AlignTop);
     fileWidget->setLayout(fileInnerLayout);
 
@@ -99,29 +96,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
     centralWidget->setLayout(mainLayout);
 
-    
     btn = new QPushButton("Load images");
+    btn->setStyleSheet(baseButtonStyle);
     btn->setToolTip("Select a directory containing raw images to load into the gallery");
     fileInnerLayout->addWidget(btn);
     fileInnerLayout->addWidget(adjustmentCellManagerWidget);
-
-    /*
-    pbar = new QProgressBar(fileWidget);
-    pbar->setGeometry(100, 300, 200, 50);
-
-    rBtn1 = new QRadioButton("1", this);
-    rBtn1->setGeometry(100, 400, 50, 50);
-    rBtn2 = new QRadioButton("2", this);
-    rBtn2->setGeometry(150, 400, 50, 50);
-    rBtn3 = new QRadioButton("3", this);
-    rBtn3->setGeometry(200, 400, 50, 50);
-    btnGroup = new QButtonGroup(this);
-    btnGroup->addButton(rBtn1);
-    btnGroup->addButton(rBtn2);
-    btnGroup->addButton(rBtn3);*/
-
-    /*pieMenu = new PieMenu(this);
-    pieMenu->setButtonCount(5);*/
 
     QObject::connect(btn, &QPushButton::clicked, this, &MainWindow::onButtonClicked);
     //QObject::connect(btn, &QPushButton::pressed, pieMenu, &PieMenu::display);
@@ -146,11 +125,16 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
                          auto activeImage = adjustmentCellManager->getActiveImage();
                          if (activeImage) {
                              adjustmentPanelWidget->setImage(activeImage);
+                             // Activate the newly added cell (always appended at the back)
+                             if (!activeImage->adjustmentCells.empty()) {
+                                 adjustmentPanelWidget->setActiveCell(&activeImage->adjustmentCells.back());
+                             }
                              imageViewer->onAdjustmentChanged();
                          }
                      });
     QObject::connect(adjustmentCellManager.get(), &AdjustmentCellManager::linkedCellDataChanged,
                      this, [this](QUuid cellDataId) {
+                         adjustmentPanelWidget->updateCellVisualStates();
                          if (imageViewer && imageViewer->getCurrentImage() && imageViewer->getCurrentImage()->getIsLoaded()) {
                              imageViewer->onAdjustmentChanged();
                          }

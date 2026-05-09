@@ -6,10 +6,21 @@
 #include <QApplication>
 #include <QPushButton>
 #include <QDebug>
+#include <QFontDatabase>
 
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
+
+    // Set up fonts
+    QFontDatabase::addApplicationFont(":/resources/fonts/Inter-Regular.ttf");
+    QFontDatabase::addApplicationFont(":/resources/fonts/Inter-Medium.ttf");
+    QFontDatabase::addApplicationFont(":/resources/fonts/Inter-Bold.ttf");
+
+    QFont font("Inter");
+    font.setPointSize(10);
+
+    app.setFont(font);
 
     // Set OpenGL surface format
     QSurfaceFormat format;
@@ -24,8 +35,6 @@ int main(int argc, char *argv[])
     QSurfaceFormat::setDefaultFormat(format);
 
     MainWindow window;
-
-
 
     window.show();
     return app.exec();

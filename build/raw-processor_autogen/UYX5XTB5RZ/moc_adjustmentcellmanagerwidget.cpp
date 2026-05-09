@@ -53,7 +53,9 @@ template <> constexpr inline auto AdjustmentCellManagerWidget::qt_create_metaobj
         "onApplyClicked",
         "onSaveAsPresetClicked",
         "onApplyModeChanged",
-        "onEyeButtonToggled"
+        "onEnabledStateChanged",
+        "stateId",
+        "onAutoPresetSwitchChanged"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -83,8 +85,14 @@ template <> constexpr inline auto AdjustmentCellManagerWidget::qt_create_metaobj
         QtMocHelpers::SlotData<void(int)>(13, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Int, 5 },
         }}),
-        // Slot 'onEyeButtonToggled'
-        QtMocHelpers::SlotData<void()>(14, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onEnabledStateChanged'
+        QtMocHelpers::SlotData<void(int)>(14, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 15 },
+        }}),
+        // Slot 'onAutoPresetSwitchChanged'
+        QtMocHelpers::SlotData<void(int)>(16, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 15 },
+        }}),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -117,7 +125,8 @@ void AdjustmentCellManagerWidget::qt_static_metacall(QObject *_o, QMetaObject::C
         case 6: _t->onApplyClicked(); break;
         case 7: _t->onSaveAsPresetClicked(); break;
         case 8: _t->onApplyModeChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 9: _t->onEyeButtonToggled(); break;
+        case 9: _t->onEnabledStateChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 10: _t->onAutoPresetSwitchChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     }
@@ -148,14 +157,14 @@ int AdjustmentCellManagerWidget::qt_metacall(QMetaObject::Call _c, int _id, void
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 10)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 10;
+        _id -= 11;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 10)
+        if (_id < 11)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 10;
+        _id -= 11;
     }
     return _id;
 }

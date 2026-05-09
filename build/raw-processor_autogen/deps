@@ -59,6 +59,7 @@ raw-processor_autogen/timestamp: \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QMap \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QMutex \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QObject \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QPoint \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QRect \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QScopedPointer \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QSize \
@@ -424,6 +425,7 @@ raw-processor_autogen/timestamp: \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets/qtopenglwidgetsexports.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QButtonGroup \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QFrame \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QHBoxLayout \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QLabel \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QListWidget \

@@ -91,6 +91,7 @@ public:
 
     // Preset operations
     void createPreset(const QString& presetName, bool isGlobal);
+    void createPresetFromActiveCellIfMissing(bool isGlobal);
     void renamePreset(std::shared_ptr<Preset> preset, const QString& newName);
     void removePreset(std::shared_ptr<Preset> preset);
     const std::list<std::shared_ptr<Preset>>& getLocalPresets() const;

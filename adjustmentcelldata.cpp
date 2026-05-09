@@ -13,6 +13,7 @@ bool AdjustmentCellData::isLinked() const {
     return !id.isNull();
 }
 
+// Creates a deep copy of all the adjustments.
 std::unordered_map<AdjType, std::unique_ptr<Adjustment>> AdjustmentCellData::cloneAdjustments() const {
     std::unordered_map<AdjType, std::unique_ptr<Adjustment>> cloned;
     for (const auto& [type, adj] : adjustments) {

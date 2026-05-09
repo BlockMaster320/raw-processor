@@ -3,13 +3,13 @@
         {
             "adjustments": {
                 "Contrast": [
-                    0.1119999885559082
+                    0.3259999752044678
                 ],
                 "Denoise": [
-                    0.8659999966621399
+                    0.5
                 ],
                 "Exposure": [
-                    1.940000057220459
+                    0.5900001525878906
                 ],
                 "Midpoint": [
                     0.20000000298023224
@@ -18,16 +18,17 @@
                     0
                 ],
                 "Saturation": [
-                    0.8799999952316284
+                    0
                 ],
                 "WhiteBlack": [
                     0,
                     0
                 ]
             },
-            "dataId": "{00000000-0000-0000-0000-000000000000}",
-            "linked": false,
-            "name": "Cell 1 (Copy)",
+            "collapsed": false,
+            "dataId": "{a51e0dbf-4c4b-4bd1-aaaf-fe7bd3de87a7}",
+            "linked": true,
+            "name": "hehe",
             "visible": true
         }
     ],

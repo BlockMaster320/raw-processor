@@ -1,35 +1,5 @@
 {
     "cells": [
-        {
-            "adjustments": {
-                "Contrast": [
-                    -0.4860000014305115
-                ],
-                "Denoise": [
-                    0
-                ],
-                "Exposure": [
-                    0.7800002098083496
-                ],
-                "Midpoint": [
-                    0.39899998903274536
-                ],
-                "PopArt": [
-                    0
-                ],
-                "Saturation": [
-                    0
-                ],
-                "WhiteBlack": [
-                    0,
-                    0
-                ]
-            },
-            "dataId": "{bc70a5d2-9fe4-41e4-99eb-50e56d565355}",
-            "linked": true,
-            "name": "HighContrast",
-            "visible": true
-        }
     ],
     "imagePath": "C:/Storage/FIT/BP/raw-processor/textures/2024-09-05-16-DSC07912.ARW"
 }

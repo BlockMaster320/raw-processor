@@ -39,7 +39,11 @@ private slots:
     void onApplyClicked();
     void onSaveAsPresetClicked();
     void onApplyModeChanged(int modeId);
-    void onEyeButtonToggled();
+    void onEnabledStateChanged(int stateId);
+    void onAutoPresetSwitchChanged(int stateId);
+
+protected:
+    bool eventFilter(QObject* watched, QEvent* event) override;
 
 private:
     void setupUI();
@@ -47,6 +51,7 @@ private:
     void populatePresetList();
 
     std::shared_ptr<AdjustmentCellManager> acm;
+    QString previouslySelectedPresetId;  // track preset selection across scope changes
 
     // UI Components
     QWidget* presetScopeSwitchWidget;   // segmented switch container
@@ -54,8 +59,18 @@ private:
     QPushButton* globalScopeButton;     // global scope segment
     QButtonGroup* presetScopeGroup;     // exclusive scope group
     QListWidget* presetList;            // list of presets
-    QLabel* activeCellNameLabel;        // name of active cell
-    QPushButton* eyeButton;             // show/hide toggle
+    QLabel* presetsLabel;               // label for presets
+    QWidget* activeCellControlsWidget;  // container for active cell controls (shown/hidden based on active cell)
+    QLabel* activeCellNameLabel;        // shows name of active cell or preset
+    QWidget* enabledStateWidget;        // segmented switch container
+    QPushButton* enabledButton;         // enabled state segment
+    QPushButton* disabledButton;        // disabled state segment
+    QButtonGroup* enabledStateGroup;    // exclusive state group
+    QLabel* autoPresetLabel;            // auto preset option label
+    QWidget* autoPresetSwitchWidget;    // compact switch container
+    QPushButton* autoPresetOffButton;   // compact switch off segment
+    QPushButton* autoPresetOnButton;    // compact switch on segment
+    QButtonGroup* autoPresetSwitchGroup;// compact switch group
     QPushButton* applyButton;           // apply to selected images
     QPushButton* saveAsPresetButton;    // save as preset
     QWidget* applyModeSwitchWidget;     // segmented switch container

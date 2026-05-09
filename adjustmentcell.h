@@ -9,19 +9,18 @@
 
 #include <QString>
 
-// Represents an instance of an adjustment cell that can optionally be linked
-// to a shared AdjustmentCellData, allowing for dynamic linking across multiple images.
+// Represents an instance of an adjustment cell.
 class AdjustmentCell {
 public:
-    explicit AdjustmentCell(const QString& instanceName = "Cell");
-    explicit AdjustmentCell(std::shared_ptr<AdjustmentCellData> cellData, const QString& instanceName = "Cell");
+    explicit AdjustmentCell(const QString& cellName = "Cell");
+    explicit AdjustmentCell(std::shared_ptr<AdjustmentCellData> cellData);
 
     // Core data - can be shared with other cells for dynamic linking
     std::shared_ptr<AdjustmentCellData> data;
 
     // Instance-specific properties
-    QString instanceName;
     bool visible = true;
+    bool collapsed = false;
 
     // Display and process order for adjustments
     std::vector<AdjType> displayOrder;  // order in which adjustments are shown in the UI

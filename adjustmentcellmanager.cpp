@@ -431,6 +431,47 @@ void AdjustmentCellManager::createPreset(const QString& presetName, bool isGloba
     }
 }
 
+void AdjustmentCellManager::createPresetFromActiveCellIfMissing(bool isGlobal) {
+    if (!activeCell) return;
+
+    // Presets must reference linked data.
+    if (!activeCell->isLinked()) {
+        activeCell->id = generateId();
+    }
+
+    // Ensure the linked data is managed and persisted.
+    activeCell->isGlobal = isGlobal;
+    cellDataMap[activeCell->id] = activeCell;
+
+    auto hasPresetWithDataId = [this](const QUuid& id) {
+        for (const auto& preset : localPresets) {
+            if (preset && preset->dataId == id) return true;
+        }
+        for (const auto& preset : globalPresets) {
+            if (preset && preset->dataId == id) return true;
+        }
+        return false;
+    };
+
+    if (hasPresetWithDataId(activeCell->id)) {
+        return;
+    }
+
+    auto preset = std::make_shared<Preset>(
+        activeCell->id,
+        activeCell->name,
+        isGlobal ? PresetScope::Global : PresetScope::Local
+    );
+
+    if (isGlobal) {
+        globalPresets.push_back(preset);
+        saveGlobalData();
+    } else {
+        localPresets.push_back(preset);
+        saveLocalData();
+    }
+}
+
 void AdjustmentCellManager::renamePreset(std::shared_ptr<Preset> preset, const QString& newName) {
     if (!preset) return;
 
@@ -449,6 +490,9 @@ void AdjustmentCellManager::renamePreset(std::shared_ptr<Preset> preset, const Q
     } else {
         saveLocalData();
     }
+
+    // Notify UI subscribers that linked cell-data metadata changed.
+    emit linkedCellDataChanged(preset->dataId);
 }
 
 void AdjustmentCellManager::removePreset(std::shared_ptr<Preset> preset) {
@@ -473,6 +517,7 @@ const std::list<std::shared_ptr<Preset>>& AdjustmentCellManager::getGlobalPreset
     return globalPresets;
 }
 
+// Apply the active cell to all selected images based on the current apply mode.
 void AdjustmentCellManager::apply() {
     if (!activeCell) return;
 
@@ -500,11 +545,9 @@ void AdjustmentCellManager::apply() {
         if (applyMode == ApplyMode::Link) {
             // Create a linked cell
             newCell->data = activeCell;
-            newCell->instanceName = activeCell->name + " (Linked)";
         } else {
             // Create a copy (static) cell with deep-copied adjustments
-            newCell->data = std::make_shared<AdjustmentCellData>(activeCell->name + " (Copy)");
-            newCell->instanceName = activeCell->name;
+            newCell->data = std::make_shared<AdjustmentCellData>(activeCell->name);
             newCell->data->enabled = activeCell->enabled;
 
             // Deep copy adjustments
@@ -524,11 +567,21 @@ void AdjustmentCellManager::changeCellVisibility(std::shared_ptr<AdjustmentCellD
     }
 }
 
+// Detach the given cell from its linked data, making it a static cell with copied adjustments.
 void AdjustmentCellManager::notifyCellDataChanged(std::shared_ptr<AdjustmentCellData> cellData) {
-    if (cellData && cellData->isLinked()) {
-        // Persist the updated cell data to the local/global preset file
-        updateCellData(cellData->id);
-        // Notify viewers to re-render
+    if (cellData) {
+        if (cellData->isLinked()) {
+            // Persist the updated cell data to the local/global preset file
+            updateCellData(cellData->id);
+        } else {
+            // For unlinked cells, save the active image
+            for (const auto& image : selectedImages) {
+                if (image) {
+                    image->saveAdjustmentCells();
+                }
+            }
+        }
+        // Notify viewers to re-render (works for both linked and unlinked)
         emit linkedCellDataChanged(cellData->id);
     }
 }

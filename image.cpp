@@ -264,37 +264,40 @@ void Image::loadAdjustmentCells(AdjustmentCellManager* acm) {
 
 					AdjustmentCell cell;
 					cell.visible = visible;
+					cell.collapsed = cellObj.value("collapsed").toBool(false);
+
+					// Get cell name from JSON (for backward compat with instanceName field)
+					QString cellName = cellObj.value("instanceName").toString();
+					if (cellName.isEmpty()) {
+						cellName = cellObj.value("name").toString("Cell");
+					}
 
 					if (isLinked && acm && !dataId.isNull()) {
-						// Load linked cell - get data from manager (which loads from file)					// First, refresh from file to ensure latest values
-					acm->refreshCellData(dataId);
-											auto cellData = acm->getCellData(dataId);
+						// Load linked cell - get data from manager
+						acm->refreshCellData(dataId);
+						auto cellData = acm->getCellData(dataId);
 						if (cellData) {
 							cell.data = cellData;
 						} else {
 							// Fallback: create new cell with cached adjustments from sidecar
-							// This happens if the file doesn't have this cell yet (shouldn't happen in normal flow)
 							cell.data = std::make_shared<AdjustmentCellData>();
-					// Set ID FIRST before calling fromJson to prevent it from being overwritten
-					cell.data->id = dataId;
-					cell.data->isGlobal = false;
-					
-					if (cellObj.contains("adjustments") && cellObj["adjustments"].isObject()) {
-						// Only load adjustments from the sidecar JSON
-						cell.data->fromJson(cellObj);
-						// Explicitly preserve the ID we just set
-						cell.data->id = dataId;
-					}
-					// Register the fallback cellData with the manager so modifications are persisted
-					acm->registerCellData(cell.data);
+							cell.data->id = dataId;
+							cell.data->isGlobal = false;
+							
+							if (cellObj.contains("adjustments") && cellObj["adjustments"].isObject()) {
+								cell.data->fromJson(cellObj);
+								cell.data->id = dataId;
+							}
+							acm->registerCellData(cell.data);
 						}
 					} else {
 						// Load static cell (unlinked)
-						cell.data = std::make_shared<AdjustmentCellData>();
+						cell.data = std::make_shared<AdjustmentCellData>(cellName);
 
 						// Load adjustments from JSON
 						if (cellObj.contains("adjustments") && cellObj["adjustments"].isObject()) {
 							cell.data->fromJson(cellObj);
+							cell.data->name = cellName;
 						} else {
 							// Initialize with default adjustments
 							cell.data->adjustments[AdjType::Denoise]    = std::make_unique<AdjDenoise>();
@@ -307,53 +310,54 @@ void Image::loadAdjustmentCells(AdjustmentCellManager* acm) {
 						}
 					}
 
-                    adjustmentCells.push_back(cell);
-                }
-            }
-        }
-    }
+					adjustmentCells.push_back(cell);
+				}
+			}
+		}
+	}
 
-    // If no cells loaded, create default cell
-    if (adjustmentCells.empty()) {
-        AdjustmentCell defaultCell("Base");
-        adjustmentCells.push_back(defaultCell);
-    }
+	// If no cells loaded, create default cell
+	if (adjustmentCells.empty()) {
+		AdjustmentCell defaultCell("Base");
+		adjustmentCells.push_back(defaultCell);
+	}
 }
 
 void Image::saveAdjustmentCells() {
-    QString sidecarPath = getSidecarPath();
-    QJsonObject root;
-    root["imagePath"] = imagePath;
+	QString sidecarPath = getSidecarPath();
+	QJsonObject root;
+	root["imagePath"] = imagePath;
 
-    QJsonArray cellArray;
-    for (const auto& cell : adjustmentCells) {
-        QJsonObject cellObj;
-        cellObj["visible"] = cell.visible;
-        cellObj["linked"] = cell.isLinked();
+	QJsonArray cellArray;
+	for (const auto& cell : adjustmentCells) {
+		QJsonObject cellObj;
+		cellObj["visible"] = cell.visible;
+		cellObj["linked"] = cell.isLinked();
+		cellObj["collapsed"] = cell.collapsed;
 
-        if (cell.data) {
-            cellObj["dataId"] = cell.data->id.toString();
-            cellObj["name"] = cell.data->name;
+		if (cell.data) {
+			cellObj["dataId"] = cell.data->id.toString();
+			cellObj["name"] = cell.data->name;
 
-            // Serialize adjustments using the cell data's toJson method
-            QJsonObject cellDataJson = cell.data->toJson();
-            cellObj["adjustments"] = cellDataJson.value("adjustments").toObject();
-        }
+			// Serialize adjustments using the cell data's toJson method
+			QJsonObject cellDataJson = cell.data->toJson();
+			cellObj["adjustments"] = cellDataJson.value("adjustments").toObject();
+		}
 
-        cellArray.append(cellObj);
-    }
+		cellArray.append(cellObj);
+	}
 
-    root["cells"] = cellArray;
+	root["cells"] = cellArray;
 
-    QFile file(sidecarPath);
-    if (!file.open(QIODevice::WriteOnly)) {
-        qWarning() << "Could not save adjustment cells to:" << sidecarPath;
-        return;
-    }
+	QFile file(sidecarPath);
+	if (!file.open(QIODevice::WriteOnly)) {
+		qWarning() << "Could not save adjustment cells to:" << sidecarPath;
+		return;
+	}
 
-    QJsonDocument doc(root);
-    file.write(doc.toJson());
-    file.close();
+	QJsonDocument doc(root);
+	file.write(doc.toJson());
+	file.close();
 }
 
 

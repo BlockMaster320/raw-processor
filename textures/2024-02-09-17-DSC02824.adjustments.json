@@ -3,16 +3,16 @@
         {
             "adjustments": {
                 "Contrast": [
-                    0.5820000171661377
+                    0.3259999752044678
                 ],
                 "Denoise": [
-                    1
+                    0.5
                 ],
                 "Exposure": [
-                    0.8600001335144043
+                    0.5900001525878906
                 ],
                 "Midpoint": [
-                    0.24300000071525574
+                    0.20000000298023224
                 ],
                 "PopArt": [
                     0
@@ -25,9 +25,10 @@
                     0
                 ]
             },
-            "dataId": "{00000000-0000-0000-0000-000000000000}",
-            "linked": false,
-            "name": "Cell 1",
+            "collapsed": false,
+            "dataId": "{089acb45-f6f2-478a-9eb2-06134185fdd3}",
+            "linked": true,
+            "name": "Base",
             "visible": true
         }
     ],

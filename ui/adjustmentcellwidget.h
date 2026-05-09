@@ -7,6 +7,7 @@
 #include <QEvent>
 
 class QMouseEvent;
+class QLineEdit;
 
 class AdjustmentCellWidget : public QWidget {
     Q_OBJECT
@@ -15,11 +16,14 @@ public:
 
     AdjustmentCell* getCell() const { return cell; }
     void setActive(bool isActive);
+    void updateVisualState();  // Update visual state when cell data changes
 
 signals:
     void adjustmentChanged();
     void sliderReleased(AdjustmentCell* cell);
     void cellActivated(AdjustmentCell* cell);
+    void dragInitiated(AdjustmentCellWidget* widget, QPoint globalPos);
+    void cellRenameRequested(AdjustmentCell* cell, const QString& newName);
     void removeCellRequested(AdjustmentCell* cell);
     void unlinkCellRequested(AdjustmentCell* cell);
 
@@ -33,4 +37,7 @@ private:
     AdjustmentCell* cell;
     bool isActive = false;
     bool isCollapsed = false;
+    QPoint dragPressPos;
+    bool trackingForDrag = false;
+    QLineEdit* nameEdit = nullptr;
 };

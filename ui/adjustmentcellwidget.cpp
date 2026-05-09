@@ -1,12 +1,21 @@
 #include "adjustmentcellwidget.h"
+#include "uiconstants.h"
 
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QLabel>
+#include <QLineEdit>
 #include <QToolButton>
 #include <QSlider>
 #include <QFrame>
 #include <QMouseEvent>
+#include <QApplication>
+#include <QAbstractButton>
+#include <QAbstractSlider>
+#include <QScrollArea>
+#include <QScrollBar>
+#include <QWheelEvent>
+#include <QCursor>
 
 #include "../QtAwesome/QtAwesome.h"
 
@@ -33,10 +42,11 @@ AdjustmentCellWidget::AdjustmentCellWidget(AdjustmentCell* cell, QWidget* parent
 
     installEventFilter(this);
     setObjectName("adjustmentCellWidgetRoot");
+    setAttribute(Qt::WA_StyledBackground, true);
 
     auto* mainLayout = new QVBoxLayout(this);
-    mainLayout->setContentsMargins(4, 4, 4, 8);
-    mainLayout->setSpacing(4);
+    mainLayout->setContentsMargins(20, 15, 20, 15);
+    mainLayout->setSpacing(8);
 
     // Header option buttons
     auto* headerWidget = new QWidget(this);
@@ -47,12 +57,16 @@ AdjustmentCellWidget::AdjustmentCellWidget(AdjustmentCell* cell, QWidget* parent
 
     const QString displayName = (cell->data && !cell->data->name.isEmpty())
         ? cell->data->name
-        : cell->instanceName;
-    auto* nameLabel = new QLabel(displayName, headerWidget);
-    nameLabel->installEventFilter(this);
-    QFont boldFont = nameLabel->font();
+        : QStringLiteral("Cell");
+    nameEdit = new QLineEdit(displayName, headerWidget);
+    nameEdit->installEventFilter(this);
+    nameEdit->setReadOnly(true);
+    nameEdit->setFrame(false);
+    nameEdit->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+    nameEdit->setStyleSheet("QLineEdit { border: none; background: transparent; padding: 0; margin: 0; }");
+    QFont boldFont = nameEdit->font();
     boldFont.setBold(true);
-    nameLabel->setFont(boldFont);
+    nameEdit->setFont(boldFont);
 
     auto* hideBtn = new QToolButton(headerWidget);
     auto* eyeBtn = new QToolButton(headerWidget);
@@ -75,16 +89,20 @@ AdjustmentCellWidget::AdjustmentCellWidget(AdjustmentCell* cell, QWidget* parent
     eyeBtn->setToolTip("Toggle cell visibility");
     unlinkBtn->setToolTip("Unlink cell from shared source");
     removeBtn->setToolTip("Remove cell");
+    hideBtn->setCursor(Qt::PointingHandCursor);
+    eyeBtn->setCursor(Qt::PointingHandCursor);
+    unlinkBtn->setCursor(Qt::PointingHandCursor);
+    removeBtn->setCursor(Qt::PointingHandCursor);
 
     auto* awesome = cellAwesome();
-    hideBtn->setIcon(awesome->icon(fa::fa_solid, fa::fa_chevron_up));
+        hideBtn->setIcon(awesome->icon(fa::fa_solid, cell->collapsed ? fa::fa_chevron_down : fa::fa_chevron_up));
     eyeBtn->setIcon(awesome->icon(fa::fa_solid, cell->visible ? fa::fa_eye : fa::fa_eye_slash));
     unlinkBtn->setIcon(awesome->icon(fa::fa_solid, fa::fa_unlink));
     removeBtn->setIcon(awesome->icon(fa::fa_solid, fa::fa_trash));
 
     unlinkBtn->setEnabled(cell->isLinked());
 
-    headerLayout->addWidget(nameLabel);
+    headerLayout->addWidget(nameEdit);
     headerLayout->addStretch();
     headerLayout->addWidget(hideBtn);
     headerLayout->addWidget(eyeBtn);
@@ -96,22 +114,26 @@ AdjustmentCellWidget::AdjustmentCellWidget(AdjustmentCell* cell, QWidget* parent
     auto* line = new QFrame(this);
     line->installEventFilter(this);
     line->setFrameShape(QFrame::HLine);
-    line->setFrameShadow(QFrame::Sunken);
+    line->setFrameShadow(QFrame::Plain);
+    line->setFixedHeight(1);
+    line->setStyleSheet("QFrame { border: none; background-color: rgba(255, 255, 255, 0.28); }");
     mainLayout->addWidget(line);
 
     // Container that holds all sliders (toggled by the hide button)
     auto* slidersContainer = new QWidget(this);
     slidersContainer->installEventFilter(this);
+        isCollapsed = cell->collapsed;
     slidersContainer->setVisible(!isCollapsed);
     auto* slidersLayout = new QVBoxLayout(slidersContainer);
     slidersLayout->setContentsMargins(0, 0, 0, 0);
-    slidersLayout->setSpacing(4);
+    slidersLayout->setSpacing(2);
     mainLayout->addWidget(slidersContainer);
 
     connect(hideBtn, &QToolButton::clicked, this, [this, slidersContainer, cell, hideBtn]()
     {
         emit cellActivated(cell);
         isCollapsed = !isCollapsed;
+            cell->collapsed = isCollapsed;
         slidersContainer->setVisible(!isCollapsed);
         hideBtn->setIcon(cellAwesome()->icon(fa::fa_solid, isCollapsed ? fa::fa_chevron_down : fa::fa_chevron_up));
     });
@@ -135,13 +157,58 @@ AdjustmentCellWidget::AdjustmentCellWidget(AdjustmentCell* cell, QWidget* parent
         emit removeCellRequested(cell);
     });
 
+    connect(nameEdit, &QLineEdit::editingFinished, this, [this, cell]() {
+        if (!nameEdit || nameEdit->isReadOnly()) {
+            return;
+        }
+
+        const QString currentName = (cell->data && !cell->data->name.isEmpty())
+            ? cell->data->name
+            : QStringLiteral("Cell");
+        const QString newName = nameEdit->text().trimmed();
+
+        // Lock editing first. The rename signal can trigger a panel rebuild that destroys this widget.
+        nameEdit->setReadOnly(true);
+
+        if (!newName.isEmpty() && newName != currentName) {
+            emit cellRenameRequested(cell, newName);
+        } else {
+            nameEdit->setText(currentName);
+        }
+    });
+
     // Create one slider row per adjustable attribute
     if (!cell->data) {
         return;
     }
 
     auto& adjustments = cell->data->adjustments;
+    bool toneLabelAdded = false;
+    bool colorLabelAdded = false;
+    bool detailLabelAdded = false;
+
+    auto addSectionLabel = [slidersContainer, slidersLayout](const QString& text) {
+        auto* sectionLabel = new QLabel(text, slidersContainer);
+        sectionLabel->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        sectionLabel->setStyleSheet(QString("color: %1; font-weight: 600;").arg(appMutedTextColor));
+        sectionLabel->setContentsMargins(0, 2, 0, 1);
+        slidersLayout->addWidget(sectionLabel);
+    };
+
     for (AdjType type : cell->displayOrder) {
+        if (type == AdjType::Exposure && !toneLabelAdded) {
+            addSectionLabel("Tone");
+            toneLabelAdded = true;
+        }
+        if (type == AdjType::Saturation && !colorLabelAdded) {
+            addSectionLabel("Color");
+            colorLabelAdded = true;
+        }
+        if (type == AdjType::Denoise && !detailLabelAdded) {
+            addSectionLabel("Detail");
+            detailLabelAdded = true;
+        }
+
         auto it = adjustments.find(type);
         if (it == adjustments.end()) continue;
         auto& adjustment = it->second;
@@ -154,6 +221,7 @@ AdjustmentCellWidget::AdjustmentCellWidget(AdjustmentCell* cell, QWidget* parent
             rowWidget->installEventFilter(this);
             auto* rowLayout = new QHBoxLayout(rowWidget);
             rowLayout->setContentsMargins(0, 0, 0, 0);
+            rowLayout->setSpacing(4);
 
             auto* attrNameLabel = new QLabel(QString::fromStdString(attr.name), rowWidget);
             attrNameLabel->installEventFilter(this);
@@ -161,7 +229,7 @@ AdjustmentCellWidget::AdjustmentCellWidget(AdjustmentCell* cell, QWidget* parent
 
             auto* valueLabel = new QLabel(QString::number(attr.value, 'f', 2), rowWidget);
             valueLabel->installEventFilter(this);
-            valueLabel->setMinimumWidth(40);
+            valueLabel->setMinimumWidth(36);
             valueLabel->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
 
             rowLayout->addWidget(attrNameLabel);
@@ -173,6 +241,35 @@ AdjustmentCellWidget::AdjustmentCellWidget(AdjustmentCell* cell, QWidget* parent
             auto* slider = new QSlider(Qt::Horizontal, slidersContainer);
             slider->installEventFilter(this);
             slider->setRange(0, 1000);
+            slider->setFixedHeight(18);
+            slider->setStyleSheet(
+                QStringLiteral(
+                    "QSlider {"
+                    " background: transparent;"
+                    " }"
+                    "QSlider::groove:horizontal {"
+                    " height: 3px;"
+                    " background: %1;"
+                    " border-radius: 2px;"
+                    " }"
+                    "QSlider::sub-page:horizontal {"
+                    " background: %2;"
+                    " border-radius: 2px;"
+                    " }"
+                    "QSlider::add-page:horizontal {"
+                    " background: %1;"
+                    " border-radius: 2px;"
+                    " }"
+                    "QSlider::handle:horizontal {"
+                    " background-color: #ffffff;"
+                    " border: 1px solid rgba(0, 0, 0, 0.18);"
+                    " width: 10px;"
+                    " height: 10px;"
+                    " margin: -4px 0;"
+                    " border-radius: 5px;"
+                    " }"
+                ).arg(appSurfacePressedColor, appMutedTextColor)
+            );
 
             float range = attr.max - attr.min;
             int initVal = static_cast<int>((attr.value - attr.min) / range * 1000.f);
@@ -211,6 +308,20 @@ void AdjustmentCellWidget::setActive(bool active)
     applyVisualState();
 }
 
+void AdjustmentCellWidget::updateVisualState()
+{
+    if (nameEdit && nameEdit->isReadOnly() && cell) {
+        const QString displayName = (cell->data && !cell->data->name.isEmpty())
+            ? cell->data->name
+            : QStringLiteral("Cell");
+        if (nameEdit->text() != displayName) {
+            nameEdit->setText(displayName);
+        }
+    }
+
+    applyVisualState();
+}
+
 void AdjustmentCellWidget::mousePressEvent(QMouseEvent* event)
 {
     if (event->button() == Qt::LeftButton && cell) {
@@ -222,10 +333,58 @@ void AdjustmentCellWidget::mousePressEvent(QMouseEvent* event)
 
 bool AdjustmentCellWidget::eventFilter(QObject* watched, QEvent* event)
 {
-    Q_UNUSED(watched);
+    if (!event || !cell) {
+        return QWidget::eventFilter(watched, event);
+    }
 
-    if (event && event->type() == QEvent::MouseButtonPress && cell) {
+    // Prevent mouse wheel from changing slider values, but keep scroll area scrolling.
+    if (event->type() == QEvent::Wheel && qobject_cast<QAbstractSlider*>(watched)) {
+        auto* wheelEvent = static_cast<QWheelEvent*>(event);
+
+        QWidget* parent = this;
+        while (parent) {
+            if (auto* scrollArea = qobject_cast<QScrollArea*>(parent)) {
+                auto* scrollBar = scrollArea->verticalScrollBar();
+                const int steps = wheelEvent->angleDelta().y() / 120;
+                if (steps != 0) {
+                    scrollBar->setValue(scrollBar->value() - (steps * scrollBar->singleStep() * 3));
+                }
+                break;
+            }
+            parent = parent->parentWidget();
+        }
+
+        return true;
+    }
+
+    if (watched == nameEdit && event->type() == QEvent::MouseButtonDblClick) {
+        nameEdit->setReadOnly(false);
+        nameEdit->setFocus();
+        nameEdit->selectAll();
+        trackingForDrag = false;
+        return true;
+    }
+
+    if (event->type() == QEvent::MouseButtonPress) {
+        auto* me = static_cast<QMouseEvent*>(event);
+        if (me->button() == Qt::LeftButton) {
+            // Only initiate drag tracking from non-interactive elements
+            if (!qobject_cast<QAbstractButton*>(watched)
+                && !qobject_cast<QAbstractSlider*>(watched)
+                && !(watched == nameEdit && !nameEdit->isReadOnly())) {
+                dragPressPos = QCursor::pos();
+                trackingForDrag = true;
+            }
+        }
         emit cellActivated(cell);
+    } else if (event->type() == QEvent::MouseMove && trackingForDrag) {
+        auto* me = static_cast<QMouseEvent*>(event);
+        if ((QCursor::pos() - dragPressPos).manhattanLength() >= QApplication::startDragDistance()) {
+            trackingForDrag = false;
+            emit dragInitiated(this, QCursor::pos());
+        }
+    } else if (event->type() == QEvent::MouseButtonRelease) {
+        trackingForDrag = false;
     }
 
     return QWidget::eventFilter(watched, event);
@@ -233,9 +392,36 @@ bool AdjustmentCellWidget::eventFilter(QObject* watched, QEvent* event)
 
 void AdjustmentCellWidget::applyVisualState()
 {
-    if (isActive) {
-        setStyleSheet("QWidget#adjustmentCellWidgetRoot { background-color: rgba(255, 255, 255, 0.14); border-radius: 4px; }");
+    bool isEnabled = cell && cell->data && cell->data->enabled;
+    const QString rootTransparentChildren =
+        QString("QWidget#adjustmentCellWidgetRoot QWidget { background: transparent; }")
+        + QString("QWidget#adjustmentCellWidgetRoot QLabel { background: transparent; }")
+        + QString("QWidget#adjustmentCellWidgetRoot QSlider { background: transparent; }");
+    const QString rootBaseStyle =
+        QString("QWidget#adjustmentCellWidgetRoot {")
+        + QString(" background-color: %1;")
+        + QString(" border-radius: 10px;")
+        + QString(" border: %2;")
+        + QString(" }");
+
+    if (!isEnabled) {
+        // Grayed out disabled state
+        const QString disabledBorderStyle = isActive
+            ? QString("2px solid %1").arg(appActiveHighlightColor)
+            : QStringLiteral("none");
+        setStyleSheet(
+            rootBaseStyle.arg(appPanelBackgroundColor, disabledBorderStyle)
+            + QString("QWidget#adjustmentCellWidgetRoot { color: rgba(255, 255, 255, 0.55); }")
+            + rootTransparentChildren
+        );
+        setEnabled(false);
     } else {
-        setStyleSheet("QWidget#adjustmentCellWidgetRoot { background-color: rgba(255, 255, 255, 0.05); border-radius: 4px; }");
+        // Normal enabled state
+        if (isActive) {
+            setStyleSheet(rootBaseStyle.arg(appPanelBackgroundColor, QString("2px solid %1").arg(appActiveHighlightColor)) + rootTransparentChildren);
+        } else {
+            setStyleSheet(rootBaseStyle.arg(appPanelBackgroundColor, "none") + rootTransparentChildren);
+        }
+        setEnabled(true);
     }
 }

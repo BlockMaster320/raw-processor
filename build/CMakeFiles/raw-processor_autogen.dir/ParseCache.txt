@@ -4432,6 +4432,7 @@ C:/Storage/FIT/BP/raw-processor/adjustmentcellwidget.cpp
 C:/Storage/FIT/BP/raw-processor/ui/adjustmentpanelwidget.h
  mmc:Q_OBJECT
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QJsonObject
+ mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QPoint
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QString
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QUuid
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/q17memory.h
@@ -4597,6 +4598,7 @@ C:/Storage/FIT/BP/raw-processor/ui/adjustmentpanelwidget.h
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qtransform.h
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qwindowdefs.h
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qwindowdefs_win.h
+ mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QFrame
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QPushButton
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QScrollArea
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QVBoxLayout
@@ -6885,6 +6887,7 @@ C:/Storage/FIT/BP/raw-processor/ui/mainwindow.h
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QMap
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QMutex
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QObject
+ mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QPoint
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QRect
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QScopedPointer
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QSize
@@ -7242,6 +7245,7 @@ C:/Storage/FIT/BP/raw-processor/ui/mainwindow.h
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets/qtopenglwidgetsexports.h
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets/qtopenglwidgetsglobal.h
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QButtonGroup
+ mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QFrame
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QHBoxLayout
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QLabel
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QListWidget
