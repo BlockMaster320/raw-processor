@@ -1,0 +1,65 @@
+{
+    "cells": [
+        {
+            "adjustments": {
+                "Contrast": [
+                    0
+                ],
+                "Denoise": [
+                    0
+                ],
+                "Exposure": [
+                    0
+                ],
+                "Midpoint": [
+                    0.20000000298023224
+                ],
+                "PopArt": [
+                    0
+                ],
+                "Saturation": [
+                    0
+                ],
+                "WhiteBlack": [
+                    0,
+                    0
+                ]
+            },
+            "dataId": "{00000000-0000-0000-0000-000000000000}",
+            "linked": false,
+            "name": "Base",
+            "visible": true
+        },
+        {
+            "adjustments": {
+                "Contrast": [
+                    0.4700000286102295
+                ],
+                "Denoise": [
+                    0
+                ],
+                "Exposure": [
+                    0.7800002098083496
+                ],
+                "Midpoint": [
+                    0.39899998903274536
+                ],
+                "PopArt": [
+                    0
+                ],
+                "Saturation": [
+                    0
+                ],
+                "WhiteBlack": [
+                    0,
+                    0
+                ]
+            },
+            "dataId": "{6eeb3ddb-632f-4976-be9b-edee11460f30}",
+            "linked": true,
+            "name": "New Preset",
+            "visible": true
+        }
+    ],
+    "imagePath": "C:/Storage/FIT/BP/raw-processor/textures/2024-08-24-13-DSC07873.ARW"
+}

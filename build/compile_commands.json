@@ -43,6 +43,18 @@
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\adjustmentcelldata.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\adjustmentcelldata.cpp",
+  "file": "C:\\Storage\\FIT\\BP\\raw-processor\\adjustmentcelldata.cpp",
+  "output": "CMakeFiles\\raw-processor.dir\\adjustmentcelldata.cpp.obj"
+},
+{
+  "directory": "C:/Storage/FIT/BP/raw-processor/build",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\adjustmentcellmanager.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\adjustmentcellmanager.cpp",
+  "file": "C:\\Storage\\FIT\\BP\\raw-processor\\adjustmentcellmanager.cpp",
+  "output": "CMakeFiles\\raw-processor.dir\\adjustmentcellmanager.cpp.obj"
+},
+{
+  "directory": "C:/Storage/FIT/BP/raw-processor/build",
   "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\ui\\mainwindow.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\ui\\mainwindow.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\ui\\mainwindow.cpp",
   "output": "CMakeFiles\\raw-processor.dir\\ui\\mainwindow.cpp.obj"
@@ -73,6 +85,12 @@
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\ui\\adjustmentcellmanagerwidget.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\ui\\adjustmentcellmanagerwidget.cpp",
+  "file": "C:\\Storage\\FIT\\BP\\raw-processor\\ui\\adjustmentcellmanagerwidget.cpp",
+  "output": "CMakeFiles\\raw-processor.dir\\ui\\adjustmentcellmanagerwidget.cpp.obj"
+},
+{
+  "directory": "C:/Storage/FIT/BP/raw-processor/build",
   "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\ui\\PieMenu.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\ui\\PieMenu.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\ui\\PieMenu.cpp",
   "output": "CMakeFiles\\raw-processor.dir\\ui\\PieMenu.cpp.obj"
@@ -88,6 +106,24 @@
   "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\imagemanager.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\imagemanager.cpp",
   "file": "C:\\Storage\\FIT\\BP\\raw-processor\\imagemanager.cpp",
   "output": "CMakeFiles\\raw-processor.dir\\imagemanager.cpp.obj"
+},
+{
+  "directory": "C:/Storage/FIT/BP/raw-processor/build",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\QtAwesome\\QtAwesome.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\QtAwesome\\QtAwesome.cpp",
+  "file": "C:\\Storage\\FIT\\BP\\raw-processor\\QtAwesome\\QtAwesome.cpp",
+  "output": "CMakeFiles\\raw-processor.dir\\QtAwesome\\QtAwesome.cpp.obj"
+},
+{
+  "directory": "C:/Storage/FIT/BP/raw-processor/build",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\QtAwesome\\QtAwesomeAnim.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\QtAwesome\\QtAwesomeAnim.cpp",
+  "file": "C:\\Storage\\FIT\\BP\\raw-processor\\QtAwesome\\QtAwesomeAnim.cpp",
+  "output": "CMakeFiles\\raw-processor.dir\\QtAwesome\\QtAwesomeAnim.cpp.obj"
+},
+{
+  "directory": "C:/Storage/FIT/BP/raw-processor/build",
+  "command": "c:\\Programs\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/include -IC:/Storage/FIT/BP/raw-processor/libraw -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Programs/Qt/6.9.3/mingw_64/include -isystem C:/Programs/Qt/6.9.3/mingw_64/mkspecs/win32-g++ -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtGui -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL -isystem C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent -g -std=gnu++17 -fopenmp -o CMakeFiles\\raw-processor.dir\\build\\.qt\\rcc\\qrc_qtawesome_fonts.cpp.obj -c C:\\Storage\\FIT\\BP\\raw-processor\\build\\.qt\\rcc\\qrc_qtawesome_fonts.cpp",
+  "file": "C:\\Storage\\FIT\\BP\\raw-processor\\build\\.qt\\rcc\\qrc_qtawesome_fonts.cpp",
+  "output": "CMakeFiles\\raw-processor.dir\\build\\.qt\\rcc\\qrc_qtawesome_fonts.cpp.obj"
 },
 {
   "directory": "C:/Storage/FIT/BP/raw-processor/build",

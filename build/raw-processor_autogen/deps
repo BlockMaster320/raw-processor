@@ -52,7 +52,9 @@ raw-processor_autogen/timestamp: \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent/qtconcurrentthreadengine.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent/qtconcurrentversion.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QDeadlineTimer \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QEvent \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QHash \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QJsonObject \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QList \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QMap \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QMutex \
@@ -63,7 +65,9 @@ raw-processor_autogen/timestamp: \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QSizeF \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QString \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QStringList \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QUuid \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QVariant \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QVariantMap \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QtCore \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QtCoreDepends \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/q17memory.h \
@@ -336,10 +340,13 @@ raw-processor_autogen/timestamp: \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/qxpfunctional.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/qxptype_traits.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/qyieldcpu.h \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/QIcon \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/QIconEngine \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/QImage \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/QKeyEvent \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/QMatrix3x3 \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/QOpenGLFunctions \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/QPainter \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/QPainterPath \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/QSurfaceFormat \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/QTransform \
@@ -359,6 +366,7 @@ raw-processor_autogen/timestamp: \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qguiapplication.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qguiapplication_platform.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qicon.h \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qiconengine.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qimage.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qinputdevice.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qinputmethod.h \
@@ -370,8 +378,11 @@ raw-processor_autogen/timestamp: \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qopenglext.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qopenglfunctions.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qpaintdevice.h \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qpainter.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qpainterpath.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qpalette.h \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qpen.h \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qpicture.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qpixelformat.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qpixmap.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qpointingdevice.h \
@@ -383,10 +394,13 @@ raw-processor_autogen/timestamp: \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qscreen.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qscreen_platform.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qsurfaceformat.h \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qtextdocument.h \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qtextoption.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qtgui-config.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qtguiexports.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qtguiglobal.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qtransform.h \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qvalidator.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qvector2d.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qvector3d.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtGui/qvector4d.h \
@@ -410,6 +424,10 @@ raw-processor_autogen/timestamp: \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets/qtopenglwidgetsexports.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QButtonGroup \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QHBoxLayout \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QLabel \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QListWidget \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QListWidgetItem \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QMainWindow \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QProgressBar \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QPushButton \
@@ -419,21 +437,31 @@ raw-processor_autogen/timestamp: \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QVBoxLayout \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/QWidget \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractbutton.h \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractitemview.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractscrollarea.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractslider.h \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractspinbox.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qboxlayout.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qbuttongroup.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qframe.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qgridlayout.h \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qlabel.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qlayout.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qlayoutitem.h \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qlistview.h \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qlistwidget.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qmainwindow.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qprogressbar.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qpushbutton.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qradiobutton.h \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qrubberband.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qscrollarea.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qsizepolicy.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qslider.h \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qstyle.h \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qstyleoption.h \
+	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qtabbar.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qtabwidget.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qtwidgets-config.h \
 	C:/Programs/Qt/6.9.3/mingw_64/include/QtWidgets/qtwidgetsexports.h \
@@ -501,6 +529,7 @@ raw-processor_autogen/timestamp: \
 	C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigExtras.cmake \
 	C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigVersion.cmake \
 	C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigVersionImpl.cmake \
+	C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in \
 	C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake \
 	C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake \
 	C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreTargets-relwithdebinfo.cmake \
@@ -1011,10 +1040,20 @@ raw-processor_autogen/timestamp: \
 	C:/Programs/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
 	C:/Programs/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h \
 	C:/Storage/FIT/BP/raw-processor/CMakeLists.txt \
+	C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesome.cpp \
+	C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesome.h \
+	C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesomeAnim.cpp \
+	C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesomeAnim.h \
+	C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesomeEnumGenerated.h \
+	C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesomeStringGenerated.h \
 	C:/Storage/FIT/BP/raw-processor/adjustment.cpp \
 	C:/Storage/FIT/BP/raw-processor/adjustment.h \
 	C:/Storage/FIT/BP/raw-processor/adjustmentcell.cpp \
 	C:/Storage/FIT/BP/raw-processor/adjustmentcell.h \
+	C:/Storage/FIT/BP/raw-processor/adjustmentcelldata.cpp \
+	C:/Storage/FIT/BP/raw-processor/adjustmentcelldata.h \
+	C:/Storage/FIT/BP/raw-processor/adjustmentcellmanager.cpp \
+	C:/Storage/FIT/BP/raw-processor/adjustmentcellmanager.h \
 	C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/3.29.5-msvc4/CMakeCXXCompiler.cmake \
 	C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/3.29.5-msvc4/CMakeRCCompiler.cmake \
 	C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/3.29.5-msvc4/CMakeSystem.cmake \
@@ -1031,6 +1070,8 @@ raw-processor_autogen/timestamp: \
 	C:/Storage/FIT/BP/raw-processor/thumbnailloader.h \
 	C:/Storage/FIT/BP/raw-processor/ui/PieMenu.cpp \
 	C:/Storage/FIT/BP/raw-processor/ui/PieMenu.h \
+	C:/Storage/FIT/BP/raw-processor/ui/adjustmentcellmanagerwidget.cpp \
+	C:/Storage/FIT/BP/raw-processor/ui/adjustmentcellmanagerwidget.h \
 	C:/Storage/FIT/BP/raw-processor/ui/adjustmentcellwidget.cpp \
 	C:/Storage/FIT/BP/raw-processor/ui/adjustmentcellwidget.h \
 	C:/Storage/FIT/BP/raw-processor/ui/adjustmentpanelwidget.cpp \
@@ -1041,6 +1082,7 @@ raw-processor_autogen/timestamp: \
 	C:/Storage/FIT/BP/raw-processor/ui/imageviewer.h \
 	C:/Storage/FIT/BP/raw-processor/ui/mainwindow.cpp \
 	C:/Storage/FIT/BP/raw-processor/ui/mainwindow.h \
+	C:/Storage/FIT/BP/raw-processor/ui/uiconstants.h \
 	C:/Storage/FIT/BP/raw-processor/utility.cpp \
 	C:/Storage/FIT/BP/raw-processor/utility.h \
 	C:/Program\ Files/Microsoft\ Visual\ Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe

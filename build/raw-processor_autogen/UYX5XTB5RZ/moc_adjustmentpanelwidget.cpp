@@ -40,12 +40,22 @@ template <> constexpr inline auto AdjustmentPanelWidget::qt_create_metaobjectdat
     QtMocHelpers::StringRefStorage qt_stringData {
         "AdjustmentPanelWidget",
         "adjustmentChanged",
-        ""
+        "",
+        "activeCellChanged",
+        "AdjustmentCell*",
+        "cell",
+        "onCreateCellClicked"
     };
 
     QtMocHelpers::UintData qt_methods {
         // Signal 'adjustmentChanged'
         QtMocHelpers::SignalData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'activeCellChanged'
+        QtMocHelpers::SignalData<void(AdjustmentCell *)>(3, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 4, 5 },
+        }}),
+        // Slot 'onCreateCellClicked'
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -70,11 +80,15 @@ void AdjustmentPanelWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->adjustmentChanged(); break;
+        case 1: _t->activeCellChanged((*reinterpret_cast< std::add_pointer_t<AdjustmentCell*>>(_a[1]))); break;
+        case 2: _t->onCreateCellClicked(); break;
         default: ;
         }
     }
     if (_c == QMetaObject::IndexOfMethod) {
         if (QtMocHelpers::indexOfMethod<void (AdjustmentPanelWidget::*)()>(_a, &AdjustmentPanelWidget::adjustmentChanged, 0))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (AdjustmentPanelWidget::*)(AdjustmentCell * )>(_a, &AdjustmentPanelWidget::activeCellChanged, 1))
             return;
     }
 }
@@ -98,14 +112,14 @@ int AdjustmentPanelWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 3;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 3)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 1;
+        _id -= 3;
     }
     return _id;
 }
@@ -114,5 +128,11 @@ int AdjustmentPanelWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 void AdjustmentPanelWidget::adjustmentChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
+}
+
+// SIGNAL 1
+void AdjustmentPanelWidget::activeCellChanged(AdjustmentCell * _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 1, nullptr, _t1);
 }
 QT_WARNING_POP

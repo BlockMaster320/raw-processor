@@ -24,7 +24,14 @@
 			"find_package",
 			"find_dependency",
 			"_qt_internal_find_qt_dependencies",
-			"set_property"
+			"set_property",
+			"target_sources",
+			"__qt_propagate_generated_resource",
+			"_qt_internal_process_resource",
+			"qt6_add_resources",
+			"qt_add_resources",
+			"_qt_internal_expose_deferred_files_to_ide",
+			"qt6_finalize_target"
 		],
 		"files" : 
 		[
@@ -43,7 +50,8 @@
 			"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake",
 			"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake",
 			"libraw/CMakeLists.txt",
-			"C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/FindOpenMP.cmake"
+			"C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/FindOpenMP.cmake",
+			"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake:921:EVAL"
 		],
 		"nodes" : 
 		[
@@ -77,13 +85,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 66,
+				"line" : 101,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 48,
+				"line" : 83,
 				"parent" : 0
 			},
 			{
@@ -252,6 +260,59 @@
 				"file" : 15,
 				"line" : 620,
 				"parent" : 37
+			},
+			{
+				"command" : 16,
+				"file" : 1,
+				"line" : 75,
+				"parent" : 0
+			},
+			{
+				"command" : 15,
+				"file" : 0,
+				"line" : 485,
+				"parent" : 39
+			},
+			{
+				"command" : 14,
+				"file" : 0,
+				"line" : 405,
+				"parent" : 40
+			},
+			{
+				"command" : 13,
+				"file" : 0,
+				"line" : 2594,
+				"parent" : 41
+			},
+			{
+				"command" : 12,
+				"file" : 0,
+				"line" : 2137,
+				"parent" : 42
+			},
+			{
+				"file" : 1,
+				"line" : -1,
+				"parent" : 0
+			},
+			{
+				"command" : 18,
+				"file" : 16,
+				"line" : 1,
+				"parent" : 44
+			},
+			{
+				"command" : 17,
+				"file" : 0,
+				"line" : 871,
+				"parent" : 45
+			},
+			{
+				"command" : 12,
+				"file" : 0,
+				"line" : 2262,
+				"parent" : 46
 			}
 		]
 	},
@@ -393,14 +454,20 @@
 				7,
 				9,
 				11,
-				12,
+				13,
 				15,
 				17,
-				19,
-				21,
-				23,
-				25,
-				27
+				20,
+				22,
+				24,
+				26,
+				28,
+				30,
+				32,
+				34,
+				37,
+				39,
+				42
 			]
 		}
 	],
@@ -546,7 +613,9 @@
 			"sourceIndexes" : 
 			[
 				0,
-				29
+				42,
+				43,
+				47
 			]
 		},
 		{
@@ -559,14 +628,19 @@
 				7,
 				9,
 				11,
-				12,
+				13,
 				15,
 				17,
-				19,
-				21,
-				23,
-				25,
-				27
+				20,
+				22,
+				24,
+				26,
+				28,
+				30,
+				32,
+				34,
+				37,
+				39
 			]
 		},
 		{
@@ -578,22 +652,40 @@
 				6,
 				8,
 				10,
-				13,
+				12,
 				14,
 				16,
 				18,
-				20,
-				22,
-				24,
-				26,
-				28
+				19,
+				21,
+				23,
+				25,
+				27,
+				29,
+				31,
+				33,
+				35,
+				36,
+				38,
+				40,
+				41
+			]
+		},
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				44,
+				45,
+				46
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				30
+				48,
+				49
 			]
 		}
 	],
@@ -669,6 +761,33 @@
 		},
 		{
 			"backtrace" : 4,
+			"path" : "adjustmentcelldata.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "adjustmentcelldata.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "adjustmentcellmanager.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "adjustmentcellmanager.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "ui/uiconstants.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
 			"compileGroupIndex" : 0,
 			"path" : "ui/mainwindow.cpp",
 			"sourceGroupIndex" : 1
@@ -724,6 +843,17 @@
 		},
 		{
 			"backtrace" : 4,
+			"path" : "ui/adjustmentcellmanagerwidget.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "ui/adjustmentcellmanagerwidget.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
 			"path" : "ui/PieMenu.h",
 			"sourceGroupIndex" : 2
 		},
@@ -761,6 +891,66 @@
 			"sourceGroupIndex" : 2
 		},
 		{
+			"backtrace" : 4,
+			"path" : "QtAwesome/QtAwesome.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "QtAwesome/QtAwesome.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "QtAwesome/QtAwesomeAnim.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "QtAwesome/QtAwesomeAnim.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "QtAwesome/QtAwesomeEnumGenerated.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "QtAwesome/QtAwesomeStringGenerated.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 43,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/.qt/rcc/qrc_qtawesome_fonts.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 47,
+			"isGenerated" : true,
+			"path" : "build/.qt/rcc/qtawesome_fonts.qrc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 47,
+			"path" : "QtAwesome/fonts/Font Awesome 7 Brands-Regular-400.otf",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 47,
+			"path" : "QtAwesome/fonts/Font Awesome 7 Free-Regular-400.otf",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 47,
+			"path" : "QtAwesome/fonts/Font Awesome 7 Free-Solid-900.otf",
+			"sourceGroupIndex" : 3
+		},
+		{
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/raw-processor_autogen/timestamp",
@@ -769,8 +959,14 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
+			"path" : "build/.qt/rcc/qrc_qtawesome_fonts.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
 			"path" : "build/raw-processor_autogen/timestamp.rule",
-			"sourceGroupIndex" : 3
+			"sourceGroupIndex" : 4
 		}
 	],
 	"type" : "EXECUTABLE"

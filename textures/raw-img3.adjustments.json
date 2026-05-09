@@ -1,0 +1,35 @@
+{
+    "cells": [
+        {
+            "adjustments": {
+                "Contrast": [
+                    0.1119999885559082
+                ],
+                "Denoise": [
+                    0.8659999966621399
+                ],
+                "Exposure": [
+                    1.940000057220459
+                ],
+                "Midpoint": [
+                    0.20000000298023224
+                ],
+                "PopArt": [
+                    0
+                ],
+                "Saturation": [
+                    0.8799999952316284
+                ],
+                "WhiteBlack": [
+                    0,
+                    0
+                ]
+            },
+            "dataId": "{00000000-0000-0000-0000-000000000000}",
+            "linked": false,
+            "name": "Cell 1 (Copy)",
+            "visible": true
+        }
+    ],
+    "imagePath": "C:/Storage/FIT/BP/raw-processor/textures/raw-img3.ARW"
+}

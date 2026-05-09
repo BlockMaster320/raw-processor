@@ -16,6 +16,8 @@ void ImageManager::loadGroup(QWidget *parent)
     if (dir.isEmpty())
         return;
 
+    currentGroupPath = dir;
+
     qDebug() << "Selected directory:" << dir;
     QDir directory(dir);
     QStringList files = directory.entryList(

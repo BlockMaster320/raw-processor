@@ -37,6 +37,7 @@ QRect GalleryWidget::cellRectAt(int visualIndex, int visibleCount) const
 void GalleryWidget::setManager(std::shared_ptr<ImageManager> mgr)
 {
     manager = mgr;
+    clearSelection();
     update();
 }
 
@@ -49,6 +50,8 @@ void GalleryWidget::setThumbnailLoader(std::shared_ptr<ThumbnailLoader> loader)
 void GalleryWidget::paintEvent(QPaintEvent *)
 {
     if (!manager) return;
+
+    pruneInvalidSelection();
 
     QPainter painter(this);
     const int visibleCount = visibleCellCount();
@@ -73,6 +76,14 @@ void GalleryWidget::paintEvent(QPaintEvent *)
             painter.fillRect(rect, Qt::blue);
             thumbnailLoader->requestThumbnail(img);
         }
+
+        if (selectedIndices.find(idx) != selectedIndices.end()) {
+            painter.fillRect(rect, QColor(90, 170, 255, 90));
+            QPen pen(QColor(90, 170, 255, 220));
+            pen.setWidth(2);
+            painter.setPen(pen);
+            painter.drawRect(rect.adjusted(1, 1, -1, -1));
+        }
     }
 }
 
@@ -92,19 +103,115 @@ void GalleryWidget::wheelEvent(QWheelEvent *e)
 
 void GalleryWidget::mousePressEvent(QMouseEvent *e)
 {
-    if (!manager) return;
+    if (!manager || e->button() != Qt::LeftButton) return;
+
+    const int index = indexAtPosition(e->pos());
+    if (index < 0 || index >= static_cast<int>(manager->images.size())) {
+        return;
+    }
+
+    const Qt::KeyboardModifiers mods = e->modifiers();
+    if ((mods & Qt::ShiftModifier) && lastSelectedIndex >= 0) {
+        const int start = std::min(lastSelectedIndex, index);
+        const int end = std::max(lastSelectedIndex, index);
+        for (int i = start; i <= end; ++i) {
+            selectedIndices.insert(i);
+        }
+    } else if (mods & Qt::ControlModifier) {
+        selectedIndices.insert(index);
+    } else {
+        selectedIndices.clear();
+        selectedIndices.insert(index);
+    }
+
+    lastSelectedIndex = index;
+    emitSelectedImagesChanged();
+    update();
+}
+
+void GalleryWidget::mouseDoubleClickEvent(QMouseEvent* e)
+{
+    if (!manager || e->button() != Qt::LeftButton) {
+        return;
+    }
+
+    const int index = indexAtPosition(e->pos());
+    if (index >= 0 && index < static_cast<int>(manager->images.size())) {
+        emit imageSelected(manager->images[index]);
+    }
+}
+
+void GalleryWidget::clearSelection()
+{
+    selectedIndices.clear();
+    lastSelectedIndex = -1;
+    emitSelectedImagesChanged();
+    update();
+}
+
+int GalleryWidget::indexAtPosition(const QPoint& pos) const
+{
+    if (!manager) {
+        return -1;
+    }
 
     const int visibleCount = visibleCellCount();
-    if (visibleCount <= 0) return;
+    if (visibleCount <= 0) {
+        return -1;
+    }
 
     for (int i = 0; i < visibleCount; ++i) {
         const QRect rect = cellRectAt(i, visibleCount);
-        if (!rect.contains(e->pos())) continue;
+        if (rect.contains(pos)) {
+            return baseIndex + i;
+        }
+    }
 
-        const int index = baseIndex + i;
-        if (index >= 0 && index < static_cast<int>(manager->images.size())) {
-            emit imageSelected(manager->images[index]);
+    return -1;
+}
+
+void GalleryWidget::emitSelectedImagesChanged()
+{
+    std::vector<std::shared_ptr<Image>> selected;
+    if (manager) {
+        selected.reserve(selectedIndices.size());
+        for (int idx : selectedIndices) {
+            if (idx >= 0 && idx < static_cast<int>(manager->images.size())) {
+                selected.push_back(manager->images[idx]);
+            }
+        }
+    }
+
+    emit selectedImagesChanged(selected);
+}
+
+void GalleryWidget::pruneInvalidSelection()
+{
+    if (!manager) {
+        if (!selectedIndices.empty()) {
+            selectedIndices.clear();
+            lastSelectedIndex = -1;
+            emitSelectedImagesChanged();
         }
         return;
+    }
+
+    const int size = static_cast<int>(manager->images.size());
+    bool changed = false;
+    for (auto it = selectedIndices.begin(); it != selectedIndices.end();) {
+        if (*it < 0 || *it >= size) {
+            it = selectedIndices.erase(it);
+            changed = true;
+        } else {
+            ++it;
+        }
+    }
+
+    if (lastSelectedIndex < 0 || lastSelectedIndex >= size) {
+        lastSelectedIndex = selectedIndices.empty() ? -1 : *selectedIndices.rbegin();
+    }
+
+    if (changed) {
+        emitSelectedImagesChanged();
     }
 }

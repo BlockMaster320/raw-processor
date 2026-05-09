@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="fonts/Font Awesome 7 Brands-Regular-400.otf">C:/Storage/FIT/BP/raw-processor/QtAwesome/fonts/Font Awesome 7 Brands-Regular-400.otf</file>
+    <file alias="fonts/Font Awesome 7 Free-Regular-400.otf">C:/Storage/FIT/BP/raw-processor/QtAwesome/fonts/Font Awesome 7 Free-Regular-400.otf</file>
+    <file alias="fonts/Font Awesome 7 Free-Solid-900.otf">C:/Storage/FIT/BP/raw-processor/QtAwesome/fonts/Font Awesome 7 Free-Solid-900.otf</file>
+  </qresource>
+</RCC>
+

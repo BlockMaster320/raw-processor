@@ -23,7 +23,12 @@ qt_add_executable(raw-processor
     adjustment.cpp
     adjustmentcell.h
     adjustmentcell.cpp
+    adjustmentcelldata.h
+    adjustmentcelldata.cpp
+    adjustmentcellmanager.h
+    adjustmentcellmanager.cpp
 
+    ui/uiconstants.h
     ui/mainwindow.cpp
     ui/mainwindow.h
     ui/imageviewer.h
@@ -34,6 +39,8 @@ qt_add_executable(raw-processor
     ui/adjustmentcellwidget.cpp
     ui/adjustmentpanelwidget.h
     ui/adjustmentpanelwidget.cpp
+    ui/adjustmentcellmanagerwidget.h
+    ui/adjustmentcellmanagerwidget.cpp
     ui/PieMenu.h
     ui/PieMenu.cpp
 
@@ -43,6 +50,34 @@ qt_add_executable(raw-processor
     imagemanager.cpp
 
     stb_image.h
+
+    QtAwesome/QtAwesome.h
+    QtAwesome/QtAwesome.cpp
+    QtAwesome/QtAwesomeAnim.h
+    QtAwesome/QtAwesomeAnim.cpp
+    QtAwesome/QtAwesomeEnumGenerated.h
+    QtAwesome/QtAwesomeStringGenerated.h
+)
+
+set_source_files_properties(
+    "QtAwesome/fonts/Font Awesome 7 Brands-Regular-400.otf"
+    PROPERTIES QT_RESOURCE_ALIAS "fonts/Font Awesome 7 Brands-Regular-400.otf"
+)
+set_source_files_properties(
+    "QtAwesome/fonts/Font Awesome 7 Free-Regular-400.otf"
+    PROPERTIES QT_RESOURCE_ALIAS "fonts/Font Awesome 7 Free-Regular-400.otf"
+)
+set_source_files_properties(
+    "QtAwesome/fonts/Font Awesome 7 Free-Solid-900.otf"
+    PROPERTIES QT_RESOURCE_ALIAS "fonts/Font Awesome 7 Free-Solid-900.otf"
+)
+
+qt_add_resources(raw-processor qtawesome_fonts
+    PREFIX "/"
+    FILES
+        "QtAwesome/fonts/Font Awesome 7 Brands-Regular-400.otf"
+        "QtAwesome/fonts/Font Awesome 7 Free-Regular-400.otf"
+        "QtAwesome/fonts/Font Awesome 7 Free-Solid-900.otf"
 )
 
 target_link_libraries(raw-processor

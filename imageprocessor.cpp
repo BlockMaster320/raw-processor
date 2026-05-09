@@ -334,25 +334,32 @@ void ImageProcessor::renderAdjustmentPass()
 
     glDisable(GL_FRAMEBUFFER_SRGB); // keep offscreen processing linear; display gamma is handled in the final display pass
 
-    // Start each pass with zeroed uniforms; set dirty so the final global pass always runs.
-    resetUniforms();
-    uniformsDirty = true;
-
     // Set up FBO pointers
     isFboRgbUsed = false;
     fboOccupied = fboRgb;
     fboFree = fboAdjustment1;
 
     for (auto& cell : currentImage->adjustmentCells) {
-        if (!cell.isVisible)
+        // Check cell visibility (both instance visibility and data enabled state)
+        if (!cell.visible || !cell.data || !cell.data->enabled)
             continue;
 
-        for (auto& adj : cell.adjustments) {
-            adj->apply(*this);
+        // Process each cell as its own adjustment stage so non-additive uniforms
+        // (e.g. midpoint) are not overwritten by later cells.
+        resetUniforms();
+        uniformsDirty = false;
+
+        // Apply adjustments in process order
+        for (AdjType type : cell.processOrder) {
+            auto it = cell.data->adjustments.find(type);
+            if (it != cell.data->adjustments.end())
+                it->second->apply(*this);
         }
+
+        // Flush this cell's pending global uniforms before moving to the next cell.
+        renderGlobalAdjustments();
     }
 
-    renderGlobalAdjustments();
     renderPostprocessPass();    // tone mapping and Rec.2020 -> sRGB conversion
 }
 

@@ -1,6 +1,8 @@
 #include "adjustment.h"
 #include "imageprocessor.h"
 
+#include <cmath>
+
 AdjAttribute::AdjAttribute(std::string name, float value, float min, float max, bool isAdjustable)
     : name(std::move(name)), value(value), min(min), max(max), isAdjustable(isAdjustable)
 {}
@@ -11,6 +13,7 @@ AdjExposure::AdjExposure()
 }
 void AdjExposure::apply(ImageProcessor& processor)
 {
+    if (std::abs(attributes[0].value) < 1e-6f) return;
     processor.uniforms.exposure += attributes[0].value;
     processor.uniformsDirty = true;
 }
@@ -21,6 +24,7 @@ AdjContrast::AdjContrast()
 }
 void AdjContrast::apply(ImageProcessor& processor)
 {
+    if (std::abs(attributes[0].value) < 1e-6f) return;
     processor.uniforms.contrast += attributes[0].value;
     processor.uniformsDirty = true;
 }
@@ -31,6 +35,8 @@ AdjMidpoint::AdjMidpoint()
 }
 void AdjMidpoint::apply(ImageProcessor& processor)
 {
+    // Midpoint only has effect when contrast is applied.
+    if (std::abs(processor.uniforms.contrast) < 1e-6f) return;
     processor.uniforms.midpoint = attributes[0].value;
     processor.uniformsDirty = true;
 }
@@ -41,6 +47,7 @@ AdjPopArt::AdjPopArt()
 }
 void AdjPopArt::apply(ImageProcessor& processor)
 {
+    if (std::abs(attributes[0].value) < 1e-6f) return;
     processor.uniforms.popArt += attributes[0].value;
     processor.uniformsDirty = true;
 }
@@ -52,6 +59,7 @@ AdjWhiteBlack::AdjWhiteBlack()
 }
 void AdjWhiteBlack::apply(ImageProcessor& processor)
 {
+    if (std::abs(attributes[0].value) < 1e-6f && std::abs(attributes[1].value) < 1e-6f) return;
     processor.uniforms.white += attributes[0].value;
     processor.uniforms.black += attributes[1].value;
     processor.uniformsDirty = true;
@@ -63,6 +71,7 @@ AdjSaturation::AdjSaturation()
 }
 void AdjSaturation::apply(ImageProcessor& processor)
 {
+    if (std::abs(attributes[0].value) < 1e-6f) return;
     processor.uniforms.saturation += attributes[0].value;
     processor.uniformsDirty = true;
 }
@@ -92,4 +101,48 @@ void AdjDenoise::apply(ImageProcessor& processor)
     processor.renderFilterPass(ImageProcessor::FilterPassType::GaussianChroma, chromaV);
     processor.renderFilterPass(ImageProcessor::FilterPassType::BilateralLuma, denoiseUniforms);
     processor.renderFilterPass(ImageProcessor::FilterPassType::YcbcrToRgb);
+}
+
+// --- Clone implementations for deep copying ---
+
+std::unique_ptr<Adjustment> AdjExposure::clone() const {
+    auto cloned = std::make_unique<AdjExposure>();
+    cloned->attributes = attributes;
+    return cloned;
+}
+
+std::unique_ptr<Adjustment> AdjContrast::clone() const {
+    auto cloned = std::make_unique<AdjContrast>();
+    cloned->attributes = attributes;
+    return cloned;
+}
+
+std::unique_ptr<Adjustment> AdjMidpoint::clone() const {
+    auto cloned = std::make_unique<AdjMidpoint>();
+    cloned->attributes = attributes;
+    return cloned;
+}
+
+std::unique_ptr<Adjustment> AdjPopArt::clone() const {
+    auto cloned = std::make_unique<AdjPopArt>();
+    cloned->attributes = attributes;
+    return cloned;
+}
+
+std::unique_ptr<Adjustment> AdjWhiteBlack::clone() const {
+    auto cloned = std::make_unique<AdjWhiteBlack>();
+    cloned->attributes = attributes;
+    return cloned;
+}
+
+std::unique_ptr<Adjustment> AdjSaturation::clone() const {
+    auto cloned = std::make_unique<AdjSaturation>();
+    cloned->attributes = attributes;
+    return cloned;
+}
+
+std::unique_ptr<Adjustment> AdjDenoise::clone() const {
+    auto cloned = std::make_unique<AdjDenoise>();
+    cloned->attributes = attributes;
+    return cloned;
 }

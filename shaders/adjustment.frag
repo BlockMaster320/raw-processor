@@ -16,10 +16,12 @@ const vec3 REC2020_LUMA = vec3(0.2627, 0.6780, 0.0593);
 out vec4 fragColor;
 
 vec3 applyExposure(vec3 col, float ev) {
+    if (abs(ev) < 1e-6) return col;
     return col * pow(2.0, ev);
 }
 
 vec3 applyContrast(vec3 col, float contrast, float midpoint) {
+    if (abs(contrast) < 1e-6) return col;
     float con = contrast + 1.0; // convert from [-1, 1] to [0, 2] range
 
     // Simple midpoint contrast
@@ -44,6 +46,7 @@ vec3 applyContrast(vec3 col, float contrast, float midpoint) {
 }
 
 vec3 applyPopArt(vec3 col, float popArt) {
+    if (abs(popArt) < 1e-6) return col;
     // ChatGPT's "Lightroom-like" contrast
     float pop = popArt + 1.;    // convert to [0, 2] range
     float pivot = 0.5;
@@ -60,6 +63,7 @@ vec3 applyPopArt(vec3 col, float popArt) {
 }
 
 vec3 applyWhiteBlackLevels(vec3 col, float white, float black) {
+    if (abs(white) < 1e-6 && abs(black) < 1e-6) return col;
     float w = white + 1.; // convert from [-1, 1] to [0, 2] range
     float b = black;
     //float range = max(w - b, 1e-5);
@@ -73,6 +77,7 @@ vec3 applyWhiteBlackLevels(vec3 col, float white, float black) {
 }
 
 vec3 applySaturation(vec3 col, float saturation) {
+    if (abs(saturation) < 1e-6) return col;
     float sat = saturation + 1.; // convert to [0, 1] range
     float luma = dot(col, REC2020_LUMA);
     return mix(vec3(luma), col, sat);

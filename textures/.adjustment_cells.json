@@ -1,0 +1,156 @@
+{
+    "cells": {
+        "{18114daa-01fa-49c7-b3b6-4d4c45033056}": {
+            "adjustments": {
+                "Contrast": [
+                    0.26999998092651367
+                ],
+                "Denoise": [
+                    0
+                ],
+                "Exposure": [
+                    0.7800002098083496
+                ],
+                "Midpoint": [
+                    0.39899998903274536
+                ],
+                "PopArt": [
+                    0
+                ],
+                "Saturation": [
+                    0
+                ],
+                "WhiteBlack": [
+                    0,
+                    0
+                ]
+            },
+            "enabled": true,
+            "id": "{18114daa-01fa-49c7-b3b6-4d4c45033056}",
+            "isGlobal": false,
+            "name": "HighContrast"
+        },
+        "{49678d7a-6037-4dff-9f6d-c7af7762f069}": {
+            "adjustments": {
+                "Contrast": [
+                    -0.012000024318695068
+                ],
+                "Denoise": [
+                    0
+                ],
+                "Exposure": [
+                    0.14999961853027344
+                ],
+                "Midpoint": [
+                    0.2540000081062317
+                ],
+                "PopArt": [
+                    0
+                ],
+                "Saturation": [
+                    0
+                ],
+                "WhiteBlack": [
+                    0,
+                    0
+                ]
+            },
+            "enabled": true,
+            "id": "{49678d7a-6037-4dff-9f6d-c7af7762f069}",
+            "isGlobal": false,
+            "name": "Base"
+        },
+        "{6eeb3ddb-632f-4976-be9b-edee11460f30}": {
+            "adjustments": {
+                "Contrast": [
+                    0.4700000286102295
+                ],
+                "Denoise": [
+                    0
+                ],
+                "Exposure": [
+                    0.7800002098083496
+                ],
+                "Midpoint": [
+                    0.39899998903274536
+                ],
+                "PopArt": [
+                    0
+                ],
+                "Saturation": [
+                    0
+                ],
+                "WhiteBlack": [
+                    0,
+                    0
+                ]
+            },
+            "enabled": true,
+            "id": "{6eeb3ddb-632f-4976-be9b-edee11460f30}",
+            "isGlobal": false,
+            "name": "New Preset"
+        },
+        "{bc70a5d2-9fe4-41e4-99eb-50e56d565355}": {
+            "adjustments": {
+                "Contrast": [
+                    0.15199995040893555
+                ],
+                "Denoise": [
+                    0
+                ],
+                "Exposure": [
+                    0.7800002098083496
+                ],
+                "Midpoint": [
+                    0.39899998903274536
+                ],
+                "PopArt": [
+                    0
+                ],
+                "Saturation": [
+                    0
+                ],
+                "WhiteBlack": [
+                    0,
+                    0
+                ]
+            },
+            "enabled": true,
+            "id": "{bc70a5d2-9fe4-41e4-99eb-50e56d565355}",
+            "isGlobal": false,
+            "name": "HighContrast"
+        },
+        "{f0108d8e-c9eb-47d9-8b74-1c92f70937fa}": {
+            "adjustments": {
+                "Contrast": [
+                    0.3140000104904175
+                ],
+                "Denoise": [
+                    0
+                ],
+                "Exposure": [
+                    0.7800002098083496
+                ],
+                "Midpoint": [
+                    0.39899998903274536
+                ],
+                "PopArt": [
+                    0
+                ],
+                "Saturation": [
+                    0
+                ],
+                "WhiteBlack": [
+                    0,
+                    0
+                ]
+            },
+            "enabled": true,
+            "id": "{f0108d8e-c9eb-47d9-8b74-1c92f70937fa}",
+            "isGlobal": false,
+            "name": "HighC"
+        }
+    },
+    "presets": [
+    ]
+}

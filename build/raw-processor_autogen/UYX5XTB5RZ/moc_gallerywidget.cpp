@@ -42,13 +42,20 @@ template <> constexpr inline auto GalleryWidget::qt_create_metaobjectdata<qt_met
         "imageSelected",
         "",
         "std::shared_ptr<Image>",
-        "img"
+        "img",
+        "selectedImagesChanged",
+        "std::vector<std::shared_ptr<Image>>",
+        "images"
     };
 
     QtMocHelpers::UintData qt_methods {
         // Signal 'imageSelected'
         QtMocHelpers::SignalData<void(std::shared_ptr<Image>)>(1, 2, QMC::AccessPublic, QMetaType::Void, {{
             { 0x80000000 | 3, 4 },
+        }}),
+        // Signal 'selectedImagesChanged'
+        QtMocHelpers::SignalData<void(const std::vector<std::shared_ptr<Image>> &)>(5, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 6, 7 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -74,11 +81,14 @@ void GalleryWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->imageSelected((*reinterpret_cast< std::add_pointer_t<std::shared_ptr<Image>>>(_a[1]))); break;
+        case 1: _t->selectedImagesChanged((*reinterpret_cast< std::add_pointer_t<std::vector<std::shared_ptr<Image>>>>(_a[1]))); break;
         default: ;
         }
     }
     if (_c == QMetaObject::IndexOfMethod) {
         if (QtMocHelpers::indexOfMethod<void (GalleryWidget::*)(std::shared_ptr<Image> )>(_a, &GalleryWidget::imageSelected, 0))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (GalleryWidget::*)(const std::vector<std::shared_ptr<Image>> & )>(_a, &GalleryWidget::selectedImagesChanged, 1))
             return;
     }
 }
@@ -102,14 +112,14 @@ int GalleryWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 2;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 2)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 1;
+        _id -= 2;
     }
     return _id;
 }
@@ -118,5 +128,11 @@ int GalleryWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 void GalleryWidget::imageSelected(std::shared_ptr<Image> _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 0, nullptr, _t1);
+}
+
+// SIGNAL 1
+void GalleryWidget::selectedImagesChanged(const std::vector<std::shared_ptr<Image>> & _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 1, nullptr, _t1);
 }
 QT_WARNING_POP

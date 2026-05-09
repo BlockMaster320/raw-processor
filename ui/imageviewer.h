@@ -3,6 +3,8 @@
 #include "../image.h"
 #include "../imageprocessor.h"
 
+#include <memory>
+
 #include <QOpenGLWidget>
 #include <QOpenGLFunctions>
 #include <QOpenGLShaderProgram>
@@ -17,11 +19,14 @@ public:
     ImageViewer(QWidget *parent = nullptr);
     ~ImageViewer();
 
+    void setAdjustmentCellManager(std::shared_ptr<AdjustmentCellManager> manager);
+
     virtual void initializeGL() override;
     virtual void resizeGL(int w, int h) override;
     virtual void paintGL() override;
 
     void setImage(std::shared_ptr<Image> image);
+    std::shared_ptr<Image> getCurrentImage() const { return image; }
 
     void mousePressEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
@@ -40,6 +45,7 @@ private:
     QOpenGLVertexArrayObject vaoDisplay;
 
     std::shared_ptr<Image> image;
+    std::shared_ptr<AdjustmentCellManager> adjustmentCellManager;
     ImageProcessor imageProcessor;
 
     // Libraw-processed reference image for comparison

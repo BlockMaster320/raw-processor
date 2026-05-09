@@ -4,6 +4,9 @@
 #include "../adjustmentcell.h"
 
 #include <QWidget>
+#include <QEvent>
+
+class QMouseEvent;
 
 class AdjustmentCellWidget : public QWidget {
     Q_OBJECT
@@ -11,11 +14,23 @@ public:
     explicit AdjustmentCellWidget(AdjustmentCell* cell, QWidget* parent = nullptr);
 
     AdjustmentCell* getCell() const { return cell; }
+    void setActive(bool isActive);
 
 signals:
     void adjustmentChanged();
+    void sliderReleased(AdjustmentCell* cell);
+    void cellActivated(AdjustmentCell* cell);
     void removeCellRequested(AdjustmentCell* cell);
+    void unlinkCellRequested(AdjustmentCell* cell);
+
+protected:
+    void mousePressEvent(QMouseEvent* event) override;
+    bool eventFilter(QObject* watched, QEvent* event) override;
 
 private:
+    void applyVisualState();
+
     AdjustmentCell* cell;
+    bool isActive = false;
+    bool isCollapsed = false;
 };

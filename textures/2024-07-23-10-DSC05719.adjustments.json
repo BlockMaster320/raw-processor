@@ -1,0 +1,35 @@
+{
+    "cells": [
+        {
+            "adjustments": {
+                "Contrast": [
+                    0.3359999656677246
+                ],
+                "Denoise": [
+                    0.7239999771118164
+                ],
+                "Exposure": [
+                    0.75
+                ],
+                "Midpoint": [
+                    0.20000000298023224
+                ],
+                "PopArt": [
+                    0
+                ],
+                "Saturation": [
+                    0
+                ],
+                "WhiteBlack": [
+                    0,
+                    0
+                ]
+            },
+            "dataId": "{00000000-0000-0000-0000-000000000000}",
+            "linked": false,
+            "name": "Cell 1",
+            "visible": true
+        }
+    ],
+    "imagePath": "C:/Storage/FIT/BP/raw-processor/textures/2024-07-23-10-DSC05719.ARW"
+}

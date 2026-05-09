@@ -13,12 +13,15 @@
 #include <QVector4D>
 #include <QImage>
 
+class AdjustmentCellManager;  // Forward declaration
+
 class Image {
 public:
     explicit Image(const QString& path);
 
     bool loadRawData();
-    void loadAdjustmentCells();
+    void loadAdjustmentCells(AdjustmentCellManager* acm = nullptr);
+    void saveAdjustmentCells();
 
     // Getters & setters
     bool getIsLoaded() const;
@@ -56,6 +59,7 @@ public:
 
 private:
     void clearLoadedData();
+    QString getSidecarPath() const;
 
     std::vector<uint16_t> rawPixels;
     int rawWidth;

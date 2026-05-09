@@ -1,4 +1,5 @@
 #include "image.h"
+#include "adjustmentcellmanager.h"
 
 #include "libraw/libraw.h"
 #include "utility.h"
@@ -8,6 +9,11 @@
 #include <utility>
 
 #include <QDebug>
+#include <QFile>
+#include <QDir>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
 
 Image::Image(const QString& path)
 	: imagePath(path), rawPixels(), rawWidth(0), rawHeight(0), imageWidth(0), imageHeight(0),
@@ -117,12 +123,6 @@ bool Image::loadRawData()
 	return true;
 }
 
-void Image::loadAdjustmentCells()
-{
-	if (adjustmentCells.empty())
-		adjustmentCells.emplace_back("Base");
-}
-
 // Builds a reference RGB image using LibRaw's internal processing pipeline (on CPU) with settings chosen to best match the GPU pipeline's output for direct pixel comparison.
 bool Image::buildReferenceImage()
 {
@@ -229,4 +229,131 @@ void Image::clearLoadedData()
 	rec2020ToSrgbMat = QMatrix3x3();
 	isLoaded = false;
 }
+
+QString Image::getSidecarPath() const {
+	QFileInfo fileInfo(imagePath);
+	QString baseName = fileInfo.baseName();
+	QString directory = fileInfo.dir().absolutePath();
+	return QDir(directory).filePath(baseName + ".adjustments.json");
+}
+
+void Image::loadAdjustmentCells(AdjustmentCellManager* acm) {
+	adjustmentCells.clear();
+
+	// Try to load from sidecar file
+	QString sidecarPath = getSidecarPath();
+	QFile file(sidecarPath);
+
+	if (file.exists() && file.open(QIODevice::ReadOnly)) {
+		QJsonDocument doc = QJsonDocument::fromJson(file.readAll());
+		file.close();
+
+		if (doc.isObject()) {
+			QJsonObject root = doc.object();
+			if (root.contains("cells") && root["cells"].isArray()) {
+				QJsonArray cellArray = root["cells"].toArray();
+
+				for (const auto& cellJson : cellArray) {
+					if (!cellJson.isObject()) continue;
+
+					QJsonObject cellObj = cellJson.toObject();
+					bool visible = cellObj.value("visible").toBool(true);
+					bool isLinked = cellObj.value("linked").toBool(false);
+					QString dataIdStr = cellObj.value("dataId").toString();
+					QUuid dataId = dataIdStr.isEmpty() ? QUuid() : QUuid(dataIdStr);
+
+					AdjustmentCell cell;
+					cell.visible = visible;
+
+					if (isLinked && acm && !dataId.isNull()) {
+						// Load linked cell - get data from manager (which loads from file)					// First, refresh from file to ensure latest values
+					acm->refreshCellData(dataId);
+											auto cellData = acm->getCellData(dataId);
+						if (cellData) {
+							cell.data = cellData;
+						} else {
+							// Fallback: create new cell with cached adjustments from sidecar
+							// This happens if the file doesn't have this cell yet (shouldn't happen in normal flow)
+							cell.data = std::make_shared<AdjustmentCellData>();
+					// Set ID FIRST before calling fromJson to prevent it from being overwritten
+					cell.data->id = dataId;
+					cell.data->isGlobal = false;
+					
+					if (cellObj.contains("adjustments") && cellObj["adjustments"].isObject()) {
+						// Only load adjustments from the sidecar JSON
+						cell.data->fromJson(cellObj);
+						// Explicitly preserve the ID we just set
+						cell.data->id = dataId;
+					}
+					// Register the fallback cellData with the manager so modifications are persisted
+					acm->registerCellData(cell.data);
+						}
+					} else {
+						// Load static cell (unlinked)
+						cell.data = std::make_shared<AdjustmentCellData>();
+
+						// Load adjustments from JSON
+						if (cellObj.contains("adjustments") && cellObj["adjustments"].isObject()) {
+							cell.data->fromJson(cellObj);
+						} else {
+							// Initialize with default adjustments
+							cell.data->adjustments[AdjType::Denoise]    = std::make_unique<AdjDenoise>();
+							cell.data->adjustments[AdjType::Exposure]   = std::make_unique<AdjExposure>();
+							cell.data->adjustments[AdjType::Contrast]   = std::make_unique<AdjContrast>();
+							cell.data->adjustments[AdjType::Midpoint]   = std::make_unique<AdjMidpoint>();
+							cell.data->adjustments[AdjType::PopArt]     = std::make_unique<AdjPopArt>();
+							cell.data->adjustments[AdjType::WhiteBlack] = std::make_unique<AdjWhiteBlack>();
+							cell.data->adjustments[AdjType::Saturation] = std::make_unique<AdjSaturation>();
+						}
+					}
+
+                    adjustmentCells.push_back(cell);
+                }
+            }
+        }
+    }
+
+    // If no cells loaded, create default cell
+    if (adjustmentCells.empty()) {
+        AdjustmentCell defaultCell("Base");
+        adjustmentCells.push_back(defaultCell);
+    }
+}
+
+void Image::saveAdjustmentCells() {
+    QString sidecarPath = getSidecarPath();
+    QJsonObject root;
+    root["imagePath"] = imagePath;
+
+    QJsonArray cellArray;
+    for (const auto& cell : adjustmentCells) {
+        QJsonObject cellObj;
+        cellObj["visible"] = cell.visible;
+        cellObj["linked"] = cell.isLinked();
+
+        if (cell.data) {
+            cellObj["dataId"] = cell.data->id.toString();
+            cellObj["name"] = cell.data->name;
+
+            // Serialize adjustments using the cell data's toJson method
+            QJsonObject cellDataJson = cell.data->toJson();
+            cellObj["adjustments"] = cellDataJson.value("adjustments").toObject();
+        }
+
+        cellArray.append(cellObj);
+    }
+
+    root["cells"] = cellArray;
+
+    QFile file(sidecarPath);
+    if (!file.open(QIODevice::WriteOnly)) {
+        qWarning() << "Could not save adjustment cells to:" << sidecarPath;
+        return;
+    }
+
+    QJsonDocument doc(root);
+    file.write(doc.toJson());
+    file.close();
+}
+
 

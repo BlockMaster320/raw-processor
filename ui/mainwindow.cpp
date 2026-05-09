@@ -5,6 +5,7 @@
 
 #include <QHBoxLayout>
 #include <QSplitter>
+#include <QVBoxLayout>
 
 #include <iostream>
 #include <cmath>
@@ -16,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     // Set up image manager, thumbnail loader and gallery
     imageManager = std::make_shared<ImageManager>();
     thumbnailLoader = std::make_shared<ThumbnailLoader>();
+    adjustmentCellManager = std::make_shared<AdjustmentCellManager>();
 
     gallery = new GalleryWidget(this);
     gallery->setManager(imageManager);
@@ -26,10 +28,19 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
                 //adjustmentWidget->setImage(nullptr);  // Clear adjustment cell widgets before the old image is potentially destroyed, then set the new image on both viewer (creates default cells) and adjustment UI.
                 imageViewer->setImage(img);
                 adjustmentPanelWidget->setImage(img);
+                adjustmentCellManager->setActiveImage(img);
+            });
+    connect(gallery, &GalleryWidget::selectedImagesChanged,
+            this, [this](const std::vector<std::shared_ptr<Image>>& selectedImages) {
+                adjustmentCellManager->clearSelection();
+                for (const auto& img : selectedImages) {
+                    adjustmentCellManager->selectImage(img, false);
+                }
             });
 
     // Set up image viewer
     imageViewer = new ImageViewer(this);
+    imageViewer->setAdjustmentCellManager(adjustmentCellManager);
 
     // UI layout
     QWidget* centralWidget = new QWidget(this);
@@ -38,6 +49,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     // Set up widgets for sections of the UI
     QWidget* fileWidget = new QWidget(this);
     adjustmentPanelWidget = new AdjustmentPanelWidget(this);
+    adjustmentPanelWidget->setAdjustmentCellManager(adjustmentCellManager);
+    adjustmentCellManagerWidget = new AdjustmentCellManagerWidget(adjustmentCellManager, this);
 
     //fileWidget->setStyleSheet("background-color: lightgray;");
     //adjustmentWidget->setStyleSheet("background-color: lightgreen;");
@@ -57,10 +70,15 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     imageViewer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     // UI layouts
+    QVBoxLayout* fileInnerLayout = new QVBoxLayout;  // layout inside fileWidget
+    fileInnerLayout->setContentsMargins(0, 0, 0, 0);
+    fileInnerLayout->setAlignment(Qt::AlignTop);
+    fileWidget->setLayout(fileInnerLayout);
+
     QVBoxLayout* fileLayout = new QVBoxLayout;       // file section
     fileLayout->addWidget(fileWidget);
 
-    QVBoxLayout* adjustmentLayout = new QVBoxLayout; // adjustment section
+    QVBoxLayout* adjustmentLayout = new QVBoxLayout; // adjustment section (cells for current image)
     adjustmentLayout->addWidget(adjustmentPanelWidget);
 
     QVBoxLayout* imageLayout = new QVBoxLayout;      // image display section
@@ -82,9 +100,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     centralWidget->setLayout(mainLayout);
 
     
-    btn = new QPushButton("Load images", fileWidget);
-    //btn->setGeometry(100, 100, 200, 50);
+    btn = new QPushButton("Load images");
     btn->setToolTip("Select a directory containing raw images to load into the gallery");
+    fileInnerLayout->addWidget(btn);
+    fileInnerLayout->addWidget(adjustmentCellManagerWidget);
 
     /*
     pbar = new QProgressBar(fileWidget);
@@ -108,6 +127,34 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     //QObject::connect(btn, &QPushButton::pressed, pieMenu, &PieMenu::display);
     QObject::connect(adjustmentPanelWidget, &AdjustmentPanelWidget::adjustmentChanged,
                      imageViewer, &ImageViewer::onAdjustmentChanged);
+    QObject::connect(adjustmentPanelWidget, &AdjustmentPanelWidget::activeCellChanged,
+                     this, [this](AdjustmentCell* cell) {
+                         if (cell && cell->data) {
+                             adjustmentCellManager->setActiveCell(cell->data);
+                         } else {
+                             adjustmentCellManager->setActiveCell(nullptr);
+                         }
+                         adjustmentCellManagerWidget->clearPresetSelection();
+                         adjustmentCellManagerWidget->updateActiveCell();
+                     });
+    QObject::connect(adjustmentCellManagerWidget, &AdjustmentCellManagerWidget::presetActivated,
+                     this, [this]() {
+                         adjustmentPanelWidget->clearActiveCellSelection();
+                     });
+    QObject::connect(adjustmentCellManagerWidget, &AdjustmentCellManagerWidget::appliedToImages,
+                     this, [this]() {
+                         auto activeImage = adjustmentCellManager->getActiveImage();
+                         if (activeImage) {
+                             adjustmentPanelWidget->setImage(activeImage);
+                             imageViewer->onAdjustmentChanged();
+                         }
+                     });
+    QObject::connect(adjustmentCellManager.get(), &AdjustmentCellManager::linkedCellDataChanged,
+                     this, [this](QUuid cellDataId) {
+                         if (imageViewer && imageViewer->getCurrentImage() && imageViewer->getCurrentImage()->getIsLoaded()) {
+                             imageViewer->onAdjustmentChanged();
+                         }
+                     });
 
 }
 
@@ -116,6 +163,12 @@ MainWindow::~MainWindow() {}
 void MainWindow::onButtonClicked()
 {
     imageManager->loadGroup(this);  // prompt user to select image directory
+    gallery->clearSelection();
+    if (!imageManager->currentGroupPath.isEmpty()) {
+        adjustmentCellManager->initialize(imageManager->currentGroupPath);
+        adjustmentCellManagerWidget->updatePresetList();
+        adjustmentCellManagerWidget->updateActiveCell();
+    }
     gallery->update();              // refresh gallery after image list changed
 }
 

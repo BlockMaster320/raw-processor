@@ -340,6 +340,7 @@
 		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateVersionlessAliasTargets.cmake",
 		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Concurrent/Qt6ConcurrentVersionlessAliasTargets.cmake",
 		"C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/GNUInstallDirs.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in",
 		"C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/GNUInstallDirs.cmake"
 	],
 	"CMAKE_SOURCE_DIR" : "C:/Storage/FIT/BP/raw-processor",
@@ -348,6 +349,30 @@
 	"DEP_FILE_RULE_NAME" : "raw-processor_autogen/timestamp",
 	"HEADERS" : 
 	[
+		[
+			"C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesome.h",
+			"MU",
+			"3QVQ3WXC3W/moc_QtAwesome.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesomeAnim.h",
+			"MU",
+			"3QVQ3WXC3W/moc_QtAwesomeAnim.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesomeEnumGenerated.h",
+			"MU",
+			"3QVQ3WXC3W/moc_QtAwesomeEnumGenerated.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesomeStringGenerated.h",
+			"MU",
+			"3QVQ3WXC3W/moc_QtAwesomeStringGenerated.cpp",
+			null
+		],
 		[
 			"C:/Storage/FIT/BP/raw-processor/adjustment.h",
 			"MU",
@@ -358,6 +383,18 @@
 			"C:/Storage/FIT/BP/raw-processor/adjustmentcell.h",
 			"MU",
 			"EWIEGA46WW/moc_adjustmentcell.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/adjustmentcelldata.h",
+			"MU",
+			"EWIEGA46WW/moc_adjustmentcelldata.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/adjustmentcellmanager.h",
+			"MU",
+			"EWIEGA46WW/moc_adjustmentcellmanager.cpp",
 			null
 		],
 		[
@@ -397,6 +434,12 @@
 			null
 		],
 		[
+			"C:/Storage/FIT/BP/raw-processor/ui/adjustmentcellmanagerwidget.h",
+			"MU",
+			"UYX5XTB5RZ/moc_adjustmentcellmanagerwidget.cpp",
+			null
+		],
+		[
 			"C:/Storage/FIT/BP/raw-processor/ui/adjustmentcellwidget.h",
 			"MU",
 			"UYX5XTB5RZ/moc_adjustmentcellwidget.cpp",
@@ -424,6 +467,12 @@
 			"C:/Storage/FIT/BP/raw-processor/ui/mainwindow.h",
 			"MU",
 			"UYX5XTB5RZ/moc_mainwindow.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/ui/uiconstants.h",
+			"MU",
+			"UYX5XTB5RZ/moc_uiconstants.cpp",
 			null
 		],
 		[
@@ -499,7 +548,10 @@
 	],
 	"MOC_PREDEFS_FILE" : "C:/Storage/FIT/BP/raw-processor/build/raw-processor_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
-	"MOC_SKIP" : [],
+	"MOC_SKIP" : 
+	[
+		"C:/Storage/FIT/BP/raw-processor/build/.qt/rcc/qrc_qtawesome_fonts.cpp"
+	],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 8,
 	"PARSE_CACHE_FILE" : "C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/raw-processor_autogen.dir/ParseCache.txt",
@@ -510,14 +562,31 @@
 	"SETTINGS_FILE" : "C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/raw-processor_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesome.cpp", "MU", null ],
+		[
+			"C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesomeAnim.cpp",
+			"MU",
+			null
+		],
 		[ "C:/Storage/FIT/BP/raw-processor/adjustment.cpp", "MU", null ],
 		[ "C:/Storage/FIT/BP/raw-processor/adjustmentcell.cpp", "MU", null ],
+		[ "C:/Storage/FIT/BP/raw-processor/adjustmentcelldata.cpp", "MU", null ],
+		[
+			"C:/Storage/FIT/BP/raw-processor/adjustmentcellmanager.cpp",
+			"MU",
+			null
+		],
 		[ "C:/Storage/FIT/BP/raw-processor/image.cpp", "MU", null ],
 		[ "C:/Storage/FIT/BP/raw-processor/imagemanager.cpp", "MU", null ],
 		[ "C:/Storage/FIT/BP/raw-processor/imageprocessor.cpp", "MU", null ],
 		[ "C:/Storage/FIT/BP/raw-processor/main.cpp", "MU", null ],
 		[ "C:/Storage/FIT/BP/raw-processor/thumbnailloader.cpp", "MU", null ],
 		[ "C:/Storage/FIT/BP/raw-processor/ui/PieMenu.cpp", "MU", null ],
+		[
+			"C:/Storage/FIT/BP/raw-processor/ui/adjustmentcellmanagerwidget.cpp",
+			"MU",
+			null
+		],
 		[
 			"C:/Storage/FIT/BP/raw-processor/ui/adjustmentcellwidget.cpp",
 			"MU",
@@ -535,7 +604,10 @@
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
-	"UIC_SKIP" : [],
+	"UIC_SKIP" : 
+	[
+		"C:/Storage/FIT/BP/raw-processor/build/.qt/rcc/qrc_qtawesome_fonts.cpp"
+	],
 	"UIC_UI_FILES" : [],
 	"USE_BETTER_GRAPH" : true,
 	"VERBOSITY" : 0
