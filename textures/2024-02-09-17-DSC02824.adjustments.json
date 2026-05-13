@@ -3,13 +3,13 @@
         {
             "adjustments": {
                 "Contrast": [
-                    0.3259999752044678
+                    0.5360000133514404
                 ],
                 "Denoise": [
-                    0.5
+                    0.6769999861717224
                 ],
                 "Exposure": [
-                    0.5900001525878906
+                    0.8600001335144043
                 ],
                 "Midpoint": [
                     0.20000000298023224
@@ -18,7 +18,7 @@
                     0
                 ],
                 "Saturation": [
-                    0
+                    -1
                 ],
                 "WhiteBlack": [
                     0,
@@ -26,7 +26,7 @@
                 ]
             },
             "collapsed": false,
-            "dataId": "{089acb45-f6f2-478a-9eb2-06134185fdd3}",
+            "dataId": "{6d2ff380-bcf0-4599-88fa-89354de7bf30}",
             "linked": true,
             "name": "Base",
             "visible": true

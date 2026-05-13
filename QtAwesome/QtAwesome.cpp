@@ -28,7 +28,7 @@
 // Initializing namespaces need to happen outside a namespace
 static void qtawesome_init_resources()
 {
-    Q_INIT_RESOURCE(qtawesome_fonts);
+    // Fonts are compiled from app-level resources and auto-initialized by Qt.
 }
 
 
@@ -357,9 +357,21 @@ bool QtAwesome::initFontAwesome()
     for (QtAwesomeFontData &fd : _fontDetails) {
         // only load font-awesome once
         if (fd.fontId() < 0) {
-            // load the font file
-            QFile res(":/fonts/" + fd.fontFilename());
-            if (!res.open(QIODevice::ReadOnly)) {
+            // Load the font file from known resource locations.
+            QFile res;
+            const QStringList candidates = {
+                ":/fonts/" + fd.fontFilename(),
+                ":/QtAwesome/fonts/" + fd.fontFilename(),
+                ":" + fd.fontFilename()
+            };
+            for (const QString& path : candidates) {
+                res.setFileName(path);
+                if (res.open(QIODevice::ReadOnly)) {
+                    break;
+                }
+            }
+
+            if (!res.isOpen()) {
                 qDebug() << "Font awesome font" << fd.fontFilename() << "could not be loaded!";
                 success = false;
                 continue;

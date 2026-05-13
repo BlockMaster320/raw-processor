@@ -1,0 +1,3 @@
+C:/Storage/FIT/BP/raw-processor/build-release/portable-release/bin/raw-processor.exe
+C:/Storage/FIT/BP/raw-processor/build-release/portable-release/bin/libraw.dll
+C:/Storage/FIT/BP/raw-processor/build-release/portable-release/bin/libgomp-1.dll

@@ -23,11 +23,12 @@ CMAKE_ADDR2LINE:FILEPATH=C:/Programs/Qt/Tools/mingw1310_64/bin/addr2line.exe
 //Path to a program.
 CMAKE_AR:FILEPATH=C:/Programs/Qt/Tools/mingw1310_64/bin/ar.exe
 
-//No help, variable specified on the command line.
+//Choose the type of build, options are: None Debug Release RelWithDebInfo
+// MinSizeRel ...
 CMAKE_BUILD_TYPE:STRING=Debug
 
 //No help, variable specified on the command line.
-CMAKE_CXX_COMPILER:FILEPATH=c:/Programs/Qt/Tools/mingw1310_64/bin/g++.exe
+CMAKE_CXX_COMPILER:UNINITIALIZED=C:/Programs/Qt/Tools/mingw1310_64/bin/g++.exe
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -43,9 +44,6 @@ CMAKE_CXX_FLAGS:STRING=
 //Flags used by the CXX compiler during DEBUG builds.
 CMAKE_CXX_FLAGS_DEBUG:STRING=-g
 
-//No help, variable specified on the command line.
-CMAKE_CXX_FLAGS_DEBUG_INIT:STRING=-DQT_QML_DEBUG -DQT_DECLARATIVE_DEBUG
-
 //Flags used by the CXX compiler during MINSIZEREL builds.
 CMAKE_CXX_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
 
@@ -55,14 +53,8 @@ CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 //Flags used by the CXX compiler during RELWITHDEBINFO builds.
 CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
-//No help, variable specified on the command line.
-CMAKE_CXX_FLAGS_RELWITHDEBINFO_INIT:STRING=-DQT_QML_DEBUG -DQT_DECLARATIVE_DEBUG
-
 //Libraries linked by default with all C++ applications.
 CMAKE_CXX_STANDARD_LIBRARIES:STRING=-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-
-//No help, variable specified on the command line.
-CMAKE_C_COMPILER:FILEPATH=c:/Programs/Qt/Tools/mingw1310_64/bin/gcc.exe
 
 //Path to a program.
 CMAKE_DLLTOOL:FILEPATH=C:/Programs/Qt/Tools/mingw1310_64/bin/dlltool.exe
@@ -128,7 +120,7 @@ CMAKE_INSTALL_MANDIR:PATH=
 CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/code
+CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/raw-processor
 
 //Run-time variable data (LOCALSTATEDIR/run)
 CMAKE_INSTALL_RUNSTATEDIR:PATH=
@@ -281,9 +273,6 @@ CMAKE_STRIP:FILEPATH=C:/Programs/Qt/Tools/mingw1310_64/bin/strip.exe
 //Path to a program.
 CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 
-//No help, variable specified on the command line.
-CMAKE_TOOLCHAIN_FILE:FILEPATH=c:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6/qt.toolchain.cmake
-
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
 // during the make.  This is useful for debugging only. With Visual
@@ -372,11 +361,6 @@ QT_ADDITIONAL_HOST_PACKAGES_PREFIX_PATH:STRING=
 //Additional directories where find(Qt6 ...) components are searched
 QT_ADDITIONAL_PACKAGES_PREFIX_PATH:STRING=
 
-QT_QMAKE_TARGET_MKSPEC:STRING=win32-g++
-
-//No help, variable specified on the command line.
-QT_QML_GENERATE_QMLLS_INI:STRING=ON
-
 //The directory containing a CMake configuration file for Qt6ConcurrentPrivate.
 Qt6ConcurrentPrivate_DIR:PATH=C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6ConcurrentPrivate
 
@@ -459,15 +443,6 @@ ZLIB_LIBRARY_DEBUG:FILEPATH=ZLIB_LIBRARY_DEBUG-NOTFOUND
 ZLIB_LIBRARY_RELEASE:FILEPATH=ZLIB_LIBRARY_RELEASE-NOTFOUND
 
 //Value Computed by CMake
-code_BINARY_DIR:STATIC=C:/Storage/FIT/BP/raw-processor/build
-
-//Value Computed by CMake
-code_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-code_SOURCE_DIR:STATIC=C:/Storage/FIT/BP/raw-processor
-
-//Value Computed by CMake
 libraw_BINARY_DIR:STATIC=C:/Storage/FIT/BP/raw-processor/build/libraw
 
 //Value Computed by CMake
@@ -528,8 +503,6 @@ CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 CMAKE_CXX_STANDARD_LIBRARIES-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_DLLTOOL
 CMAKE_DLLTOOL-ADVANCED:INTERNAL=1
-//Path to cache edit program executable.
-CMAKE_EDIT_COMMAND:INTERNAL=C:/Programs/Qt/Tools/CMake_64/bin/cmake-gui.exe
 //Executable file format
 CMAKE_EXECUTABLE_FORMAT:INTERNAL=Unknown
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS
@@ -542,8 +515,6 @@ CMAKE_EXE_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_EXE_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_EXPORT_COMPILE_COMMANDS
-CMAKE_EXPORT_COMPILE_COMMANDS-ADVANCED:INTERNAL=1
 //Name of external makefile project generator.
 CMAKE_EXTRA_GENERATOR:INTERNAL=
 //Name of generator.
@@ -1517,5 +1488,5 @@ ZLIB_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 //CMAKE_INSTALL_PREFIX during last run
-_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/code
+_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/raw-processor
 

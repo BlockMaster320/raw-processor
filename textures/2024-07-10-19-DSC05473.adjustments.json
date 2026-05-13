@@ -3,13 +3,13 @@
         {
             "adjustments": {
                 "Contrast": [
-                    0.3539999723434448
+                    0
                 ],
                 "Denoise": [
-                    0.5
+                    0
                 ],
                 "Exposure": [
-                    -2.179999828338623
+                    0.09000015258789062
                 ],
                 "Midpoint": [
                     0.20000000298023224
@@ -26,10 +26,9 @@
                 ]
             },
             "collapsed": false,
-            "dataId": "{089acb45-f6f2-478a-9eb2-06134185fdd3}",
-            "instanceName": "brooo",
-            "linked": true,
-            "name": "brooo",
+            "dataId": "{00000000-0000-0000-0000-000000000000}",
+            "linked": false,
+            "name": "Base",
             "visible": true
         }
     ],

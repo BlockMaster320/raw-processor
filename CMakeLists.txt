@@ -3,6 +3,7 @@ project(raw-processor LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_AUTORCC ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Core Widgets OpenGLWidgets Concurrent)
 
@@ -11,45 +12,48 @@ add_subdirectory(libraw)
 qt_standard_project_setup()
 
 qt_add_executable(raw-processor
-    main.cpp
-    utility.h
-    utility.cpp
-    image.h
-    image.cpp
-    imageprocessor.h
-    imageprocessor.cpp
+    resources.qrc
+    src/main.cpp
+    src/core/utility.h
+    src/core/utility.cpp
+    src/core/image.h
+    src/core/image.cpp
+    src/processing/imageprocessor.h
+    src/processing/imageprocessor.cpp
+    src/processing/exporter.h
+    src/processing/exporter.cpp
 
-    adjustment.h
-    adjustment.cpp
-    adjustmentcell.h
-    adjustmentcell.cpp
-    adjustmentcelldata.h
-    adjustmentcelldata.cpp
-    adjustmentcellmanager.h
-    adjustmentcellmanager.cpp
+    src/core/adjustment.h
+    src/core/adjustment.cpp
+    src/core/adjustmentcell.h
+    src/core/adjustmentcell.cpp
+    src/core/adjustmentcelldata.h
+    src/core/adjustmentcelldata.cpp
+    src/core/adjustmentcellmanager.h
+    src/core/adjustmentcellmanager.cpp
 
-    ui/uiconstants.h
-    ui/mainwindow.cpp
-    ui/mainwindow.h
-    ui/imageviewer.h
-    ui/imageviewer.cpp
-    ui/gallerywidget.h
-    ui/gallerywidget.cpp
-    ui/adjustmentcellwidget.h
-    ui/adjustmentcellwidget.cpp
-    ui/adjustmentpanelwidget.h
-    ui/adjustmentpanelwidget.cpp
-    ui/adjustmentcellmanagerwidget.h
-    ui/adjustmentcellmanagerwidget.cpp
-    ui/PieMenu.h
-    ui/PieMenu.cpp
+    src/ui/uiconstants.h
+    src/ui/mainwindow.cpp
+    src/ui/mainwindow.h
+    src/ui/imageviewer.h
+    src/ui/imageviewer.cpp
+    src/ui/gallerywidget.h
+    src/ui/gallerywidget.cpp
+    src/ui/adjustmentcellwidget.h
+    src/ui/adjustmentcellwidget.cpp
+    src/ui/adjustmentpanelwidget.h
+    src/ui/adjustmentpanelwidget.cpp
+    src/ui/adjustmentcellmanagerwidget.h
+    src/ui/adjustmentcellmanagerwidget.cpp
+    src/ui/PieMenu.h
+    src/ui/PieMenu.cpp
 
-    thumbnailloader.h
-    thumbnailloader.cpp
-    imagemanager.h
-    imagemanager.cpp
+    src/core/thumbnailloader.h
+    src/core/thumbnailloader.cpp
+    src/core/imagemanager.h
+    src/core/imagemanager.cpp
 
-    stb_image.h
+    src/core/stb_image.h
 
     QtAwesome/QtAwesome.h
     QtAwesome/QtAwesome.cpp
@@ -59,26 +63,7 @@ qt_add_executable(raw-processor
     QtAwesome/QtAwesomeStringGenerated.h
 )
 
-set_source_files_properties(
-    "QtAwesome/fonts/Font Awesome 7 Brands-Regular-400.otf"
-    PROPERTIES QT_RESOURCE_ALIAS "fonts/Font Awesome 7 Brands-Regular-400.otf"
-)
-set_source_files_properties(
-    "QtAwesome/fonts/Font Awesome 7 Free-Regular-400.otf"
-    PROPERTIES QT_RESOURCE_ALIAS "fonts/Font Awesome 7 Free-Regular-400.otf"
-)
-set_source_files_properties(
-    "QtAwesome/fonts/Font Awesome 7 Free-Solid-900.otf"
-    PROPERTIES QT_RESOURCE_ALIAS "fonts/Font Awesome 7 Free-Solid-900.otf"
-)
-
-qt_add_resources(raw-processor qtawesome_fonts
-    PREFIX "/"
-    FILES
-        "QtAwesome/fonts/Font Awesome 7 Brands-Regular-400.otf"
-        "QtAwesome/fonts/Font Awesome 7 Free-Regular-400.otf"
-        "QtAwesome/fonts/Font Awesome 7 Free-Solid-900.otf"
-)
+target_include_directories(raw-processor PRIVATE src src/core src/processing src/ui QtAwesome)
 
 target_link_libraries(raw-processor
     PRIVATE
@@ -98,11 +83,25 @@ set_target_properties(raw-processor PROPERTIES
 
 include(GNUInstallDirs)
 
+set(RAW_PROCESSOR_PORTABLE_DIR "${CMAKE_BINARY_DIR}/portable-release")
+
 install(TARGETS raw-processor
     BUNDLE  DESTINATION .
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
+
+install(TARGETS raw
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+)
+
+if(WIN32)
+    # Install OpenMP runtime DLL bundled with the MinGW toolchain.
+    # libraw is compiled with OpenMP support, so libgomp-1.dll must ship next to the executable.
+    get_filename_component(_compiler_bin "${CMAKE_CXX_COMPILER}" DIRECTORY)
+    install(FILES "${_compiler_bin}/libgomp-1.dll" DESTINATION ${CMAKE_INSTALL_BINDIR})
+endif()
 
 qt_generate_deploy_app_script(
     TARGET raw-processor
@@ -110,3 +109,12 @@ qt_generate_deploy_app_script(
     NO_UNSUPPORTED_PLATFORM_ERROR
 )
 install(SCRIPT ${deploy_script})
+
+add_custom_target(portable-release
+    COMMAND ${CMAKE_COMMAND} -E rm -rf "${RAW_PROCESSOR_PORTABLE_DIR}"
+    COMMAND ${CMAKE_COMMAND} -E make_directory "${RAW_PROCESSOR_PORTABLE_DIR}"
+    COMMAND ${CMAKE_COMMAND} --install "${CMAKE_BINARY_DIR}" --prefix "${RAW_PROCESSOR_PORTABLE_DIR}"
+    DEPENDS raw-processor
+    USES_TERMINAL
+    COMMENT "Creating portable release folder in ${RAW_PROCESSOR_PORTABLE_DIR}"
+)
