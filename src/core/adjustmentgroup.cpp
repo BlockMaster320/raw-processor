@@ -1,20 +1,20 @@
-#include "adjustmentcelldata.h"
+#include "adjustmentgroup.h"
 
 #include <QJsonObject>
 #include <QJsonArray>
 
-AdjustmentCellData::AdjustmentCellData()
+AdjustmentGroup::AdjustmentGroup()
     : id(QUuid()), name("Unnamed"), isEnabled(true), isGlobal(false) {}
 
-AdjustmentCellData::AdjustmentCellData(const QString& cellName)
+AdjustmentGroup::AdjustmentGroup(const QString& cellName)
     : id(QUuid()), name(cellName), isEnabled(true), isGlobal(false) {}
 
-bool AdjustmentCellData::isLinked() const {
+bool AdjustmentGroup::isLinked() const {
     return !id.isNull();
 }
 
 // Creates a deep copy of all the adjustments.
-std::unordered_map<AdjType, std::unique_ptr<Adjustment>> AdjustmentCellData::cloneAdjustments() const {
+std::unordered_map<AdjType, std::unique_ptr<Adjustment>> AdjustmentGroup::cloneAdjustments() const {
     std::unordered_map<AdjType, std::unique_ptr<Adjustment>> cloned;
     for (const auto& [type, adj] : adjustments) {
         if (adj) {
@@ -24,7 +24,7 @@ std::unordered_map<AdjType, std::unique_ptr<Adjustment>> AdjustmentCellData::clo
     return cloned;
 }
 
-QJsonObject AdjustmentCellData::toJson() const {
+QJsonObject AdjustmentGroup::toJson() const {
     QJsonObject obj;
     obj["id"] = id.toString();
     obj["name"] = name;
@@ -61,7 +61,7 @@ QJsonObject AdjustmentCellData::toJson() const {
     return obj;
 }
 
-void AdjustmentCellData::fromJson(const QJsonObject& obj) {
+void AdjustmentGroup::fromJson(const QJsonObject& obj) {
     // Only update ID if present in JSON (preserves existing ID when loading partial JSON)
     if (obj.contains("id")) {
         id = QUuid(obj.value("id").toString());
@@ -115,8 +115,8 @@ void AdjustmentCellData::fromJson(const QJsonObject& obj) {
     }
 }
 
-std::shared_ptr<AdjustmentCellData> AdjustmentCellData::createDefault() {
-    auto data = std::make_shared<AdjustmentCellData>("Default");
+std::shared_ptr<AdjustmentGroup> AdjustmentGroup::createDefault() {
+    auto data = std::make_shared<AdjustmentGroup>("Default");
     data->isEnabled = true;
     return data;
 }

@@ -6,8 +6,8 @@
 
 class ImageManager {
 public:
-    void loadGroup(QWidget* parent);
+    void loadCollection(QWidget* parent);
 
     std::vector<std::shared_ptr<Image>> images;
-    QString currentGroupPath;
+    QString localCollectionPath;
 };

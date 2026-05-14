@@ -3,7 +3,7 @@
 #include <QFileDialog>
 #include <QDir>
 
-void ImageManager::loadGroup(QWidget *parent)
+void ImageManager::loadCollection(QWidget *parent)
 {
 
     // QFileDialog dialog;
@@ -19,6 +19,9 @@ void ImageManager::loadGroup(QWidget *parent)
 
     const QString dir = QFileDialog::getExistingDirectory(parent, "Select image folder");
     if (dir.isEmpty()) return;
+
+    // Keep the selected folder so adjustment/preset persistence can initialize paths.
+    localCollectionPath = dir;
 
     QDir directory(dir);
     QStringList files = directory.entryList(

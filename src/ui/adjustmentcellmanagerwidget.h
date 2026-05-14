@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../core/adjustmentcellmanager.h"
+#include "../core/adjustmentmanager.h"
 
 #include <memory>
 
@@ -14,14 +14,14 @@
 #include <QListWidgetItem>
 
 class Image;
-class AdjustmentCellData;
+class AdjustmentGroup;
 
 // Widget for managing adjustment cell presets and applying cells to images
 class AdjustmentCellManagerWidget : public QWidget {
     Q_OBJECT
 
 public:
-    explicit AdjustmentCellManagerWidget(std::shared_ptr<AdjustmentCellManager> acm, QWidget* parent = nullptr);
+    explicit AdjustmentCellManagerWidget(std::shared_ptr<AdjustmentManager> acm, QWidget* parent = nullptr);
 
     void updatePresetList();
     void updateActiveCell();
@@ -50,7 +50,7 @@ private:
     void setupConnections();
     void populatePresetList();
 
-    std::shared_ptr<AdjustmentCellManager> acm;
+    std::shared_ptr<AdjustmentManager> acm;
     QString previouslySelectedPresetId;  // track preset selection across scope changes
 
     // UI Components

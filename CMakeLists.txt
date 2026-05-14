@@ -27,10 +27,10 @@ qt_add_executable(raw-processor
     src/core/adjustment.cpp
     src/core/adjustmentcell.h
     src/core/adjustmentcell.cpp
-    src/core/adjustmentcelldata.h
-    src/core/adjustmentcelldata.cpp
-    src/core/adjustmentcellmanager.h
-    src/core/adjustmentcellmanager.cpp
+    src/core/adjustmentgroup.h
+    src/core/adjustmentgroup.cpp
+    src/core/adjustmentmanager.h
+    src/core/adjustmentmanager.cpp
 
     src/ui/uiconstants.h
     src/ui/mainwindow.cpp

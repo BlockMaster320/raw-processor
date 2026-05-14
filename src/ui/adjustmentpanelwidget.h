@@ -12,7 +12,7 @@
 #include <QPoint>
 
 class Image;
-class AdjustmentCellManager;
+class AdjustmentManager;
 class AdjustmentCellWidget;
 
 // UI widget that displays adjustment cells for the current image.
@@ -21,7 +21,7 @@ class AdjustmentPanelWidget : public QWidget {
 public:
     explicit AdjustmentPanelWidget(QWidget* parent = nullptr);
 
-    void setAdjustmentCellManager(std::shared_ptr<AdjustmentCellManager> acm);
+    void setAdjustmentCellManager(std::shared_ptr<AdjustmentManager> acm);
     void setImage(std::shared_ptr<Image> image);
     void clearActiveCellSelection();
     void updateCellVisualStates();  // Update visual states of all cell widgets
@@ -57,6 +57,6 @@ private:
 
     std::shared_ptr<Image> currentImage;
     AdjustmentCell* activeCell = nullptr;
-    std::shared_ptr<AdjustmentCellManager> adjustmentCellManager;
+    std::shared_ptr<AdjustmentManager> adjustmentCellManager;
 };
 

@@ -1,6 +1,6 @@
 #include "exporter.h"
 
-#include "core/adjustmentcellmanager.h"
+#include "core/adjustmentmanager.h"
 #include "core/image.h"
 #include "imageprocessor.h"
 #include "ui/imageviewer.h"
@@ -34,7 +34,7 @@ QString buildUniqueExportPath(const QString& directory, const QString& baseName)
 Exporter::Exporter(ImageViewer* viewer) : viewer(viewer) {}
 
 // Exports the currently selected images to JPEG format, applying their adjustments.
-bool Exporter::exportSelectedImages(QWidget* parent, const std::shared_ptr<AdjustmentCellManager>& adjustmentCellManager)
+bool Exporter::exportSelectedImages(QWidget* parent, const std::shared_ptr<AdjustmentManager>& adjustmentCellManager)
 {
     if (!viewer || !adjustmentCellManager) {
         return false;

@@ -1055,10 +1055,10 @@ raw-processor_autogen/timestamp: \
 	C:/Storage/FIT/BP/raw-processor/src/core/adjustment.h \
 	C:/Storage/FIT/BP/raw-processor/src/core/adjustmentcell.cpp \
 	C:/Storage/FIT/BP/raw-processor/src/core/adjustmentcell.h \
-	C:/Storage/FIT/BP/raw-processor/src/core/adjustmentcelldata.cpp \
-	C:/Storage/FIT/BP/raw-processor/src/core/adjustmentcelldata.h \
-	C:/Storage/FIT/BP/raw-processor/src/core/adjustmentcellmanager.cpp \
-	C:/Storage/FIT/BP/raw-processor/src/core/adjustmentcellmanager.h \
+	C:/Storage/FIT/BP/raw-processor/src/core/adjustmentgroup.cpp \
+	C:/Storage/FIT/BP/raw-processor/src/core/adjustmentgroup.h \
+	C:/Storage/FIT/BP/raw-processor/src/core/adjustmentmanager.cpp \
+	C:/Storage/FIT/BP/raw-processor/src/core/adjustmentmanager.h \
 	C:/Storage/FIT/BP/raw-processor/src/core/image.cpp \
 	C:/Storage/FIT/BP/raw-processor/src/core/image.h \
 	C:/Storage/FIT/BP/raw-processor/src/core/imagemanager.cpp \

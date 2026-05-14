@@ -19,7 +19,7 @@ public:
     ImageViewer(QWidget *parent = nullptr);
     ~ImageViewer();
 
-    void setAdjustmentCellManager(std::shared_ptr<AdjustmentCellManager> manager);
+    void setAdjustmentManager(std::shared_ptr<AdjustmentManager> manager);
 
     virtual void initializeGL() override;
     virtual void resizeGL(int w, int h) override;
@@ -45,7 +45,7 @@ private:
     QOpenGLVertexArrayObject vaoDisplay;
 
     std::shared_ptr<Image> image;
-    std::shared_ptr<AdjustmentCellManager> adjustmentCellManager;
+    std::shared_ptr<AdjustmentManager> adjustmentManager;
     ImageProcessor imageProcessor;
 
     // Libraw-processed reference image for comparison

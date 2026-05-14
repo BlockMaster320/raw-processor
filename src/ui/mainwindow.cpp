@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     // Set up image manager, thumbnail loader and gallery
     imageManager = std::make_shared<ImageManager>();
     thumbnailLoader = std::make_shared<ThumbnailLoader>();
-    adjustmentCellManager = std::make_shared<AdjustmentCellManager>();
+    adjustmentCellManager = std::make_shared<AdjustmentManager>();
 
     gallery = new GalleryWidget(this);
     gallery->setManager(imageManager);
@@ -44,7 +44,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
     // Set up image viewer
     imageViewer = new ImageViewer(this);
-    imageViewer->setAdjustmentCellManager(adjustmentCellManager);
+    imageViewer->setAdjustmentManager(adjustmentCellManager);
     exporter = std::make_unique<Exporter>(imageViewer);
 
     // UI layout
@@ -146,7 +146,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
                              imageViewer->onAdjustmentChanged();
                          }
                      });
-    QObject::connect(adjustmentCellManager.get(), &AdjustmentCellManager::linkedCellDataChanged,
+    QObject::connect(adjustmentCellManager.get(), &AdjustmentManager::linkedCellDataChanged,
                      this, [this](QUuid cellDataId) {
                          adjustmentPanelWidget->updateCellVisualStates();
                          if (imageViewer && imageViewer->getCurrentImage() && imageViewer->getCurrentImage()->getIsLoaded()) {
@@ -160,10 +160,10 @@ MainWindow::~MainWindow() {}
 
 void MainWindow::onButtonClicked()
 {
-    imageManager->loadGroup(this);  // prompt user to select image directory
+    imageManager->loadCollection(this);  // prompt user to select image directory
     gallery->clearSelection();
-    if (!imageManager->currentGroupPath.isEmpty()) {
-        adjustmentCellManager->initialize(imageManager->currentGroupPath);
+    if (!imageManager->localCollectionPath.isEmpty()) {
+        adjustmentCellManager->initialize(imageManager->localCollectionPath);
         adjustmentCellManagerWidget->updatePresetList();
         adjustmentCellManagerWidget->updateActiveCell();
     }

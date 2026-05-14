@@ -441,11 +441,11 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "raw-processor_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 6,
 			"id" : "raw::@b2b7665b651a197228a4"
+		},
+		{
+			"id" : "raw-processor_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 0,
@@ -743,24 +743,24 @@
 		},
 		{
 			"backtrace" : 4,
-			"path" : "src/core/adjustmentcelldata.h",
+			"path" : "src/core/adjustmentgroup.h",
 			"sourceGroupIndex" : 3
 		},
 		{
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
-			"path" : "src/core/adjustmentcelldata.cpp",
+			"path" : "src/core/adjustmentgroup.cpp",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 4,
-			"path" : "src/core/adjustmentcellmanager.h",
+			"path" : "src/core/adjustmentmanager.h",
 			"sourceGroupIndex" : 3
 		},
 		{
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
-			"path" : "src/core/adjustmentcellmanager.cpp",
+			"path" : "src/core/adjustmentmanager.cpp",
 			"sourceGroupIndex" : 2
 		},
 		{

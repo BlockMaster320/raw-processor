@@ -1,6 +1,6 @@
 #pragma once
 
-#include "adjustmentcelldata.h"
+#include "adjustmentgroup.h"
 
 #include <memory>
 #include <list>
@@ -30,11 +30,11 @@ enum class PresetScope {
 
 // Represents a saved preset - a reference to shared adjustment cell data
 struct Preset {
-    std::shared_ptr<AdjustmentCellData> data;
+    std::shared_ptr<AdjustmentGroup> data;
     QString name;
     PresetScope scope;
 
-    Preset(std::shared_ptr<AdjustmentCellData> cellData, const QString& presetName, PresetScope presetScope)
+    Preset(std::shared_ptr<AdjustmentGroup> cellData, const QString& presetName, PresetScope presetScope)
         : data(std::move(cellData)), name(presetName), scope(presetScope) {}
 };
 
@@ -44,11 +44,11 @@ struct Preset {
 // - Local and global presets
 // - Applying cells to images
 // - Saving/loading from JSON files
-class AdjustmentCellManager : public QObject {
+class AdjustmentManager : public QObject {
     Q_OBJECT
 public:
-    AdjustmentCellManager();
-    ~AdjustmentCellManager();
+    AdjustmentManager();
+    ~AdjustmentManager();
 
     // Initialize manager with paths and load existing data
     void initialize(const QString& localGroupPath);
@@ -59,17 +59,17 @@ public:
     void updateCellData(const QUuid& id);
 
     // Cell data retrieval
-    std::shared_ptr<AdjustmentCellData> getCellData(const QUuid& id) const;
+    std::shared_ptr<AdjustmentGroup> getCellData(const QUuid& id) const;
 
     // Register a cell data that was loaded from a sidecar but not in the manager
-    void registerCellData(std::shared_ptr<AdjustmentCellData> cellData);
+    void registerCellData(std::shared_ptr<AdjustmentGroup> cellData);
 
     // Refresh a linked cell's data from the file (ensures latest values)
     void refreshCellData(const QUuid& id);
 
     // Active cell and image management
-    void setActiveCell(std::shared_ptr<AdjustmentCellData> cellData);
-    std::shared_ptr<AdjustmentCellData> getActiveCell() const;
+    void setActiveCell(std::shared_ptr<AdjustmentGroup> cellData);
+    std::shared_ptr<AdjustmentGroup> getActiveCell() const;
 
     void setActiveImage(std::shared_ptr<Image> image);
     std::shared_ptr<Image> getActiveImage() const;
@@ -101,10 +101,10 @@ public:
     void apply();
 
     // Cell visibility
-    void changeCellVisibility(std::shared_ptr<AdjustmentCellData> cellData, bool visible);
+    void changeCellVisibility(std::shared_ptr<AdjustmentGroup> cellData, bool visible);
 
     // Notify that a linked cell's data has been modified (e.g., slider moved)
-    void notifyCellDataChanged(std::shared_ptr<AdjustmentCellData> cellData);
+    void notifyCellDataChanged(std::shared_ptr<AdjustmentGroup> cellData);
 
 signals:
     void linkedCellDataChanged(QUuid cellDataId);
@@ -115,14 +115,14 @@ private:
     QString globalFilePath;
 
     // Cell data storage (linked cells)
-    std::map<QUuid, std::shared_ptr<AdjustmentCellData>> cellDataMap;
+    std::map<QUuid, std::shared_ptr<AdjustmentGroup>> adjustmentDataMap;
 
     // Presets
     std::list<std::shared_ptr<Preset>> localPresets;
     std::list<std::shared_ptr<Preset>> globalPresets;
 
     // Active selections
-    std::shared_ptr<AdjustmentCellData> activeCell;
+    std::shared_ptr<AdjustmentGroup> activeCell;
     std::shared_ptr<Image> activeImage;
     std::list<std::shared_ptr<Image>> selectedImages;
 

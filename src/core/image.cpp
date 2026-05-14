@@ -1,5 +1,5 @@
 #include "image.h"
-#include "core/adjustmentcellmanager.h"
+#include "core/adjustmentmanager.h"
 
 #include "libraw/libraw.h"
 #include "core/utility.h"
@@ -237,7 +237,7 @@ QString Image::getSidecarPath() const {
 	return QDir(directory).filePath(baseName + ".adjustments.json");
 }
 
-void Image::loadAdjustmentCells(AdjustmentCellManager* acm) {
+void Image::loadAdjustmentCells(AdjustmentManager* acm) {
 	adjustmentCells.clear();
 
 	// Try to load from sidecar file
@@ -280,7 +280,7 @@ void Image::loadAdjustmentCells(AdjustmentCellManager* acm) {
 							cell.data = cellData;
 						} else {
 							// Fallback: create new cell with cached adjustments from sidecar
-							cell.data = std::make_shared<AdjustmentCellData>();
+							cell.data = std::make_shared<AdjustmentGroup>();
 							cell.data->id = dataId;
 							cell.data->isGlobal = false;
 							
@@ -292,7 +292,7 @@ void Image::loadAdjustmentCells(AdjustmentCellManager* acm) {
 						}
 					} else {
 						// Load static cell (unlinked)
-						cell.data = std::make_shared<AdjustmentCellData>(cellName);
+						cell.data = std::make_shared<AdjustmentGroup>(cellName);
 
 						// Load adjustments from JSON
 						if (cellObj.contains("adjustments") && cellObj["adjustments"].isObject()) {

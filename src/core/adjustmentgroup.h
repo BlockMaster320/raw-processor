@@ -11,12 +11,12 @@
 #include <QJsonObject>
 
 // Represents the shared data of a dynamically linked adjustment cell.
-// Multiple AdjustmentCell instances can point to the same AdjustmentCellData
+// Multiple AdjustmentCell instances can point to the same AdjustmentGroup
 // to create dynamic linking - changes to this data affect all linked cells.
-class AdjustmentCellData {
+class AdjustmentGroup {
 public:
-    AdjustmentCellData();
-    explicit AdjustmentCellData(const QString& cellName);
+    AdjustmentGroup();
+    explicit AdjustmentGroup(const QString& cellName);
 
     QUuid id;  // unique identifier; QUuid() if not dynamically linked
     QString name;
@@ -36,5 +36,5 @@ public:
     void fromJson(const QJsonObject& obj);
 
     // Create a default/base cell data
-    static std::shared_ptr<AdjustmentCellData> createDefault();
+    static std::shared_ptr<AdjustmentGroup> createDefault();
 };

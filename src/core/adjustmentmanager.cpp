@@ -1,4 +1,4 @@
-#include "adjustmentcellmanager.h"
+#include "adjustmentmanager.h"
 #include "image.h"
 
 #include <QJsonDocument>
@@ -9,8 +9,8 @@
 #include <QDebug>
 
 namespace {
-std::shared_ptr<AdjustmentCellData> ensurePresetCellData(
-    std::map<QUuid, std::shared_ptr<AdjustmentCellData>>& cellDataMap,
+std::shared_ptr<AdjustmentGroup> ensurePresetCellData(
+    std::map<QUuid, std::shared_ptr<AdjustmentGroup>>& cellDataMap,
     const QUuid& dataId,
     const QString& presetName,
     bool isGlobal
@@ -25,7 +25,7 @@ std::shared_ptr<AdjustmentCellData> ensurePresetCellData(
     }
 
     // Keep preset links valid even if the cells object is missing this entry.
-    auto cellData = std::make_shared<AdjustmentCellData>(presetName);
+    auto cellData = std::make_shared<AdjustmentGroup>(presetName);
     cellData->id = dataId;
     cellData->isGlobal = isGlobal;
     cellDataMap[dataId] = cellData;
@@ -33,14 +33,14 @@ std::shared_ptr<AdjustmentCellData> ensurePresetCellData(
 }
 }
 
-AdjustmentCellManager::AdjustmentCellManager()
+AdjustmentManager::AdjustmentManager()
     : applyMode(ApplyMode::Copy), presetListMode(PresetScope::Local), idCounter(0) {}
 
-AdjustmentCellManager::~AdjustmentCellManager() {}
+AdjustmentManager::~AdjustmentManager() {}
 
-void AdjustmentCellManager::initialize(const QString& localGroupPath) {
+void AdjustmentManager::initialize(const QString& localGroupPath) {
     // Reset in-memory state before loading from disk to avoid duplicate entries.
-    cellDataMap.clear();
+    adjustmentDataMap.clear();
     localPresets.clear();
     globalPresets.clear();
     activeCell.reset();
@@ -60,12 +60,12 @@ void AdjustmentCellManager::initialize(const QString& localGroupPath) {
     loadData(localGroupPath);
 }
 
-void AdjustmentCellManager::loadData(const QString& localGroupPath) {
+void AdjustmentManager::loadData(const QString& localGroupPath) {
     loadLocalData();
     loadGlobalData();
 }
 
-void AdjustmentCellManager::loadLocalData() {
+void AdjustmentManager::loadLocalData() {
     if (localFilePath.isEmpty()) return;
 
     QFile file(localFilePath);
@@ -89,7 +89,7 @@ void AdjustmentCellManager::loadLocalData() {
             if (!cellValue.isObject()) continue;
 
             QJsonObject cellObj = cellValue.toObject();
-            auto cellData = std::make_shared<AdjustmentCellData>();
+            auto cellData = std::make_shared<AdjustmentGroup>();
             cellData->fromJson(cellObj);
 
             // Ensure ID matches the key
@@ -100,7 +100,7 @@ void AdjustmentCellManager::loadLocalData() {
                 cellData->id = generateId();
             }
 
-            cellDataMap[cellData->id] = cellData;
+            adjustmentDataMap[cellData->id] = cellData;
         }
     } else if (root.contains("cellData") && root["cellData"].isArray()) {
         // Backward compatibility: migrate old array format to ID-keyed format
@@ -109,14 +109,14 @@ void AdjustmentCellManager::loadLocalData() {
             if (!cellJson.isObject()) continue;
 
             QJsonObject cellObj = cellJson.toObject();
-            auto cellData = std::make_shared<AdjustmentCellData>();
+            auto cellData = std::make_shared<AdjustmentGroup>();
             cellData->fromJson(cellObj);
 
             if (cellData->id.isNull()) {
                 cellData->id = generateId();
             }
 
-            cellDataMap[cellData->id] = cellData;
+            adjustmentDataMap[cellData->id] = cellData;
         }
         // Save in new format
         saveLocalData();
@@ -132,7 +132,7 @@ void AdjustmentCellManager::loadLocalData() {
             QString name = presetObj.value("name").toString("Unnamed Preset");
             QString idStr = presetObj.value("dataId").toString();
             QUuid dataId = idStr.isEmpty() ? QUuid() : QUuid(idStr);
-            auto presetData = ensurePresetCellData(cellDataMap, dataId, name, false);
+            auto presetData = ensurePresetCellData(adjustmentDataMap, dataId, name, false);
 
             auto preset = std::make_shared<Preset>(presetData, name, PresetScope::Local);
             localPresets.push_back(preset);
@@ -140,7 +140,7 @@ void AdjustmentCellManager::loadLocalData() {
     }
 }
 
-void AdjustmentCellManager::loadGlobalData() {
+void AdjustmentManager::loadGlobalData() {
     if (globalFilePath.isEmpty()) return;
 
     QFile file(globalFilePath);
@@ -164,7 +164,7 @@ void AdjustmentCellManager::loadGlobalData() {
             if (!cellValue.isObject()) continue;
 
             QJsonObject cellObj = cellValue.toObject();
-            auto cellData = std::make_shared<AdjustmentCellData>();
+            auto cellData = std::make_shared<AdjustmentGroup>();
             cellData->fromJson(cellObj);
             cellData->isGlobal = true;
 
@@ -176,7 +176,7 @@ void AdjustmentCellManager::loadGlobalData() {
                 cellData->id = generateId();
             }
 
-            cellDataMap[cellData->id] = cellData;
+            adjustmentDataMap[cellData->id] = cellData;
         }
     } else if (root.contains("cellData") && root["cellData"].isArray()) {
         // Backward compatibility: migrate old array format
@@ -185,7 +185,7 @@ void AdjustmentCellManager::loadGlobalData() {
             if (!cellJson.isObject()) continue;
 
             QJsonObject cellObj = cellJson.toObject();
-            auto cellData = std::make_shared<AdjustmentCellData>();
+            auto cellData = std::make_shared<AdjustmentGroup>();
             cellData->fromJson(cellObj);
             cellData->isGlobal = true;
 
@@ -193,7 +193,7 @@ void AdjustmentCellManager::loadGlobalData() {
                 cellData->id = generateId();
             }
 
-            cellDataMap[cellData->id] = cellData;
+            adjustmentDataMap[cellData->id] = cellData;
         }
         // Save in new format
         saveGlobalData();
@@ -209,7 +209,7 @@ void AdjustmentCellManager::loadGlobalData() {
             QString name = presetObj.value("name").toString("Unnamed Preset");
             QString idStr = presetObj.value("dataId").toString();
             QUuid dataId = idStr.isEmpty() ? QUuid() : QUuid(idStr);
-            auto presetData = ensurePresetCellData(cellDataMap, dataId, name, true);
+            auto presetData = ensurePresetCellData(adjustmentDataMap, dataId, name, true);
 
             auto preset = std::make_shared<Preset>(presetData, name, PresetScope::Global);
             globalPresets.push_back(preset);
@@ -217,19 +217,19 @@ void AdjustmentCellManager::loadGlobalData() {
     }
 }
 
-void AdjustmentCellManager::saveData() {
+void AdjustmentManager::saveData() {
     saveLocalData();
     saveGlobalData();
 }
 
-void AdjustmentCellManager::saveLocalData() {
+void AdjustmentManager::saveLocalData() {
     if (localFilePath.isEmpty()) return;
 
     QJsonObject root;
 
     // Save local cell data as ID-keyed object
     QJsonObject cellsObj;
-    for (const auto& [id, cellData] : cellDataMap) {
+    for (const auto& [id, cellData] : adjustmentDataMap) {
         if (cellData->isGlobal) continue;  // Skip global cells
         cellsObj[id.toString()] = cellData->toJson();
     }
@@ -259,14 +259,14 @@ void AdjustmentCellManager::saveLocalData() {
     file.close();
 }
 
-void AdjustmentCellManager::saveGlobalData() {
+void AdjustmentManager::saveGlobalData() {
     if (globalFilePath.isEmpty()) return;
 
     QJsonObject root;
 
     // Save global cell data as ID-keyed object
     QJsonObject cellsObj;
-    for (const auto& [id, cellData] : cellDataMap) {
+    for (const auto& [id, cellData] : adjustmentDataMap) {
         if (!cellData->isGlobal) continue;  // Skip local cells
         cellsObj[id.toString()] = cellData->toJson();
     }
@@ -296,28 +296,28 @@ void AdjustmentCellManager::saveGlobalData() {
     file.close();
 }
 
-void AdjustmentCellManager::updateCellData(const QUuid& id) {
+void AdjustmentManager::updateCellData(const QUuid& id) {
     // Update the cell in the appropriate file
-    auto it = cellDataMap.find(id);
-    if (it != cellDataMap.end() && it->second->isGlobal) {
+    auto it = adjustmentDataMap.find(id);
+    if (it != adjustmentDataMap.end() && it->second->isGlobal) {
         saveGlobalData();
     } else {
         saveLocalData();
     }
 }
 
-std::shared_ptr<AdjustmentCellData> AdjustmentCellManager::getCellData(const QUuid& id) const {
-    auto it = cellDataMap.find(id);
-    return it != cellDataMap.end() ? it->second : nullptr;
+std::shared_ptr<AdjustmentGroup> AdjustmentManager::getCellData(const QUuid& id) const {
+    auto it = adjustmentDataMap.find(id);
+    return it != adjustmentDataMap.end() ? it->second : nullptr;
 }
 
-void AdjustmentCellManager::registerCellData(std::shared_ptr<AdjustmentCellData> cellData) {
+void AdjustmentManager::registerCellData(std::shared_ptr<AdjustmentGroup> cellData) {
     if (cellData && !cellData->id.isNull()) {
-        cellDataMap[cellData->id] = cellData;
+        adjustmentDataMap[cellData->id] = cellData;
     }
 }
 
-void AdjustmentCellManager::refreshCellData(const QUuid& id) {
+void AdjustmentManager::refreshCellData(const QUuid& id) {
     if (id.isNull()) return;
 
     // Try to reload from local file first
@@ -334,8 +334,8 @@ void AdjustmentCellManager::refreshCellData(const QUuid& id) {
                     QString idStr = id.toString();
                     if (cellsObj.contains(idStr)) {
                         QJsonObject cellObj = cellsObj.value(idStr).toObject();
-                        auto it = cellDataMap.find(id);
-                        if (it != cellDataMap.end()) {
+                        auto it = adjustmentDataMap.find(id);
+                        if (it != adjustmentDataMap.end()) {
                             // Update existing cell data from file
                             it->second->fromJson(cellObj);
                         }
@@ -360,8 +360,8 @@ void AdjustmentCellManager::refreshCellData(const QUuid& id) {
                     QString idStr = id.toString();
                     if (cellsObj.contains(idStr)) {
                         QJsonObject cellObj = cellsObj.value(idStr).toObject();
-                        auto it = cellDataMap.find(id);
-                        if (it != cellDataMap.end()) {
+                        auto it = adjustmentDataMap.find(id);
+                        if (it != adjustmentDataMap.end()) {
                             // Update existing cell data from file
                             it->second->fromJson(cellObj);
                         }
@@ -372,23 +372,23 @@ void AdjustmentCellManager::refreshCellData(const QUuid& id) {
     }
 }
 
-void AdjustmentCellManager::setActiveCell(std::shared_ptr<AdjustmentCellData> cellData) {
+void AdjustmentManager::setActiveCell(std::shared_ptr<AdjustmentGroup> cellData) {
     activeCell = cellData;
 }
 
-std::shared_ptr<AdjustmentCellData> AdjustmentCellManager::getActiveCell() const {
+std::shared_ptr<AdjustmentGroup> AdjustmentManager::getActiveCell() const {
     return activeCell;
 }
 
-void AdjustmentCellManager::setActiveImage(std::shared_ptr<Image> image) {
+void AdjustmentManager::setActiveImage(std::shared_ptr<Image> image) {
     activeImage = image;
 }
 
-std::shared_ptr<Image> AdjustmentCellManager::getActiveImage() const {
+std::shared_ptr<Image> AdjustmentManager::getActiveImage() const {
     return activeImage;
 }
 
-void AdjustmentCellManager::selectImage(std::shared_ptr<Image> image, bool clearSelection) {
+void AdjustmentManager::selectImage(std::shared_ptr<Image> image, bool clearSelection) {
     if (clearSelection) {
         selectedImages.clear();
     }
@@ -398,7 +398,7 @@ void AdjustmentCellManager::selectImage(std::shared_ptr<Image> image, bool clear
     }
 }
 
-void AdjustmentCellManager::addToSelection(std::shared_ptr<Image> image) {
+void AdjustmentManager::addToSelection(std::shared_ptr<Image> image) {
     auto it = findImageInSelection(image);
     if (it != selectedImages.end()) {
         selectedImages.erase(it);  // Toggle selection
@@ -407,42 +407,42 @@ void AdjustmentCellManager::addToSelection(std::shared_ptr<Image> image) {
     }
 }
 
-void AdjustmentCellManager::addRangeToSelection(std::shared_ptr<Image> fromImage, std::shared_ptr<Image> toImage) {
+void AdjustmentManager::addRangeToSelection(std::shared_ptr<Image> fromImage, std::shared_ptr<Image> toImage) {
     // This would require knowing the order of images, typically managed by gallery
     // For now, just add individual images
     addToSelection(fromImage);
     addToSelection(toImage);
 }
 
-const std::list<std::shared_ptr<Image>>& AdjustmentCellManager::getSelectedImages() const {
+const std::list<std::shared_ptr<Image>>& AdjustmentManager::getSelectedImages() const {
     return selectedImages;
 }
 
-void AdjustmentCellManager::clearSelection() {
+void AdjustmentManager::clearSelection() {
     selectedImages.clear();
 }
 
-void AdjustmentCellManager::setApplyMode(ApplyMode mode) {
+void AdjustmentManager::setApplyMode(ApplyMode mode) {
     applyMode = mode;
 }
 
-AdjustmentCellManager::ApplyMode AdjustmentCellManager::getApplyMode() const {
+AdjustmentManager::ApplyMode AdjustmentManager::getApplyMode() const {
     return applyMode;
 }
 
-void AdjustmentCellManager::setPresetListMode(PresetScope scope) {
+void AdjustmentManager::setPresetListMode(PresetScope scope) {
     presetListMode = scope;
 }
 
-PresetScope AdjustmentCellManager::getPresetListMode() const {
+PresetScope AdjustmentManager::getPresetListMode() const {
     return presetListMode;
 }
 
-void AdjustmentCellManager::createPreset(const QString& presetName, bool isGlobal) {
+void AdjustmentManager::createPreset(const QString& presetName, bool isGlobal) {
     if (!activeCell) return;
 
     // Create a new linked cell data for the preset
-    auto presetData = std::make_shared<AdjustmentCellData>(presetName);
+    auto presetData = std::make_shared<AdjustmentGroup>(presetName);
     presetData->id = generateId();
     presetData->isGlobal = isGlobal;
     presetData->isEnabled = activeCell->isEnabled;
@@ -450,7 +450,7 @@ void AdjustmentCellManager::createPreset(const QString& presetName, bool isGloba
     // Deep copy adjustments from active cell
     presetData->adjustments = activeCell->cloneAdjustments();
 
-    cellDataMap[presetData->id] = presetData;
+    adjustmentDataMap[presetData->id] = presetData;
 
     auto preset = std::make_shared<Preset>(presetData, presetName,
                                           isGlobal ? PresetScope::Global : PresetScope::Local);
@@ -464,7 +464,7 @@ void AdjustmentCellManager::createPreset(const QString& presetName, bool isGloba
     }
 }
 
-void AdjustmentCellManager::createPresetFromActiveCellIfMissing(bool isGlobal) {
+void AdjustmentManager::createPresetFromActiveCellIfMissing(bool isGlobal) {
     if (!activeCell) return;
 
     // Presets must reference linked data.
@@ -474,7 +474,7 @@ void AdjustmentCellManager::createPresetFromActiveCellIfMissing(bool isGlobal) {
 
     // Ensure the linked data is managed and persisted.
     activeCell->isGlobal = isGlobal;
-    cellDataMap[activeCell->id] = activeCell;
+    adjustmentDataMap[activeCell->id] = activeCell;
 
     auto hasPresetWithDataId = [this](const QUuid& id) {
         for (const auto& preset : localPresets) {
@@ -505,7 +505,7 @@ void AdjustmentCellManager::createPresetFromActiveCellIfMissing(bool isGlobal) {
     }
 }
 
-void AdjustmentCellManager::renamePreset(std::shared_ptr<Preset> preset, const QString& newName) {
+void AdjustmentManager::renamePreset(std::shared_ptr<Preset> preset, const QString& newName) {
     if (!preset || !preset->data) return;
 
     const QString trimmedName = newName.trimmed();
@@ -524,7 +524,7 @@ void AdjustmentCellManager::renamePreset(std::shared_ptr<Preset> preset, const Q
     emit linkedCellDataChanged(preset->data->id);
 }
 
-void AdjustmentCellManager::removePreset(std::shared_ptr<Preset> preset) {
+void AdjustmentManager::removePreset(std::shared_ptr<Preset> preset) {
     if (!preset) return;
 
     if (preset->scope == PresetScope::Local) {
@@ -538,23 +538,23 @@ void AdjustmentCellManager::removePreset(std::shared_ptr<Preset> preset) {
     // Note: We keep the cell data in cellDataMap to maintain links to existing cells
 }
 
-const std::list<std::shared_ptr<Preset>>& AdjustmentCellManager::getLocalPresets() const {
+const std::list<std::shared_ptr<Preset>>& AdjustmentManager::getLocalPresets() const {
     return localPresets;
 }
 
-const std::list<std::shared_ptr<Preset>>& AdjustmentCellManager::getGlobalPresets() const {
+const std::list<std::shared_ptr<Preset>>& AdjustmentManager::getGlobalPresets() const {
     return globalPresets;
 }
 
 // Apply the active cell to all selected images based on the current apply mode.
-void AdjustmentCellManager::apply() {
+void AdjustmentManager::apply() {
     if (!activeCell) return;
 
     if (applyMode == ApplyMode::Link) {
         // Ensure the active cell has an ID (needed for linking)
         if (!activeCell->isLinked()) {
             activeCell->id = generateId();
-            cellDataMap[activeCell->id] = activeCell;
+            adjustmentDataMap[activeCell->id] = activeCell;
             // Save to local file (not global, since this is from current image)
             updateCellData(activeCell->id);
             
@@ -576,7 +576,7 @@ void AdjustmentCellManager::apply() {
             newCell->data = activeCell;
         } else {
             // Create a copy (static) cell with deep-copied adjustments
-            newCell->data = std::make_shared<AdjustmentCellData>(activeCell->name);
+            newCell->data = std::make_shared<AdjustmentGroup>(activeCell->name);
             newCell->data->isEnabled = activeCell->isEnabled;
 
             // Deep copy adjustments
@@ -589,7 +589,7 @@ void AdjustmentCellManager::apply() {
     }
 }
 
-void AdjustmentCellManager::changeCellVisibility(std::shared_ptr<AdjustmentCellData> cellData, bool visible) {
+void AdjustmentManager::changeCellVisibility(std::shared_ptr<AdjustmentGroup> cellData, bool visible) {
     if (cellData) {
         cellData->isEnabled = visible;
         updateCellData(cellData->id);
@@ -597,7 +597,7 @@ void AdjustmentCellManager::changeCellVisibility(std::shared_ptr<AdjustmentCellD
 }
 
 // Detach the given cell from its linked data, making it a static cell with copied adjustments.
-void AdjustmentCellManager::notifyCellDataChanged(std::shared_ptr<AdjustmentCellData> cellData) {
+void AdjustmentManager::notifyCellDataChanged(std::shared_ptr<AdjustmentGroup> cellData) {
     if (cellData) {
         if (cellData->isLinked()) {
             // Persist the updated cell data to the local/global preset file
@@ -615,11 +615,11 @@ void AdjustmentCellManager::notifyCellDataChanged(std::shared_ptr<AdjustmentCell
     }
 }
 
-std::list<std::shared_ptr<Image>>::iterator AdjustmentCellManager::findImageInSelection(std::shared_ptr<Image> image) {
+std::list<std::shared_ptr<Image>>::iterator AdjustmentManager::findImageInSelection(std::shared_ptr<Image> image) {
     return std::find(selectedImages.begin(), selectedImages.end(), image);
 }
 
-QUuid AdjustmentCellManager::generateId() {
+QUuid AdjustmentManager::generateId() {
     // Generate a UUID based on counter for deterministic testing
     // In production, could use QUuid::createUuid()
     return QUuid::createUuid();

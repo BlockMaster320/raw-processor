@@ -46,6 +46,6 @@ private:
     static constexpr int kOuterPadding = 8;
     static constexpr int kVerticalPadding = 0;
 
-    std::shared_ptr<ImageManager> manager;
+    std::shared_ptr<ImageManager> imageManager;
     std::shared_ptr<ThumbnailLoader> thumbnailLoader;
 };

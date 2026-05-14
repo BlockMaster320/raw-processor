@@ -411,8 +411,7 @@ void ImageProcessor::renderAdjustmentPass()
                 it->second->apply(*this);
         }
 
-        // Flush this cell's pending global uniforms before moving to the next cell.
-        renderGlobalAdjustments();
+        renderGlobalAdjustments();  // flush any accumulated global adjustment uniforms before processing the next cell
     }
 
     renderPostprocessPass();    // tone mapping and Rec.2020 -> sRGB conversion

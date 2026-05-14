@@ -15,7 +15,7 @@
 #include <QFrame>
 
 namespace {
-std::shared_ptr<Preset> findPresetById(std::shared_ptr<AdjustmentCellManager> acm, const QString& idStr) {
+std::shared_ptr<Preset> findPresetById(std::shared_ptr<AdjustmentManager> acm, const QString& idStr) {
     const QUuid id = QUuid(idStr);
     if (id.isNull()) {
         return nullptr;
@@ -39,24 +39,24 @@ std::shared_ptr<Preset> findPresetById(std::shared_ptr<AdjustmentCellManager> ac
 }
 
 void setApplyModeDependentState(
-    AdjustmentCellManager::ApplyMode mode,
+    AdjustmentManager::ApplyMode mode,
     QLabel* autoPresetLabel,
     QPushButton* autoPresetOffButton,
     QPushButton* autoPresetOnButton
 ) {
-    const bool enabled = (mode == AdjustmentCellManager::ApplyMode::Link);
+    const bool enabled = (mode == AdjustmentManager::ApplyMode::Link);
     autoPresetLabel->setEnabled(enabled);
     autoPresetOffButton->setEnabled(enabled);
     autoPresetOnButton->setEnabled(enabled);
 }
 }
 
-AdjustmentCellManagerWidget::AdjustmentCellManagerWidget(std::shared_ptr<AdjustmentCellManager> acm, QWidget* parent)
+AdjustmentCellManagerWidget::AdjustmentCellManagerWidget(std::shared_ptr<AdjustmentManager> acm, QWidget* parent)
     : QWidget(parent), acm(acm) {
     setupUI();
     setupConnections();
 
-    connect(acm.get(), &AdjustmentCellManager::linkedCellDataChanged, this, [this](QUuid cellDataId) {
+    connect(acm.get(), &AdjustmentManager::linkedCellDataChanged, this, [this](QUuid cellDataId) {
         if (cellDataId.isNull()) {
             return;
         }
@@ -177,7 +177,7 @@ void AdjustmentCellManagerWidget::setupUI() {
     activeCellHeaderRowLayout->setContentsMargins(8, 0, 8, 0);
     //activeCellHeaderRowLayout->addSpacing(8);
 
-    auto* activeCellSectionLabel = new QLabel("Active Cell", activeCellHeaderRow);
+    auto* activeCellSectionLabel = new QLabel("Active Cell/Preset", activeCellHeaderRow);
     styleSectionHeader(activeCellSectionLabel);
     activeCellHeaderRowLayout->addWidget(activeCellSectionLabel);
     activeCellHeaderRowLayout->addStretch();
@@ -285,7 +285,7 @@ void AdjustmentCellManagerWidget::setupUI() {
     applyModeGroup->addButton(copyModeButton, 0);
     applyModeGroup->addButton(linkModeButton, 1);
 
-    if (acm->getApplyMode() == AdjustmentCellManager::ApplyMode::Link) {
+    if (acm->getApplyMode() == AdjustmentManager::ApplyMode::Link) {
         linkModeButton->setChecked(true);
     } else {
         copyModeButton->setChecked(true);
@@ -515,7 +515,7 @@ void AdjustmentCellManagerWidget::onApplyClicked() {
 
     // Optional automation: if applying in link mode, add current linked data as a preset if missing.
     const bool autoAddPreset = autoPresetOnButton && autoPresetOnButton->isChecked();
-    if (autoAddPreset && acm->getApplyMode() == AdjustmentCellManager::ApplyMode::Link) {
+    if (autoAddPreset && acm->getApplyMode() == AdjustmentManager::ApplyMode::Link) {
         const bool isGlobal = (acm->getPresetListMode() == PresetScope::Global);
         acm->createPresetFromActiveCellIfMissing(isGlobal);
         updatePresetList();
@@ -533,8 +533,8 @@ void AdjustmentCellManagerWidget::onSaveAsPresetClicked() {
 
 void AdjustmentCellManagerWidget::onApplyModeChanged(int modeId) {
     auto newMode = (modeId == 1)
-                       ? AdjustmentCellManager::ApplyMode::Link
-                       : AdjustmentCellManager::ApplyMode::Copy;
+                       ? AdjustmentManager::ApplyMode::Link
+                       : AdjustmentManager::ApplyMode::Copy;
     acm->setApplyMode(newMode);
     setApplyModeDependentState(newMode, autoPresetLabel, autoPresetOffButton, autoPresetOnButton);
 }

@@ -3,7 +3,7 @@
 #include "uiconstants.h"
 #include "../core/image.h"
 #include "../core/adjustmentcell.h"
-#include "../core/adjustmentcellmanager.h"
+#include "../core/adjustmentmanager.h"
 
 #include <QFrame>
 #include <QPushButton>
@@ -56,7 +56,7 @@ AdjustmentPanelWidget::AdjustmentPanelWidget(QWidget* parent) : QWidget(parent)
     dropIndicator->hide();
 }
 
-void AdjustmentPanelWidget::setAdjustmentCellManager(std::shared_ptr<AdjustmentCellManager> acm) {
+void AdjustmentPanelWidget::setAdjustmentCellManager(std::shared_ptr<AdjustmentManager> acm) {
     adjustmentCellManager = acm;
 }
 
@@ -114,7 +114,7 @@ void AdjustmentPanelWidget::setImage(std::shared_ptr<Image> image)
                         return;
                     }
 
-                    std::shared_ptr<AdjustmentCellData> previouslyActiveData =
+                    std::shared_ptr<AdjustmentGroup> previouslyActiveData =
                         (activeCell && activeCell->data) ? activeCell->data : nullptr;
 
                     std::set<Image*> touchedImages;
@@ -228,7 +228,7 @@ void AdjustmentPanelWidget::setImage(std::shared_ptr<Image> image)
                         return;
                     }
 
-                    auto detached = std::make_shared<AdjustmentCellData>(cell.data->name);
+                    auto detached = std::make_shared<AdjustmentGroup>(cell.data->name);
                     detached->isEnabled = cell.data->isEnabled;
                     detached->isGlobal = false;
                     detached->id = QUuid();
@@ -447,7 +447,7 @@ void AdjustmentPanelWidget::performDrop()
     if (sourceIdx < 0 || dropTargetIndex == sourceIdx || dropTargetIndex == sourceIdx + 1) return;
 
     // Save active cell data pointer so we can restore selection after rebuild
-    std::shared_ptr<AdjustmentCellData> activeCellData =
+    std::shared_ptr<AdjustmentGroup> activeCellData =
         (activeCell && activeCell->data) ? activeCell->data : nullptr;
 
     auto& cells = currentImage->adjustmentCells;

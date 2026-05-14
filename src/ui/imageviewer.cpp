@@ -1,6 +1,6 @@
 #include "imageviewer.h"
 #include "../core/utility.h"
-#include "../core/adjustmentcellmanager.h"
+#include "../core/adjustmentmanager.h"
 
 #include <QMouseEvent>
 
@@ -9,9 +9,9 @@ ImageViewer::ImageViewer(QWidget *parent)
             referenceTexture(nullptr), textureWidth(0), textureHeight(0), compareWithLibRaw(false), compareMode(0),
       isMouseDragging(false), mouseLastPos(0, 0), imgOffset(0, 0), imgZoom(0) {}
 
-void ImageViewer::setAdjustmentCellManager(std::shared_ptr<AdjustmentCellManager> manager)
+void ImageViewer::setAdjustmentManager(std::shared_ptr<AdjustmentManager> manager)
 {
-    adjustmentCellManager = manager;
+    adjustmentManager = manager;
 }
 
 ImageViewer::~ImageViewer()
@@ -132,7 +132,7 @@ void ImageViewer::setImage(std::shared_ptr<Image> newImage)
     }
 
     // Load adjustment cells for the image or generate default ones if not present
-    image->loadAdjustmentCells(adjustmentCellManager.get());
+    image->loadAdjustmentCells(adjustmentManager.get());
 
     textureWidth = image->getRawWidth();
     textureHeight = image->getRawHeight();

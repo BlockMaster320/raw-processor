@@ -1,6 +1,6 @@
 {
-    "cells": [
-        {
+    "cells": {
+        "{4f60c4fb-c276-4242-b528-a2f0e14ffd1a}": {
             "adjustments": {
                 "Contrast": [
                     0.6360000371932983
@@ -25,12 +25,16 @@
                     -0.02799999713897705
                 ]
             },
-            "collapsed": false,
-            "dataId": "{4f60c4fb-c276-4242-b528-a2f0e14ffd1a}",
-            "linked": true,
-            "name": "hehe",
-            "visible": true
+            "enabled": true,
+            "id": "{4f60c4fb-c276-4242-b528-a2f0e14ffd1a}",
+            "isGlobal": false,
+            "name": "hehe"
         }
-    ],
-    "imagePath": "C:/Storage/FIT/BP/raw-processor/textures/2024-07-10-19-DSC05473.ARW"
+    },
+    "presets": [
+        {
+            "dataId": "{4f60c4fb-c276-4242-b528-a2f0e14ffd1a}",
+            "name": "hehe"
+        }
+    ]
 }

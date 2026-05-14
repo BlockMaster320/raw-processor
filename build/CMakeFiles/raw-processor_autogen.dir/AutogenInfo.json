@@ -385,15 +385,15 @@
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/src/core/adjustmentcelldata.h",
+			"C:/Storage/FIT/BP/raw-processor/src/core/adjustmentgroup.h",
 			"MU",
-			"PRMOGMWJPH/moc_adjustmentcelldata.cpp",
+			"PRMOGMWJPH/moc_adjustmentgroup.cpp",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/src/core/adjustmentcellmanager.h",
+			"C:/Storage/FIT/BP/raw-processor/src/core/adjustmentmanager.h",
 			"MU",
-			"PRMOGMWJPH/moc_adjustmentcellmanager.cpp",
+			"PRMOGMWJPH/moc_adjustmentmanager.cpp",
 			null
 		],
 		[
@@ -582,12 +582,12 @@
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/src/core/adjustmentcelldata.cpp",
+			"C:/Storage/FIT/BP/raw-processor/src/core/adjustmentgroup.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/src/core/adjustmentcellmanager.cpp",
+			"C:/Storage/FIT/BP/raw-processor/src/core/adjustmentmanager.cpp",
 			"MU",
 			null
 		],

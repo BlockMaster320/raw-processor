@@ -36,7 +36,7 @@ QRect GalleryWidget::cellRectAt(int visualIndex, int visibleCount) const
 
 void GalleryWidget::setManager(std::shared_ptr<ImageManager> mgr)
 {
-    manager = mgr;
+    imageManager = mgr;
     clearSelection();
     update();
 }
@@ -49,20 +49,20 @@ void GalleryWidget::setThumbnailLoader(std::shared_ptr<ThumbnailLoader> loader)
 
 void GalleryWidget::paintEvent(QPaintEvent *)
 {
-    if (!manager) return;
+    if (!imageManager) return;
 
     pruneInvalidSelection();
 
     QPainter painter(this);
     const int visibleCount = visibleCellCount();
-    const int maxIndex = std::max(0, static_cast<int>(manager->images.size()) - visibleCount);
+    const int maxIndex = std::max(0, static_cast<int>(imageManager->images.size()) - visibleCount);
     baseIndex = std::clamp(baseIndex, 0, maxIndex);
 
     for (int i = 0; i < visibleCount; i++) {
         int idx = baseIndex + i;
-        if (idx >= static_cast<int>(manager->images.size())) break;
+        if (idx >= static_cast<int>(imageManager->images.size())) break;
 
-        auto img = manager->images[idx];
+        auto img = imageManager->images[idx];
 
         QRect rect = cellRectAt(i, visibleCount);
 
@@ -92,9 +92,9 @@ void GalleryWidget::wheelEvent(QWheelEvent *e)
     int steps = e->angleDelta().y() / 120;
     baseIndex -= steps;
 
-    if (manager) {
+    if (imageManager) {
         const int visibleCount = visibleCellCount();
-        int maxIndex = std::max(0, static_cast<int>(manager->images.size()) - visibleCount);
+        int maxIndex = std::max(0, static_cast<int>(imageManager->images.size()) - visibleCount);
         baseIndex = std::clamp(baseIndex, 0, maxIndex);
     }
 
@@ -103,10 +103,10 @@ void GalleryWidget::wheelEvent(QWheelEvent *e)
 
 void GalleryWidget::mousePressEvent(QMouseEvent *e)
 {
-    if (!manager || e->button() != Qt::LeftButton) return;
+    if (!imageManager || e->button() != Qt::LeftButton) return;
 
     const int index = indexAtPosition(e->pos());
-    if (index < 0 || index >= static_cast<int>(manager->images.size())) {
+    if (index < 0 || index >= static_cast<int>(imageManager->images.size())) {
         return;
     }
 
@@ -131,13 +131,13 @@ void GalleryWidget::mousePressEvent(QMouseEvent *e)
 
 void GalleryWidget::mouseDoubleClickEvent(QMouseEvent* e)
 {
-    if (!manager || e->button() != Qt::LeftButton) {
+    if (!imageManager || e->button() != Qt::LeftButton) {
         return;
     }
 
     const int index = indexAtPosition(e->pos());
-    if (index >= 0 && index < static_cast<int>(manager->images.size())) {
-        emit imageSelected(manager->images[index]);
+    if (index >= 0 && index < static_cast<int>(imageManager->images.size())) {
+        emit imageSelected(imageManager->images[index]);
     }
 }
 
@@ -151,7 +151,7 @@ void GalleryWidget::clearSelection()
 
 int GalleryWidget::indexAtPosition(const QPoint& pos) const
 {
-    if (!manager) {
+    if (!imageManager) {
         return -1;
     }
 
@@ -173,11 +173,11 @@ int GalleryWidget::indexAtPosition(const QPoint& pos) const
 void GalleryWidget::emitSelectedImagesChanged()
 {
     std::vector<std::shared_ptr<Image>> selected;
-    if (manager) {
+    if (imageManager) {
         selected.reserve(selectedIndices.size());
         for (int idx : selectedIndices) {
-            if (idx >= 0 && idx < static_cast<int>(manager->images.size())) {
-                selected.push_back(manager->images[idx]);
+            if (idx >= 0 && idx < static_cast<int>(imageManager->images.size())) {
+                selected.push_back(imageManager->images[idx]);
             }
         }
     }
@@ -187,7 +187,7 @@ void GalleryWidget::emitSelectedImagesChanged()
 
 void GalleryWidget::pruneInvalidSelection()
 {
-    if (!manager) {
+    if (!imageManager) {
         if (!selectedIndices.empty()) {
             selectedIndices.clear();
             lastSelectedIndex = -1;
@@ -196,7 +196,7 @@ void GalleryWidget::pruneInvalidSelection()
         return;
     }
 
-    const int size = static_cast<int>(manager->images.size());
+    const int size = static_cast<int>(imageManager->images.size());
     bool changed = false;
     for (auto it = selectedIndices.begin(); it != selectedIndices.end();) {
         if (*it < 0 || *it >= size) {

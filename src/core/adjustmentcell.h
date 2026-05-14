@@ -1,7 +1,7 @@
 #pragma once
 
 #include "adjustment.h"
-#include "adjustmentcelldata.h"
+#include "adjustmentgroup.h"
 
 #include <string>
 #include <vector>
@@ -13,10 +13,10 @@
 class AdjustmentCell {
 public:
     explicit AdjustmentCell(const QString& cellName = "Cell");
-    explicit AdjustmentCell(std::shared_ptr<AdjustmentCellData> cellData);
+    explicit AdjustmentCell(std::shared_ptr<AdjustmentGroup> cellData);
 
     // Core data - can be shared with other cells for dynamic linking
-    std::shared_ptr<AdjustmentCellData> data;
+    std::shared_ptr<AdjustmentGroup> data;
 
     // Instance-specific properties
     bool isVisible = true;

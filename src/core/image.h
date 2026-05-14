@@ -13,14 +13,14 @@
 #include <QVector4D>
 #include <QImage>
 
-class AdjustmentCellManager;  // Forward declaration
+class AdjustmentManager;  // Forward declaration
 
 class Image {
 public:
     explicit Image(const QString& path);
 
     bool loadRawData();
-    void loadAdjustmentCells(AdjustmentCellManager* acm = nullptr);
+    void loadAdjustmentCells(AdjustmentManager* acm = nullptr);
     void saveAdjustmentCells();
 
     // Getters & setters
