@@ -177,7 +177,7 @@ void AdjustmentCellManagerWidget::setupUI() {
     activeCellHeaderRowLayout->setContentsMargins(8, 0, 8, 0);
     //activeCellHeaderRowLayout->addSpacing(8);
 
-    auto* activeCellSectionLabel = new QLabel("Active Cell/Preset", activeCellHeaderRow);
+    auto* activeCellSectionLabel = new QLabel("Active cell/preset", activeCellHeaderRow);
     styleSectionHeader(activeCellSectionLabel);
     activeCellHeaderRowLayout->addWidget(activeCellSectionLabel);
     activeCellHeaderRowLayout->addStretch();
@@ -247,7 +247,7 @@ void AdjustmentCellManagerWidget::setupUI() {
     auto* applyControlsLayout = new QVBoxLayout(applyControlsWidget);
     applyControlsLayout->setContentsMargins(10, 10, 10, 10);
 
-    QLabel* applyControlsTitle = new QLabel("Cell Application", applyControlsWidget);
+    QLabel* applyControlsTitle = new QLabel("Cell/Preset Application", applyControlsWidget);
     applyControlsTitle->setObjectName("applyControlsTitle");
     applyControlsTitle->setAlignment(Qt::AlignCenter);
     applyControlsTitle->setAutoFillBackground(true);
@@ -522,7 +522,7 @@ void AdjustmentCellManagerWidget::onApplyClicked() {
     }
 
     emit appliedToImages();
-    qDebug() << "Cell applied to selected images";
+    // qDebug() << "Cell applied to selected images";
 }
 
 void AdjustmentCellManagerWidget::onSaveAsPresetClicked() {

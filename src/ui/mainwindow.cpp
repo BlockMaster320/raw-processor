@@ -23,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     gallery = new GalleryWidget(this);
     gallery->setManager(imageManager);
     gallery->setThumbnailLoader(thumbnailLoader);
+    gallery->setAdjustmentManager(adjustmentCellManager);
 
     connect(gallery, &GalleryWidget::imageSelected, // image selected by user -> sent to image viewer for display and processing
             this, [this](std::shared_ptr<Image> img) {
@@ -122,17 +123,19 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
                      imageViewer, &ImageViewer::onAdjustmentChanged);
     QObject::connect(adjustmentPanelWidget, &AdjustmentPanelWidget::activeCellChanged,
                      this, [this](AdjustmentCell* cell) {
-                         if (cell && cell->data) {
-                             adjustmentCellManager->setActiveCell(cell->data);
+                         if (cell && cell->adjustmentGroup) {
+                             adjustmentCellManager->setActiveCell(cell->adjustmentGroup);
                          } else {
                              adjustmentCellManager->setActiveCell(nullptr);
                          }
                          adjustmentCellManagerWidget->clearPresetSelection();
                          adjustmentCellManagerWidget->updateActiveCell();
+                         gallery->update();
                      });
     QObject::connect(adjustmentCellManagerWidget, &AdjustmentCellManagerWidget::presetActivated,
                      this, [this]() {
                          adjustmentPanelWidget->clearActiveCellSelection();
+                         gallery->update();
                      });
     QObject::connect(adjustmentCellManagerWidget, &AdjustmentCellManagerWidget::appliedToImages,
                      this, [this]() {
@@ -145,6 +148,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
                              }
                              imageViewer->onAdjustmentChanged();
                          }
+                         gallery->update();
                      });
     QObject::connect(adjustmentCellManager.get(), &AdjustmentManager::linkedCellDataChanged,
                      this, [this](QUuid cellDataId) {
@@ -152,6 +156,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
                          if (imageViewer && imageViewer->getCurrentImage() && imageViewer->getCurrentImage()->getIsLoaded()) {
                              imageViewer->onAdjustmentChanged();
                          }
+                         gallery->update();
                      });
 
 }

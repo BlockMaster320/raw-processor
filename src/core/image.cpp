@@ -105,19 +105,19 @@ bool Image::loadRawData()
 	rec2020ToSrgbMat = xyzToSrgbMat * rec2020ToXyzMat;
 
 	
-	qDebug() << "-------------- RAW IMAGE INFO --------------";
-	qDebug() << "CFA pattern: " << rawProcessor.imgdata.idata.cdesc;
-	qDebug() << "Raw image dimensions: " << rawWidth << ", " << rawHeight;
-	qDebug() << "Real image dimensions: " << imageWidth << ", " << imageHeight;
-	qDebug() << "CFA phase offset (left, top):" << leftMargin << "," << topMargin;
-	qDebug() << "cblack levels:" << cblack[0] << ", " << cblack[1] << ", " << cblack[2] << ", " << cblack[3];
-	qDebug() << "global black level:" << black;
-	qDebug() << "white level:" << white;
-	qDebug() << "WB multipliers (R,G1,B,G2):"
-			 << wbMul[0] << "," << wbMul[1] << ","
-			 << wbMul[2] << "," << wbMul[3];
+	// qDebug() << "-------------- RAW IMAGE INFO --------------";
+	// qDebug() << "CFA pattern: " << rawProcessor.imgdata.idata.cdesc;
+	// qDebug() << "Raw image dimensions: " << rawWidth << ", " << rawHeight;
+	// qDebug() << "Real image dimensions: " << imageWidth << ", " << imageHeight;
+	// qDebug() << "CFA phase offset (left, top):" << leftMargin << "," << topMargin;
+	// qDebug() << "cblack levels:" << cblack[0] << ", " << cblack[1] << ", " << cblack[2] << ", " << cblack[3];
+	// qDebug() << "global black level:" << black;
+	// qDebug() << "white level:" << white;
+	// qDebug() << "WB multipliers (R,G1,B,G2):"
+	// 		 << wbMul[0] << "," << wbMul[1] << ","
+	// 		 << wbMul[2] << "," << wbMul[3];
 
-	qDebug() << "----------------------------------";
+	// qDebug() << "----------------------------------";
 
 	isLoaded = true;
 	return true;
@@ -277,36 +277,38 @@ void Image::loadAdjustmentCells(AdjustmentManager* acm) {
 						acm->refreshCellData(dataId);
 						auto cellData = acm->getCellData(dataId);
 						if (cellData) {
-							cell.data = cellData;
+							cell.adjustmentGroup = cellData;
 						} else {
 							// Fallback: create new cell with cached adjustments from sidecar
-							cell.data = std::make_shared<AdjustmentGroup>();
-							cell.data->id = dataId;
-							cell.data->isGlobal = false;
+							cell.adjustmentGroup = std::make_shared<AdjustmentGroup>();
+							cell.adjustmentGroup->id = dataId;
+							cell.adjustmentGroup->isGlobal = false;
 							
 							if (cellObj.contains("adjustments") && cellObj["adjustments"].isObject()) {
-								cell.data->fromJson(cellObj);
-								cell.data->id = dataId;
+								cell.adjustmentGroup->fromJson(cellObj);
+								cell.adjustmentGroup->id = dataId;
 							}
-							acm->registerCellData(cell.data);
+							acm->registerCellData(cell.adjustmentGroup);
 						}
 					} else {
 						// Load static cell (unlinked)
-						cell.data = std::make_shared<AdjustmentGroup>(cellName);
+						cell.adjustmentGroup = std::make_shared<AdjustmentGroup>(cellName);
 
 						// Load adjustments from JSON
 						if (cellObj.contains("adjustments") && cellObj["adjustments"].isObject()) {
-							cell.data->fromJson(cellObj);
-							cell.data->name = cellName;
+							cell.adjustmentGroup->fromJson(cellObj);
+							cell.adjustmentGroup->name = cellName;
 						} else {
 							// Initialize with default adjustments
-							cell.data->adjustments[AdjType::Denoise]    = std::make_unique<AdjDenoise>();
-							cell.data->adjustments[AdjType::Exposure]   = std::make_unique<AdjExposure>();
-							cell.data->adjustments[AdjType::Contrast]   = std::make_unique<AdjContrast>();
-							cell.data->adjustments[AdjType::Midpoint]   = std::make_unique<AdjMidpoint>();
-							cell.data->adjustments[AdjType::PopArt]     = std::make_unique<AdjPopArt>();
-							cell.data->adjustments[AdjType::WhiteBlack] = std::make_unique<AdjWhiteBlack>();
-							cell.data->adjustments[AdjType::Saturation] = std::make_unique<AdjSaturation>();
+							cell.adjustmentGroup->adjustments[AdjType::Denoise]    = std::make_unique<AdjDenoise>();
+							cell.adjustmentGroup->adjustments[AdjType::WhiteBalance] = std::make_unique<AdjWhiteBalance>();
+							cell.adjustmentGroup->adjustments[AdjType::Exposure]   = std::make_unique<AdjExposure>();
+							cell.adjustmentGroup->adjustments[AdjType::Contrast]   = std::make_unique<AdjContrast>();
+							cell.adjustmentGroup->adjustments[AdjType::Midpoint]   = std::make_unique<AdjMidpoint>();
+							cell.adjustmentGroup->adjustments[AdjType::PopArt]     = std::make_unique<AdjPopArt>();
+							cell.adjustmentGroup->adjustments[AdjType::WhiteBlack] = std::make_unique<AdjWhiteBlack>();
+							cell.adjustmentGroup->adjustments[AdjType::Saturation] = std::make_unique<AdjSaturation>();
+							cell.adjustmentGroup->adjustments[AdjType::Vignette] = std::make_unique<AdjVignette>();
 						}
 					}
 
@@ -321,6 +323,8 @@ void Image::loadAdjustmentCells(AdjustmentManager* acm) {
 		AdjustmentCell defaultCell("Base");
 		adjustmentCells.push_back(defaultCell);
 	}
+
+	adjustmentCellsLoaded = true;
 }
 
 void Image::saveAdjustmentCells() {
@@ -335,12 +339,12 @@ void Image::saveAdjustmentCells() {
 		cellObj["linked"] = cell.isLinked();
 		cellObj["collapsed"] = cell.isCollapsed;
 
-		if (cell.data) {
-			cellObj["dataId"] = cell.data->id.toString();
-			cellObj["name"] = cell.data->name;
+		if (cell.adjustmentGroup) {
+			cellObj["dataId"] = cell.adjustmentGroup->id.toString();
+			cellObj["name"] = cell.adjustmentGroup->name;
 
 			// Serialize adjustments using the cell data's toJson method
-			QJsonObject cellDataJson = cell.data->toJson();
+			QJsonObject cellDataJson = cell.adjustmentGroup->toJson();
 			cellObj["adjustments"] = cellDataJson.value("adjustments").toObject();
 		}
 

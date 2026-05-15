@@ -2,6 +2,7 @@
 
 #include "../core/imagemanager.h"
 #include "../core/thumbnailloader.h"
+#include "../core/adjustmentmanager.h"
 
 #include <QRect>
 #include <QWidget>
@@ -18,6 +19,7 @@ public:
 
     void setManager(std::shared_ptr<ImageManager> mgr);
     void setThumbnailLoader(std::shared_ptr<ThumbnailLoader> loader);
+    void setAdjustmentManager(std::shared_ptr<AdjustmentManager> mgr);
     void clearSelection();
 
 signals:
@@ -48,4 +50,5 @@ private:
 
     std::shared_ptr<ImageManager> imageManager;
     std::shared_ptr<ThumbnailLoader> thumbnailLoader;
+    std::shared_ptr<AdjustmentManager> adjustmentManager;
 };

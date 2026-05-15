@@ -3,6 +3,8 @@
 in vec2 fragUV;
 
 uniform sampler2D imageTex;
+uniform float temperature; // warm/cool balance: -1 cools, +1 warms
+uniform float tint;        // green/magenta balance: -1 green, +1 magenta
 uniform float exposure;  // EV stops: 0 = neutral, +1 = one stop brighter, -1 = one stop darker
 uniform float contrast;  // 1 = neutral, <1 = less contrast, >1 = more contrast
 uniform float midpoint;  // 0 = black, 1 = white, 0.5 = neutral
@@ -10,6 +12,7 @@ uniform float popArt;
 uniform float white;
 uniform float black;
 uniform float saturation;
+uniform float vignette;
 
 const vec3 REC2020_LUMA = vec3(0.2627, 0.6780, 0.0593);
 
@@ -20,14 +23,30 @@ vec3 applyExposure(vec3 col, float ev) {
     return col * pow(2.0, ev);
 }
 
+vec3 applyWhiteBalance(vec3 col, float temperature, float tint) {
+    if (abs(temperature) < 1e-6 && abs(tint) < 1e-6) return col;
+
+    // float rMul = 1.0 + (0.25 * temperature) + (0.05 * tint);
+    // float bMul = 1.0 - (0.25 * temperature) + (0.05 * tint);
+    // float gMul = 1.0 - (0.10 * tint);
+
+    float rMul = 1.0 + (0.5 * temperature) + (0.1 * tint);
+    float bMul = 1.0 - (0.5 * temperature) + (0.1 * tint);
+    float gMul = 1.0 - (0.25 * tint);
+
+    return max(col * vec3(rMul, gMul, bMul), vec3(0.0));
+}
+
 vec3 applyContrast(vec3 col, float contrast, float midpoint) {
     if (abs(contrast) < 1e-6) return col;
     float con = contrast + 1.0; // convert from [-1, 1] to [0, 2] range
 
     // Simple midpoint contrast
-    col = pow(col, vec3(1.0/2.2));   // to gamma space
+    col = max(col, vec3(0.0));        // keep pow domain valid in linear space
+    col = pow(col, vec3(1.0/2.2));    // to gamma space
     col = (col - midpoint) * con + midpoint;
-    col = pow(col, vec3(2.2));    // back to linear space
+    col = max(col, vec3(0.0));        // avoid pow of negative values after contrast pivoting
+    col = pow(col, vec3(2.2));        // back to linear space
 
     // Luma-based contrast adjustment (preserves hue)
     // vec3 col_gamma = pow(col, vec3(1.0/2.2));   // to gamma space
@@ -83,16 +102,30 @@ vec3 applySaturation(vec3 col, float saturation) {
     return mix(vec3(luma), col, sat);
 }
 
+vec3 applyVignette(vec3 col, vec2 uv, float vignette) {
+    if (abs(vignette) < 1e-6) return col;
+
+    vec2 centered = uv * 2. - 1.;
+    float d = length(centered);
+    float intensity = smoothstep(0.15, 1., d);
+    intensity *= intensity;
+
+    float ev = vignette * intensity;
+    return col * pow(2.0, ev);
+}
+
 
 void main() {
     ivec2 p = ivec2(fragUV * textureSize(imageTex, 0)); // convert UV to pixel coordinates
     vec3 col = texelFetch(imageTex, p, 0).rgb;
 
+    col = applyWhiteBalance(col, temperature, tint);
     col = applyExposure(col, exposure);
     col = applyContrast(col, contrast, midpoint);
     col = applyWhiteBlackLevels(col, white, black);
     col = applyPopArt(col, popArt);
     col = applySaturation(col, saturation);
+    col = applyVignette(col, fragUV, vignette);
 
     fragColor = vec4(col, 1.0);
 }

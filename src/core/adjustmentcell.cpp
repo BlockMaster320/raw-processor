@@ -1,81 +1,53 @@
 #include "adjustmentcell.h"
 
-AdjustmentCell::AdjustmentCell(const QString& cellName)
-    : isVisible(true) {
-    // Create a new unlinked cell data with default adjustments
-    data = std::make_shared<AdjustmentGroup>(cellName);
-    data->adjustments[AdjType::Denoise]    = std::make_unique<AdjDenoise>();
-    data->adjustments[AdjType::Exposure]   = std::make_unique<AdjExposure>();
-    data->adjustments[AdjType::Contrast]   = std::make_unique<AdjContrast>();
-    data->adjustments[AdjType::Midpoint]   = std::make_unique<AdjMidpoint>();
-    data->adjustments[AdjType::PopArt]     = std::make_unique<AdjPopArt>();
-    data->adjustments[AdjType::WhiteBlack] = std::make_unique<AdjWhiteBlack>();
-    data->adjustments[AdjType::Saturation] = std::make_unique<AdjSaturation>();
-
-    // Display order: tone adjustments first, then denoise at the bottom
-    displayOrder = {
-        AdjType::Exposure,
-        AdjType::Contrast,
-        AdjType::Midpoint,
-        AdjType::WhiteBlack,
-        AdjType::Saturation,
-        AdjType::PopArt,
-        AdjType::Denoise,
-    };
-
-    // Process order: denoise first (on raw-like data), then tone adjustments
-    processOrder = {
-        AdjType::Denoise,
-        AdjType::Exposure,
-        AdjType::Contrast,
-        AdjType::Midpoint,
-        AdjType::PopArt,
-        AdjType::WhiteBlack,
-        AdjType::Saturation,
-    };
-}
-
-AdjustmentCell::AdjustmentCell(std::shared_ptr<AdjustmentGroup> cellData)
-    : data(cellData), isVisible(true) {
-    // If no data provided, create a new one with defaults
-    if (!data) {
-        data = std::make_shared<AdjustmentGroup>("Cell");
-        data->adjustments[AdjType::Denoise]    = std::make_unique<AdjDenoise>();
-        data->adjustments[AdjType::Exposure]   = std::make_unique<AdjExposure>();
-        data->adjustments[AdjType::Contrast]   = std::make_unique<AdjContrast>();
-        data->adjustments[AdjType::Midpoint]   = std::make_unique<AdjMidpoint>();
-        data->adjustments[AdjType::PopArt]     = std::make_unique<AdjPopArt>();
-        data->adjustments[AdjType::WhiteBlack] = std::make_unique<AdjWhiteBlack>();
-        data->adjustments[AdjType::Saturation] = std::make_unique<AdjSaturation>();
+AdjustmentCell::AdjustmentCell(const QString& cellName, std::shared_ptr<AdjustmentGroup> adjustmentGroup)
+    : adjustmentGroup(std::move(adjustmentGroup)), isVisible(true) {
+    // If no shared group is provided, create a new unlinked group with defaults.
+    if (!this->adjustmentGroup) {
+        this->adjustmentGroup = std::make_shared<AdjustmentGroup>(cellName);
+        this->adjustmentGroup->adjustments[AdjType::Denoise]    = std::make_unique<AdjDenoise>();
+        this->adjustmentGroup->adjustments[AdjType::WhiteBalance] = std::make_unique<AdjWhiteBalance>();
+        this->adjustmentGroup->adjustments[AdjType::Exposure]   = std::make_unique<AdjExposure>();
+        this->adjustmentGroup->adjustments[AdjType::Contrast]   = std::make_unique<AdjContrast>();
+        this->adjustmentGroup->adjustments[AdjType::Midpoint]   = std::make_unique<AdjMidpoint>();
+        // data->adjustments[AdjType::PopArt]     = std::make_unique<AdjPopArt>();
+        // data->adjustments[AdjType::WhiteBlack] = std::make_unique<AdjWhiteBlack>();
+        this->adjustmentGroup->adjustments[AdjType::Saturation] = std::make_unique<AdjSaturation>();
+        this->adjustmentGroup->adjustments[AdjType::Vignette] = std::make_unique<AdjVignette>();
     }
 
     // Set display and process order
     displayOrder = {
+        AdjType::WhiteBalance,
         AdjType::Exposure,
         AdjType::Contrast,
         AdjType::Midpoint,
-        AdjType::WhiteBlack,
+        // AdjType::WhiteBlack,
         AdjType::Saturation,
-        AdjType::PopArt,
+        // AdjType::PopArt,
         AdjType::Denoise,
+        AdjType::Vignette,
     };
 
     processOrder = {
         AdjType::Denoise,
+        AdjType::WhiteBalance,
         AdjType::Exposure,
         AdjType::Contrast,
         AdjType::Midpoint,
-        AdjType::PopArt,
-        AdjType::WhiteBlack,
+        // AdjType::PopArt,
+        // AdjType::WhiteBlack,
         AdjType::Saturation,
+        AdjType::Vignette,
     };
 }
 
+// Check whether the cell is dynamically linked
 bool AdjustmentCell::isLinked() const {
-    return data && data->isLinked();
+    return adjustmentGroup && adjustmentGroup->isLinked();
 }
 
 const std::unordered_map<AdjType, std::unique_ptr<Adjustment>>& AdjustmentCell::getAdjustments() const {
     static std::unordered_map<AdjType, std::unique_ptr<Adjustment>> empty;
-    return data ? data->adjustments : empty;
+    return adjustmentGroup ? adjustmentGroup->adjustments : empty;
 }

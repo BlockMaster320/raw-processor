@@ -40,12 +40,14 @@ QJsonObject AdjustmentGroup::toJson() const {
 
         // Map AdjType to string name
         switch (type) {
+            case AdjType::WhiteBalance: typeName = "WhiteBalance"; break;
             case AdjType::Exposure: typeName = "Exposure"; break;
             case AdjType::Contrast: typeName = "Contrast"; break;
             case AdjType::Midpoint: typeName = "Midpoint"; break;
             case AdjType::PopArt: typeName = "PopArt"; break;
             case AdjType::WhiteBlack: typeName = "WhiteBlack"; break;
             case AdjType::Saturation: typeName = "Saturation"; break;
+            case AdjType::Vignette: typeName = "Vignette"; break;
             case AdjType::Denoise: typeName = "Denoise"; break;
         }
 
@@ -92,6 +94,9 @@ void AdjustmentGroup::fromJson(const QJsonObject& obj) {
         };
 
         // Deserialize each adjustment type using templates
+        AdjWhiteBalance whiteBalance;
+        deserializeAdj("WhiteBalance", AdjType::WhiteBalance, &whiteBalance);
+
         AdjExposure exposure;
         deserializeAdj("Exposure", AdjType::Exposure, &exposure);
 
@@ -110,8 +115,19 @@ void AdjustmentGroup::fromJson(const QJsonObject& obj) {
         AdjSaturation saturation;
         deserializeAdj("Saturation", AdjType::Saturation, &saturation);
 
+        AdjVignette vignette;
+        deserializeAdj("Vignette", AdjType::Vignette, &vignette);
+
         AdjDenoise denoise;
         deserializeAdj("Denoise", AdjType::Denoise, &denoise);
+
+        // Backward compatibility for sidecars/presets saved before WhiteBalance existed.
+        if (adjustments.find(AdjType::WhiteBalance) == adjustments.end()) {
+            adjustments[AdjType::WhiteBalance] = std::make_unique<AdjWhiteBalance>();
+        }
+        if (adjustments.find(AdjType::Vignette) == adjustments.end()) {
+            adjustments[AdjType::Vignette] = std::make_unique<AdjVignette>();
+        }
     }
 }
 

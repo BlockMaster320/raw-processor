@@ -12,21 +12,16 @@
 // Represents an instance of an adjustment cell.
 class AdjustmentCell {
 public:
-    explicit AdjustmentCell(const QString& cellName = "Cell");
-    explicit AdjustmentCell(std::shared_ptr<AdjustmentGroup> cellData);
+    AdjustmentCell(const QString& cellName = "Cell", std::shared_ptr<AdjustmentGroup> adjustmentGroup = nullptr);
 
-    // Core data - can be shared with other cells for dynamic linking
-    std::shared_ptr<AdjustmentGroup> data;
+    std::shared_ptr<AdjustmentGroup> adjustmentGroup;
 
-    // Instance-specific properties
     bool isVisible = true;
     bool isCollapsed = false;
 
-    // Display and process order for adjustments
     std::vector<AdjType> displayOrder;  // order in which adjustments are shown in the UI
     std::vector<AdjType> processOrder;  // order in which adjustments are applied during rendering
 
-    // Check if this cell is dynamically linked
     bool isLinked() const;
 
     // Legacy compatibility - access adjustments through data

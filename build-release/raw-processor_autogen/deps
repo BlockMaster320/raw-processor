@@ -1046,46 +1046,46 @@ raw-processor_autogen/timestamp: \
 	C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesomeAnim.h \
 	C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesomeEnumGenerated.h \
 	C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesomeStringGenerated.h \
-	C:/Storage/FIT/BP/raw-processor/adjustment.cpp \
-	C:/Storage/FIT/BP/raw-processor/adjustment.h \
-	C:/Storage/FIT/BP/raw-processor/adjustmentcell.cpp \
-	C:/Storage/FIT/BP/raw-processor/adjustmentcell.h \
-	C:/Storage/FIT/BP/raw-processor/adjustmentcelldata.cpp \
-	C:/Storage/FIT/BP/raw-processor/adjustmentcelldata.h \
-	C:/Storage/FIT/BP/raw-processor/adjustmentcellmanager.cpp \
-	C:/Storage/FIT/BP/raw-processor/adjustmentcellmanager.h \
 	C:/Storage/FIT/BP/raw-processor/build-release/CMakeFiles/3.29.5-msvc4/CMakeCXXCompiler.cmake \
 	C:/Storage/FIT/BP/raw-processor/build-release/CMakeFiles/3.29.5-msvc4/CMakeRCCompiler.cmake \
 	C:/Storage/FIT/BP/raw-processor/build-release/CMakeFiles/3.29.5-msvc4/CMakeSystem.cmake \
 	C:/Storage/FIT/BP/raw-processor/build-release/raw-processor_autogen/moc_predefs.h \
-	C:/Storage/FIT/BP/raw-processor/exporter.cpp \
-	C:/Storage/FIT/BP/raw-processor/exporter.h \
-	C:/Storage/FIT/BP/raw-processor/image.cpp \
-	C:/Storage/FIT/BP/raw-processor/image.h \
-	C:/Storage/FIT/BP/raw-processor/imagemanager.cpp \
-	C:/Storage/FIT/BP/raw-processor/imagemanager.h \
-	C:/Storage/FIT/BP/raw-processor/imageprocessor.cpp \
-	C:/Storage/FIT/BP/raw-processor/imageprocessor.h \
-	C:/Storage/FIT/BP/raw-processor/main.cpp \
 	C:/Storage/FIT/BP/raw-processor/resources.qrc \
-	C:/Storage/FIT/BP/raw-processor/stb_image.h \
-	C:/Storage/FIT/BP/raw-processor/thumbnailloader.cpp \
-	C:/Storage/FIT/BP/raw-processor/thumbnailloader.h \
-	C:/Storage/FIT/BP/raw-processor/ui/PieMenu.cpp \
-	C:/Storage/FIT/BP/raw-processor/ui/PieMenu.h \
-	C:/Storage/FIT/BP/raw-processor/ui/adjustmentcellmanagerwidget.cpp \
-	C:/Storage/FIT/BP/raw-processor/ui/adjustmentcellmanagerwidget.h \
-	C:/Storage/FIT/BP/raw-processor/ui/adjustmentcellwidget.cpp \
-	C:/Storage/FIT/BP/raw-processor/ui/adjustmentcellwidget.h \
-	C:/Storage/FIT/BP/raw-processor/ui/adjustmentpanelwidget.cpp \
-	C:/Storage/FIT/BP/raw-processor/ui/adjustmentpanelwidget.h \
-	C:/Storage/FIT/BP/raw-processor/ui/gallerywidget.cpp \
-	C:/Storage/FIT/BP/raw-processor/ui/gallerywidget.h \
-	C:/Storage/FIT/BP/raw-processor/ui/imageviewer.cpp \
-	C:/Storage/FIT/BP/raw-processor/ui/imageviewer.h \
-	C:/Storage/FIT/BP/raw-processor/ui/mainwindow.cpp \
-	C:/Storage/FIT/BP/raw-processor/ui/mainwindow.h \
-	C:/Storage/FIT/BP/raw-processor/ui/uiconstants.h \
-	C:/Storage/FIT/BP/raw-processor/utility.cpp \
-	C:/Storage/FIT/BP/raw-processor/utility.h \
+	C:/Storage/FIT/BP/raw-processor/src/core/adjustment.cpp \
+	C:/Storage/FIT/BP/raw-processor/src/core/adjustment.h \
+	C:/Storage/FIT/BP/raw-processor/src/core/adjustmentcell.cpp \
+	C:/Storage/FIT/BP/raw-processor/src/core/adjustmentcell.h \
+	C:/Storage/FIT/BP/raw-processor/src/core/adjustmentgroup.cpp \
+	C:/Storage/FIT/BP/raw-processor/src/core/adjustmentgroup.h \
+	C:/Storage/FIT/BP/raw-processor/src/core/adjustmentmanager.cpp \
+	C:/Storage/FIT/BP/raw-processor/src/core/adjustmentmanager.h \
+	C:/Storage/FIT/BP/raw-processor/src/core/image.cpp \
+	C:/Storage/FIT/BP/raw-processor/src/core/image.h \
+	C:/Storage/FIT/BP/raw-processor/src/core/imagemanager.cpp \
+	C:/Storage/FIT/BP/raw-processor/src/core/imagemanager.h \
+	C:/Storage/FIT/BP/raw-processor/src/core/stb_image.h \
+	C:/Storage/FIT/BP/raw-processor/src/core/thumbnailloader.cpp \
+	C:/Storage/FIT/BP/raw-processor/src/core/thumbnailloader.h \
+	C:/Storage/FIT/BP/raw-processor/src/core/utility.cpp \
+	C:/Storage/FIT/BP/raw-processor/src/core/utility.h \
+	C:/Storage/FIT/BP/raw-processor/src/main.cpp \
+	C:/Storage/FIT/BP/raw-processor/src/processing/exporter.cpp \
+	C:/Storage/FIT/BP/raw-processor/src/processing/exporter.h \
+	C:/Storage/FIT/BP/raw-processor/src/processing/imageprocessor.cpp \
+	C:/Storage/FIT/BP/raw-processor/src/processing/imageprocessor.h \
+	C:/Storage/FIT/BP/raw-processor/src/ui/PieMenu.cpp \
+	C:/Storage/FIT/BP/raw-processor/src/ui/PieMenu.h \
+	C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentcellmanagerwidget.cpp \
+	C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentcellmanagerwidget.h \
+	C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentcellwidget.cpp \
+	C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentcellwidget.h \
+	C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentpanelwidget.cpp \
+	C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentpanelwidget.h \
+	C:/Storage/FIT/BP/raw-processor/src/ui/gallerywidget.cpp \
+	C:/Storage/FIT/BP/raw-processor/src/ui/gallerywidget.h \
+	C:/Storage/FIT/BP/raw-processor/src/ui/imageviewer.cpp \
+	C:/Storage/FIT/BP/raw-processor/src/ui/imageviewer.h \
+	C:/Storage/FIT/BP/raw-processor/src/ui/mainwindow.cpp \
+	C:/Storage/FIT/BP/raw-processor/src/ui/mainwindow.h \
+	C:/Storage/FIT/BP/raw-processor/src/ui/uiconstants.h \
 	C:/Program\ Files/Microsoft\ Visual\ Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe

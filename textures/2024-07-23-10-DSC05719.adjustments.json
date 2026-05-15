@@ -1,0 +1,36 @@
+{
+    "cells": [
+        {
+            "adjustments": {
+                "Contrast": [
+                    0.36399996280670166
+                ],
+                "Denoise": [
+                    0
+                ],
+                "Exposure": [
+                    1.359999656677246
+                ],
+                "Midpoint": [
+                    0.20000000298023224
+                ],
+                "Saturation": [
+                    0
+                ],
+                "Vignette": [
+                    0
+                ],
+                "WhiteBalance": [
+                    -0.6540000438690186,
+                    0.628000020980835
+                ]
+            },
+            "collapsed": false,
+            "dataId": "{00000000-0000-0000-0000-000000000000}",
+            "linked": false,
+            "name": "Cell 1",
+            "visible": true
+        }
+    ],
+    "imagePath": "C:/Storage/FIT/BP/raw-processor/textures/2024-07-23-10-DSC05719.ARW"
+}

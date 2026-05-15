@@ -573,14 +573,14 @@ void AdjustmentManager::apply() {
 
         if (applyMode == ApplyMode::Link) {
             // Create a linked cell
-            newCell->data = activeCell;
+            newCell->adjustmentGroup = activeCell;
         } else {
             // Create a copy (static) cell with deep-copied adjustments
-            newCell->data = std::make_shared<AdjustmentGroup>(activeCell->name);
-            newCell->data->isEnabled = activeCell->isEnabled;
+            newCell->adjustmentGroup = std::make_shared<AdjustmentGroup>(activeCell->name);
+            newCell->adjustmentGroup->isEnabled = activeCell->isEnabled;
 
             // Deep copy adjustments
-            newCell->data->adjustments = activeCell->cloneAdjustments();
+            newCell->adjustmentGroup->adjustments = activeCell->cloneAdjustments();
         }
 
         // Add cell to image

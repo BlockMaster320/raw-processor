@@ -151,7 +151,7 @@ void ImageViewer::setImage(std::shared_ptr<Image> newImage)
     updateTransform();
 }
 
-// --- Input event handlers ---
+// --- INPUT EVENT HANDLERS ---
 
 void ImageViewer::mousePressEvent(QMouseEvent *event)
 {

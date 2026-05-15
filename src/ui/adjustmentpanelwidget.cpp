@@ -97,8 +97,19 @@ void AdjustmentPanelWidget::setImage(std::shared_ptr<Image> image)
                     if (currentImage) {
                         currentImage->saveAdjustmentCells();
                         if (adjustmentCellManager && changedCell && changedCell->isLinked()) {
-                            adjustmentCellManager->notifyCellDataChanged(changedCell->data);
+                            adjustmentCellManager->notifyCellDataChanged(changedCell->adjustmentGroup);
                         }
+                    }
+                });
+        connect(cellWidget, &AdjustmentCellWidget::cellStateChanged,
+                this, [this](AdjustmentCell* changedCell) {
+                    if (!currentImage) {
+                        return;
+                    }
+
+                    currentImage->saveAdjustmentCells();
+                    if (adjustmentCellManager && changedCell && changedCell->isLinked()) {
+                        adjustmentCellManager->notifyCellDataChanged(changedCell->adjustmentGroup);
                     }
                 });
         connect(cellWidget, &AdjustmentCellWidget::cellActivated,
@@ -115,7 +126,7 @@ void AdjustmentPanelWidget::setImage(std::shared_ptr<Image> image)
                     }
 
                     std::shared_ptr<AdjustmentGroup> previouslyActiveData =
-                        (activeCell && activeCell->data) ? activeCell->data : nullptr;
+                        (activeCell && activeCell->adjustmentGroup) ? activeCell->adjustmentGroup : nullptr;
 
                     std::set<Image*> touchedImages;
                     auto renameInImage = [&](const std::shared_ptr<Image>& image, const QUuid& linkedId, bool linked) {
@@ -126,13 +137,13 @@ void AdjustmentPanelWidget::setImage(std::shared_ptr<Image> image)
                         bool changed = false;
                         for (auto& cell : image->adjustmentCells) {
                             const bool matches = linked
-                                ? (cell.data && cell.data->id == linkedId)
+                                ? (cell.adjustmentGroup && cell.adjustmentGroup->id == linkedId)
                                 : (&cell == requestedCell);
                             if (!matches) {
                                 continue;
                             }
-                            if (cell.data) {
-                                cell.data->name = newName;
+                            if (cell.adjustmentGroup) {
+                                cell.adjustmentGroup->name = newName;
                             }
                             changed = true;
                         }
@@ -143,9 +154,9 @@ void AdjustmentPanelWidget::setImage(std::shared_ptr<Image> image)
                         }
                     };
 
-                    if (requestedCell->isLinked() && requestedCell->data) {
-                        const QUuid linkedId = requestedCell->data->id;
-                        requestedCell->data->name = newName;
+                    if (requestedCell->isLinked() && requestedCell->adjustmentGroup) {
+                        const QUuid linkedId = requestedCell->adjustmentGroup->id;
+                        requestedCell->adjustmentGroup->name = newName;
 
                         // Keep preset names synchronized with linked cell-data name.
                         if (adjustmentCellManager && !linkedId.isNull()) {
@@ -176,8 +187,8 @@ void AdjustmentPanelWidget::setImage(std::shared_ptr<Image> image)
                             renameInImage(currentImage, linkedId, true);
                         }
                     } else {
-                        if (requestedCell->data) {
-                            requestedCell->data->name = newName;
+                        if (requestedCell->adjustmentGroup) {
+                            requestedCell->adjustmentGroup->name = newName;
                         }
                         currentImage->saveAdjustmentCells();
                     }
@@ -185,7 +196,7 @@ void AdjustmentPanelWidget::setImage(std::shared_ptr<Image> image)
                     setImage(currentImage);
                     if (previouslyActiveData) {
                         for (auto& cell : currentImage->adjustmentCells) {
-                            if (cell.data == previouslyActiveData) {
+                            if (cell.adjustmentGroup == previouslyActiveData) {
                                 setActiveCell(&cell);
                                 break;
                             }
@@ -224,16 +235,16 @@ void AdjustmentPanelWidget::setImage(std::shared_ptr<Image> image)
                     }
 
                     auto& cell = cells[targetIndex];
-                    if (!cell.data || !cell.isLinked()) {
+                    if (!cell.adjustmentGroup || !cell.isLinked()) {
                         return;
                     }
 
-                    auto detached = std::make_shared<AdjustmentGroup>(cell.data->name);
-                    detached->isEnabled = cell.data->isEnabled;
+                    auto detached = std::make_shared<AdjustmentGroup>(cell.adjustmentGroup->name);
+                    detached->isEnabled = cell.adjustmentGroup->isEnabled;
                     detached->isGlobal = false;
                     detached->id = QUuid();
-                    detached->adjustments = cell.data->cloneAdjustments();
-                    cell.data = detached;
+                    detached->adjustments = cell.adjustmentGroup->cloneAdjustments();
+                    cell.adjustmentGroup = detached;
 
                     if (activeCell == &cell) {
                         emit activeCellChanged(activeCell);
@@ -448,7 +459,7 @@ void AdjustmentPanelWidget::performDrop()
 
     // Save active cell data pointer so we can restore selection after rebuild
     std::shared_ptr<AdjustmentGroup> activeCellData =
-        (activeCell && activeCell->data) ? activeCell->data : nullptr;
+        (activeCell && activeCell->adjustmentGroup) ? activeCell->adjustmentGroup : nullptr;
 
     auto& cells = currentImage->adjustmentCells;
     AdjustmentCell movedCell = cells[sourceIdx];
@@ -462,7 +473,7 @@ void AdjustmentPanelWidget::performDrop()
     // Restore the previously active cell
     if (activeCellData) {
         for (auto& cell : currentImage->adjustmentCells) {
-            if (cell.data == activeCellData) {
+            if (cell.adjustmentGroup == activeCellData) {
                 setActiveCell(&cell);
                 break;
             }

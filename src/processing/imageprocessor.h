@@ -16,6 +16,8 @@
 #include <vector>
 
 struct GlobalAdjUniforms {
+    float temperature = 0.0f;
+    float tint = 0.0f;
     float exposure = 0.0f;
     float contrast = 0.0f;
     float midpoint = 0.0f;
@@ -23,6 +25,7 @@ struct GlobalAdjUniforms {
     float white = 0.0f;
     float black = 0.0f;
     float saturation = 0.0f;
+    float vignette = 0.0f;
 };
 
 class ImageProcessor : protected QOpenGLFunctions {

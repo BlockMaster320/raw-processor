@@ -248,6 +248,8 @@ void ImageProcessor::markAdjustmentDirty() { adjustmentBitDirty = true; }
 
 void ImageProcessor::setUniforms()
 {
+    adjustmentProgram.setUniformValue("temperature", uniforms.temperature);
+    adjustmentProgram.setUniformValue("tint", uniforms.tint);
     adjustmentProgram.setUniformValue("exposure", uniforms.exposure);
     adjustmentProgram.setUniformValue("contrast", uniforms.contrast);
     adjustmentProgram.setUniformValue("midpoint", uniforms.midpoint);
@@ -255,6 +257,7 @@ void ImageProcessor::setUniforms()
     adjustmentProgram.setUniformValue("white", uniforms.white);
     adjustmentProgram.setUniformValue("black", uniforms.black);
     adjustmentProgram.setUniformValue("saturation", uniforms.saturation);
+    adjustmentProgram.setUniformValue("vignette", uniforms.vignette);
 
     // qDebug() << "Set uniforms: exposure=" << uniforms.exposure << " contrast=" << uniforms.contrast << " midpoint=" << uniforms.midpoint;
 }
@@ -396,7 +399,7 @@ void ImageProcessor::renderAdjustmentPass()
 
     for (auto& cell : currentImage->adjustmentCells) {
         // Check cell visibility (both instance visibility and data enabled state)
-        if (!cell.isVisible || !cell.data || !cell.data->isEnabled)
+        if (!cell.isVisible || !cell.adjustmentGroup || !cell.adjustmentGroup->isEnabled)
             continue;
 
         // Process each cell as its own adjustment stage so non-additive uniforms
@@ -406,8 +409,8 @@ void ImageProcessor::renderAdjustmentPass()
 
         // Apply adjustments in process order
         for (AdjType type : cell.processOrder) {
-            auto it = cell.data->adjustments.find(type);
-            if (it != cell.data->adjustments.end())
+            auto it = cell.adjustmentGroup->adjustments.find(type);
+            if (it != cell.adjustmentGroup->adjustments.end())
                 it->second->apply(*this);
         }
 

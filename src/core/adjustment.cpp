@@ -7,6 +7,19 @@ AdjAttribute::AdjAttribute(std::string name, float value, float min, float max, 
     : name(std::move(name)), value(value), min(min), max(max), isAdjustable(isAdjustable)
 {}
 
+AdjWhiteBalance::AdjWhiteBalance()
+{
+    attributes.emplace_back("Temperature", 0.0f, -1.0f, 1.0f, true);
+    attributes.emplace_back("Tint", 0.0f, -1.0f, 1.0f, true);
+}
+void AdjWhiteBalance::apply(ImageProcessor& processor)
+{
+    if (std::abs(attributes[0].value) < 1e-6f && std::abs(attributes[1].value) < 1e-6f) return;
+    processor.uniforms.temperature += attributes[0].value;
+    processor.uniforms.tint += attributes[1].value;
+    processor.uniformsDirty = true;
+}
+
 AdjExposure::AdjExposure()
 {
     attributes.emplace_back("Exposure", 0.0f, -5.0f, 5.0f, true); // range ±5 EV stops
@@ -76,6 +89,17 @@ void AdjSaturation::apply(ImageProcessor& processor)
     processor.uniformsDirty = true;
 }
 
+AdjVignette::AdjVignette()
+{
+    attributes.emplace_back("Vignette", 0.0f, -1.0f, 1.0f, true);
+}
+void AdjVignette::apply(ImageProcessor& processor)
+{
+    if (std::abs(attributes[0].value) < 1e-6f) return;
+    processor.uniforms.vignette += attributes[0].value;
+    processor.uniformsDirty = true;
+}
+
 
 AdjDenoise::AdjDenoise()
 {
@@ -111,6 +135,12 @@ std::unique_ptr<Adjustment> AdjExposure::clone() const {
     return cloned;
 }
 
+std::unique_ptr<Adjustment> AdjWhiteBalance::clone() const {
+    auto cloned = std::make_unique<AdjWhiteBalance>();
+    cloned->attributes = attributes;
+    return cloned;
+}
+
 std::unique_ptr<Adjustment> AdjContrast::clone() const {
     auto cloned = std::make_unique<AdjContrast>();
     cloned->attributes = attributes;
@@ -137,6 +167,12 @@ std::unique_ptr<Adjustment> AdjWhiteBlack::clone() const {
 
 std::unique_ptr<Adjustment> AdjSaturation::clone() const {
     auto cloned = std::make_unique<AdjSaturation>();
+    cloned->attributes = attributes;
+    return cloned;
+}
+
+std::unique_ptr<Adjustment> AdjVignette::clone() const {
+    auto cloned = std::make_unique<AdjVignette>();
     cloned->attributes = attributes;
     return cloned;
 }

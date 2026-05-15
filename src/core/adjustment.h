@@ -9,12 +9,14 @@ class ImageProcessor;  // forward declaration — full type only needed in adjus
 // --- AdjType ---
 
 enum class AdjType {
+    WhiteBalance,
     Exposure,
     Contrast,
     Midpoint,
     PopArt,
     WhiteBlack,
     Saturation,
+    Vignette,
     Denoise,
 };
 
@@ -53,6 +55,13 @@ public:
     std::unique_ptr<Adjustment> clone() const override;
 };
 
+class AdjWhiteBalance : public Adjustment {
+public:
+    AdjWhiteBalance();
+    void apply(ImageProcessor& processor) override;
+    std::unique_ptr<Adjustment> clone() const override;
+};
+
 class AdjContrast : public Adjustment {
 public:
     AdjContrast();
@@ -84,6 +93,13 @@ public:
 class AdjSaturation : public Adjustment {
 public:
     AdjSaturation();
+    void apply(ImageProcessor& processor) override;
+    std::unique_ptr<Adjustment> clone() const override;
+};
+
+class AdjVignette : public Adjustment {
+public:
+    AdjVignette();
     void apply(ImageProcessor& processor) override;
     std::unique_ptr<Adjustment> clone() const override;
 };

@@ -44,6 +44,7 @@ template <> constexpr inline auto AdjustmentCellWidget::qt_create_metaobjectdata
         "sliderReleased",
         "AdjustmentCell*",
         "cell",
+        "cellStateChanged",
         "cellActivated",
         "dragInitiated",
         "AdjustmentCellWidget*",
@@ -62,24 +63,28 @@ template <> constexpr inline auto AdjustmentCellWidget::qt_create_metaobjectdata
         QtMocHelpers::SignalData<void(AdjustmentCell *)>(3, 2, QMC::AccessPublic, QMetaType::Void, {{
             { 0x80000000 | 4, 5 },
         }}),
-        // Signal 'cellActivated'
+        // Signal 'cellStateChanged'
         QtMocHelpers::SignalData<void(AdjustmentCell *)>(6, 2, QMC::AccessPublic, QMetaType::Void, {{
             { 0x80000000 | 4, 5 },
         }}),
+        // Signal 'cellActivated'
+        QtMocHelpers::SignalData<void(AdjustmentCell *)>(7, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 4, 5 },
+        }}),
         // Signal 'dragInitiated'
-        QtMocHelpers::SignalData<void(AdjustmentCellWidget *, QPoint)>(7, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { 0x80000000 | 8, 9 }, { QMetaType::QPoint, 10 },
+        QtMocHelpers::SignalData<void(AdjustmentCellWidget *, QPoint)>(8, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 9, 10 }, { QMetaType::QPoint, 11 },
         }}),
         // Signal 'cellRenameRequested'
-        QtMocHelpers::SignalData<void(AdjustmentCell *, const QString &)>(11, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { 0x80000000 | 4, 5 }, { QMetaType::QString, 12 },
+        QtMocHelpers::SignalData<void(AdjustmentCell *, const QString &)>(12, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 4, 5 }, { QMetaType::QString, 13 },
         }}),
         // Signal 'removeCellRequested'
-        QtMocHelpers::SignalData<void(AdjustmentCell *)>(13, 2, QMC::AccessPublic, QMetaType::Void, {{
+        QtMocHelpers::SignalData<void(AdjustmentCell *)>(14, 2, QMC::AccessPublic, QMetaType::Void, {{
             { 0x80000000 | 4, 5 },
         }}),
         // Signal 'unlinkCellRequested'
-        QtMocHelpers::SignalData<void(AdjustmentCell *)>(14, 2, QMC::AccessPublic, QMetaType::Void, {{
+        QtMocHelpers::SignalData<void(AdjustmentCell *)>(15, 2, QMC::AccessPublic, QMetaType::Void, {{
             { 0x80000000 | 4, 5 },
         }}),
     };
@@ -107,18 +112,19 @@ void AdjustmentCellWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
         switch (_id) {
         case 0: _t->adjustmentChanged(); break;
         case 1: _t->sliderReleased((*reinterpret_cast< std::add_pointer_t<AdjustmentCell*>>(_a[1]))); break;
-        case 2: _t->cellActivated((*reinterpret_cast< std::add_pointer_t<AdjustmentCell*>>(_a[1]))); break;
-        case 3: _t->dragInitiated((*reinterpret_cast< std::add_pointer_t<AdjustmentCellWidget*>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QPoint>>(_a[2]))); break;
-        case 4: _t->cellRenameRequested((*reinterpret_cast< std::add_pointer_t<AdjustmentCell*>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2]))); break;
-        case 5: _t->removeCellRequested((*reinterpret_cast< std::add_pointer_t<AdjustmentCell*>>(_a[1]))); break;
-        case 6: _t->unlinkCellRequested((*reinterpret_cast< std::add_pointer_t<AdjustmentCell*>>(_a[1]))); break;
+        case 2: _t->cellStateChanged((*reinterpret_cast< std::add_pointer_t<AdjustmentCell*>>(_a[1]))); break;
+        case 3: _t->cellActivated((*reinterpret_cast< std::add_pointer_t<AdjustmentCell*>>(_a[1]))); break;
+        case 4: _t->dragInitiated((*reinterpret_cast< std::add_pointer_t<AdjustmentCellWidget*>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QPoint>>(_a[2]))); break;
+        case 5: _t->cellRenameRequested((*reinterpret_cast< std::add_pointer_t<AdjustmentCell*>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2]))); break;
+        case 6: _t->removeCellRequested((*reinterpret_cast< std::add_pointer_t<AdjustmentCell*>>(_a[1]))); break;
+        case 7: _t->unlinkCellRequested((*reinterpret_cast< std::add_pointer_t<AdjustmentCell*>>(_a[1]))); break;
         default: ;
         }
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         switch (_id) {
         default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
-        case 3:
+        case 4:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
             case 0:
@@ -132,15 +138,17 @@ void AdjustmentCellWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
             return;
         if (QtMocHelpers::indexOfMethod<void (AdjustmentCellWidget::*)(AdjustmentCell * )>(_a, &AdjustmentCellWidget::sliderReleased, 1))
             return;
-        if (QtMocHelpers::indexOfMethod<void (AdjustmentCellWidget::*)(AdjustmentCell * )>(_a, &AdjustmentCellWidget::cellActivated, 2))
+        if (QtMocHelpers::indexOfMethod<void (AdjustmentCellWidget::*)(AdjustmentCell * )>(_a, &AdjustmentCellWidget::cellStateChanged, 2))
             return;
-        if (QtMocHelpers::indexOfMethod<void (AdjustmentCellWidget::*)(AdjustmentCellWidget * , QPoint )>(_a, &AdjustmentCellWidget::dragInitiated, 3))
+        if (QtMocHelpers::indexOfMethod<void (AdjustmentCellWidget::*)(AdjustmentCell * )>(_a, &AdjustmentCellWidget::cellActivated, 3))
             return;
-        if (QtMocHelpers::indexOfMethod<void (AdjustmentCellWidget::*)(AdjustmentCell * , const QString & )>(_a, &AdjustmentCellWidget::cellRenameRequested, 4))
+        if (QtMocHelpers::indexOfMethod<void (AdjustmentCellWidget::*)(AdjustmentCellWidget * , QPoint )>(_a, &AdjustmentCellWidget::dragInitiated, 4))
             return;
-        if (QtMocHelpers::indexOfMethod<void (AdjustmentCellWidget::*)(AdjustmentCell * )>(_a, &AdjustmentCellWidget::removeCellRequested, 5))
+        if (QtMocHelpers::indexOfMethod<void (AdjustmentCellWidget::*)(AdjustmentCell * , const QString & )>(_a, &AdjustmentCellWidget::cellRenameRequested, 5))
             return;
-        if (QtMocHelpers::indexOfMethod<void (AdjustmentCellWidget::*)(AdjustmentCell * )>(_a, &AdjustmentCellWidget::unlinkCellRequested, 6))
+        if (QtMocHelpers::indexOfMethod<void (AdjustmentCellWidget::*)(AdjustmentCell * )>(_a, &AdjustmentCellWidget::removeCellRequested, 6))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (AdjustmentCellWidget::*)(AdjustmentCell * )>(_a, &AdjustmentCellWidget::unlinkCellRequested, 7))
             return;
     }
 }
@@ -164,14 +172,14 @@ int AdjustmentCellWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 8;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 8;
     }
     return _id;
 }
@@ -189,32 +197,38 @@ void AdjustmentCellWidget::sliderReleased(AdjustmentCell * _t1)
 }
 
 // SIGNAL 2
-void AdjustmentCellWidget::cellActivated(AdjustmentCell * _t1)
+void AdjustmentCellWidget::cellStateChanged(AdjustmentCell * _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 2, nullptr, _t1);
 }
 
 // SIGNAL 3
-void AdjustmentCellWidget::dragInitiated(AdjustmentCellWidget * _t1, QPoint _t2)
+void AdjustmentCellWidget::cellActivated(AdjustmentCell * _t1)
 {
-    QMetaObject::activate<void>(this, &staticMetaObject, 3, nullptr, _t1, _t2);
+    QMetaObject::activate<void>(this, &staticMetaObject, 3, nullptr, _t1);
 }
 
 // SIGNAL 4
-void AdjustmentCellWidget::cellRenameRequested(AdjustmentCell * _t1, const QString & _t2)
+void AdjustmentCellWidget::dragInitiated(AdjustmentCellWidget * _t1, QPoint _t2)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 4, nullptr, _t1, _t2);
 }
 
 // SIGNAL 5
-void AdjustmentCellWidget::removeCellRequested(AdjustmentCell * _t1)
+void AdjustmentCellWidget::cellRenameRequested(AdjustmentCell * _t1, const QString & _t2)
 {
-    QMetaObject::activate<void>(this, &staticMetaObject, 5, nullptr, _t1);
+    QMetaObject::activate<void>(this, &staticMetaObject, 5, nullptr, _t1, _t2);
 }
 
 // SIGNAL 6
-void AdjustmentCellWidget::unlinkCellRequested(AdjustmentCell * _t1)
+void AdjustmentCellWidget::removeCellRequested(AdjustmentCell * _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 6, nullptr, _t1);
+}
+
+// SIGNAL 7
+void AdjustmentCellWidget::unlinkCellRequested(AdjustmentCell * _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 7, nullptr, _t1);
 }
 QT_WARNING_POP

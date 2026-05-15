@@ -54,6 +54,7 @@ public:
     QImage thumbnail;
     std::atomic<bool> thumbnailLoaded = false;
     std::atomic<bool> thumbnailLoading = false;
+    bool adjustmentCellsLoaded = false;
 
     std::vector<AdjustmentCell> adjustmentCells;
 

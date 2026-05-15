@@ -21,6 +21,7 @@ public:
 signals:
     void adjustmentChanged();
     void sliderReleased(AdjustmentCell* cell);
+    void cellStateChanged(AdjustmentCell* cell);
     void cellActivated(AdjustmentCell* cell);
     void dragInitiated(AdjustmentCellWidget* widget, QPoint globalPos);
     void cellRenameRequested(AdjustmentCell* cell, const QString& newName);

@@ -373,117 +373,117 @@
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/adjustment.h",
+			"C:/Storage/FIT/BP/raw-processor/src/core/adjustment.h",
 			"MU",
-			"EWIEGA46WW/moc_adjustment.cpp",
+			"PRMOGMWJPH/moc_adjustment.cpp",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/adjustmentcell.h",
+			"C:/Storage/FIT/BP/raw-processor/src/core/adjustmentcell.h",
 			"MU",
-			"EWIEGA46WW/moc_adjustmentcell.cpp",
+			"PRMOGMWJPH/moc_adjustmentcell.cpp",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/adjustmentcelldata.h",
+			"C:/Storage/FIT/BP/raw-processor/src/core/adjustmentgroup.h",
 			"MU",
-			"EWIEGA46WW/moc_adjustmentcelldata.cpp",
+			"PRMOGMWJPH/moc_adjustmentgroup.cpp",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/adjustmentcellmanager.h",
+			"C:/Storage/FIT/BP/raw-processor/src/core/adjustmentmanager.h",
 			"MU",
-			"EWIEGA46WW/moc_adjustmentcellmanager.cpp",
+			"PRMOGMWJPH/moc_adjustmentmanager.cpp",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/exporter.h",
+			"C:/Storage/FIT/BP/raw-processor/src/core/image.h",
 			"MU",
-			"EWIEGA46WW/moc_exporter.cpp",
+			"PRMOGMWJPH/moc_image.cpp",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/image.h",
+			"C:/Storage/FIT/BP/raw-processor/src/core/imagemanager.h",
 			"MU",
-			"EWIEGA46WW/moc_image.cpp",
+			"PRMOGMWJPH/moc_imagemanager.cpp",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/imagemanager.h",
+			"C:/Storage/FIT/BP/raw-processor/src/core/stb_image.h",
 			"MU",
-			"EWIEGA46WW/moc_imagemanager.cpp",
+			"PRMOGMWJPH/moc_stb_image.cpp",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/imageprocessor.h",
+			"C:/Storage/FIT/BP/raw-processor/src/core/thumbnailloader.h",
 			"MU",
-			"EWIEGA46WW/moc_imageprocessor.cpp",
+			"PRMOGMWJPH/moc_thumbnailloader.cpp",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/stb_image.h",
+			"C:/Storage/FIT/BP/raw-processor/src/core/utility.h",
 			"MU",
-			"EWIEGA46WW/moc_stb_image.cpp",
+			"PRMOGMWJPH/moc_utility.cpp",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/thumbnailloader.h",
+			"C:/Storage/FIT/BP/raw-processor/src/processing/exporter.h",
 			"MU",
-			"EWIEGA46WW/moc_thumbnailloader.cpp",
+			"5QWKTM5RRA/moc_exporter.cpp",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/ui/PieMenu.h",
+			"C:/Storage/FIT/BP/raw-processor/src/processing/imageprocessor.h",
 			"MU",
-			"UYX5XTB5RZ/moc_PieMenu.cpp",
+			"5QWKTM5RRA/moc_imageprocessor.cpp",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/ui/adjustmentcellmanagerwidget.h",
+			"C:/Storage/FIT/BP/raw-processor/src/ui/PieMenu.h",
 			"MU",
-			"UYX5XTB5RZ/moc_adjustmentcellmanagerwidget.cpp",
+			"YPKJ5OE7LN/moc_PieMenu.cpp",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/ui/adjustmentcellwidget.h",
+			"C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentcellmanagerwidget.h",
 			"MU",
-			"UYX5XTB5RZ/moc_adjustmentcellwidget.cpp",
+			"YPKJ5OE7LN/moc_adjustmentcellmanagerwidget.cpp",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/ui/adjustmentpanelwidget.h",
+			"C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentcellwidget.h",
 			"MU",
-			"UYX5XTB5RZ/moc_adjustmentpanelwidget.cpp",
+			"YPKJ5OE7LN/moc_adjustmentcellwidget.cpp",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/ui/gallerywidget.h",
+			"C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentpanelwidget.h",
 			"MU",
-			"UYX5XTB5RZ/moc_gallerywidget.cpp",
+			"YPKJ5OE7LN/moc_adjustmentpanelwidget.cpp",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/ui/imageviewer.h",
+			"C:/Storage/FIT/BP/raw-processor/src/ui/gallerywidget.h",
 			"MU",
-			"UYX5XTB5RZ/moc_imageviewer.cpp",
+			"YPKJ5OE7LN/moc_gallerywidget.cpp",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/ui/mainwindow.h",
+			"C:/Storage/FIT/BP/raw-processor/src/ui/imageviewer.h",
 			"MU",
-			"UYX5XTB5RZ/moc_mainwindow.cpp",
+			"YPKJ5OE7LN/moc_imageviewer.cpp",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/ui/uiconstants.h",
+			"C:/Storage/FIT/BP/raw-processor/src/ui/mainwindow.h",
 			"MU",
-			"UYX5XTB5RZ/moc_uiconstants.cpp",
+			"YPKJ5OE7LN/moc_mainwindow.cpp",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/utility.h",
+			"C:/Storage/FIT/BP/raw-processor/src/ui/uiconstants.h",
 			"MU",
-			"EWIEGA46WW/moc_utility.cpp",
+			"YPKJ5OE7LN/moc_uiconstants.cpp",
 			null
 		]
 	],
@@ -516,6 +516,11 @@
 	],
 	"MOC_INCLUDES" : 
 	[
+		"C:/Storage/FIT/BP/raw-processor/src",
+		"C:/Storage/FIT/BP/raw-processor/src/core",
+		"C:/Storage/FIT/BP/raw-processor/src/processing",
+		"C:/Storage/FIT/BP/raw-processor/src/ui",
+		"C:/Storage/FIT/BP/raw-processor/QtAwesome",
 		"C:/Storage/FIT/BP/raw-processor/libraw",
 		"C:/Programs/Qt/6.9.3/mingw_64/include/QtCore",
 		"C:/Programs/Qt/6.9.3/mingw_64/include",
@@ -571,40 +576,68 @@
 			"MU",
 			null
 		],
-		[ "C:/Storage/FIT/BP/raw-processor/adjustment.cpp", "MU", null ],
-		[ "C:/Storage/FIT/BP/raw-processor/adjustmentcell.cpp", "MU", null ],
-		[ "C:/Storage/FIT/BP/raw-processor/adjustmentcelldata.cpp", "MU", null ],
+		[ "C:/Storage/FIT/BP/raw-processor/src/core/adjustment.cpp", "MU", null ],
 		[
-			"C:/Storage/FIT/BP/raw-processor/adjustmentcellmanager.cpp",
-			"MU",
-			null
-		],
-		[ "C:/Storage/FIT/BP/raw-processor/exporter.cpp", "MU", null ],
-		[ "C:/Storage/FIT/BP/raw-processor/image.cpp", "MU", null ],
-		[ "C:/Storage/FIT/BP/raw-processor/imagemanager.cpp", "MU", null ],
-		[ "C:/Storage/FIT/BP/raw-processor/imageprocessor.cpp", "MU", null ],
-		[ "C:/Storage/FIT/BP/raw-processor/main.cpp", "MU", null ],
-		[ "C:/Storage/FIT/BP/raw-processor/thumbnailloader.cpp", "MU", null ],
-		[ "C:/Storage/FIT/BP/raw-processor/ui/PieMenu.cpp", "MU", null ],
-		[
-			"C:/Storage/FIT/BP/raw-processor/ui/adjustmentcellmanagerwidget.cpp",
+			"C:/Storage/FIT/BP/raw-processor/src/core/adjustmentcell.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/ui/adjustmentcellwidget.cpp",
+			"C:/Storage/FIT/BP/raw-processor/src/core/adjustmentgroup.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/ui/adjustmentpanelwidget.cpp",
+			"C:/Storage/FIT/BP/raw-processor/src/core/adjustmentmanager.cpp",
 			"MU",
 			null
 		],
-		[ "C:/Storage/FIT/BP/raw-processor/ui/gallerywidget.cpp", "MU", null ],
-		[ "C:/Storage/FIT/BP/raw-processor/ui/imageviewer.cpp", "MU", null ],
-		[ "C:/Storage/FIT/BP/raw-processor/ui/mainwindow.cpp", "MU", null ],
-		[ "C:/Storage/FIT/BP/raw-processor/utility.cpp", "MU", null ]
+		[ "C:/Storage/FIT/BP/raw-processor/src/core/image.cpp", "MU", null ],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/core/imagemanager.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/core/thumbnailloader.cpp",
+			"MU",
+			null
+		],
+		[ "C:/Storage/FIT/BP/raw-processor/src/core/utility.cpp", "MU", null ],
+		[ "C:/Storage/FIT/BP/raw-processor/src/main.cpp", "MU", null ],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/processing/exporter.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/processing/imageprocessor.cpp",
+			"MU",
+			null
+		],
+		[ "C:/Storage/FIT/BP/raw-processor/src/ui/PieMenu.cpp", "MU", null ],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentcellmanagerwidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentcellwidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentpanelwidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/ui/gallerywidget.cpp",
+			"MU",
+			null
+		],
+		[ "C:/Storage/FIT/BP/raw-processor/src/ui/imageviewer.cpp", "MU", null ],
+		[ "C:/Storage/FIT/BP/raw-processor/src/ui/mainwindow.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

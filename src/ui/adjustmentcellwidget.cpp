@@ -55,8 +55,8 @@ AdjustmentCellWidget::AdjustmentCellWidget(AdjustmentCell* cell, QWidget* parent
     headerLayout->setContentsMargins(0, 0, 0, 0);
     headerLayout->setSpacing(4);
 
-    const QString displayName = (cell->data && !cell->data->name.isEmpty())
-        ? cell->data->name
+    const QString displayName = (cell->adjustmentGroup && !cell->adjustmentGroup->name.isEmpty())
+        ? cell->adjustmentGroup->name
         : QStringLiteral("Cell");
     nameEdit = new QLineEdit(displayName, headerWidget);
     nameEdit->installEventFilter(this);
@@ -136,6 +136,7 @@ AdjustmentCellWidget::AdjustmentCellWidget(AdjustmentCell* cell, QWidget* parent
             cell->isCollapsed = isCollapsed;
         slidersContainer->setVisible(!isCollapsed);
         hideBtn->setIcon(cellAwesome()->icon(fa::fa_solid, isCollapsed ? fa::fa_chevron_down : fa::fa_chevron_up));
+        emit cellStateChanged(cell);
     });
 
     connect(eyeBtn, &QToolButton::clicked, this, [this, cell, eyeBtn]()
@@ -143,6 +144,7 @@ AdjustmentCellWidget::AdjustmentCellWidget(AdjustmentCell* cell, QWidget* parent
         emit cellActivated(cell);
         cell->isVisible = !cell->isVisible;
         eyeBtn->setIcon(cellAwesome()->icon(fa::fa_solid, cell->isVisible ? fa::fa_eye : fa::fa_eye_slash));
+        emit cellStateChanged(cell);
         emit adjustmentChanged();
     });
 
@@ -162,8 +164,8 @@ AdjustmentCellWidget::AdjustmentCellWidget(AdjustmentCell* cell, QWidget* parent
             return;
         }
 
-        const QString currentName = (cell->data && !cell->data->name.isEmpty())
-            ? cell->data->name
+        const QString currentName = (cell->adjustmentGroup && !cell->adjustmentGroup->name.isEmpty())
+            ? cell->adjustmentGroup->name
             : QStringLiteral("Cell");
         const QString newName = nameEdit->text().trimmed();
 
@@ -178,14 +180,16 @@ AdjustmentCellWidget::AdjustmentCellWidget(AdjustmentCell* cell, QWidget* parent
     });
 
     // Create one slider row per adjustable attribute
-    if (!cell->data) {
+    if (!cell->adjustmentGroup) {
         return;
     }
 
-    auto& adjustments = cell->data->adjustments;
+    auto& adjustments = cell->adjustmentGroup->adjustments;
     bool toneLabelAdded = false;
     bool colorLabelAdded = false;
     bool detailLabelAdded = false;
+    bool whiteBalanceLabelAdded = false;
+    bool effectsLabelAdded = false;
 
     auto addSectionLabel = [slidersContainer, slidersLayout](const QString& text) {
         auto* sectionLabel = new QLabel(text, slidersContainer);
@@ -196,6 +200,10 @@ AdjustmentCellWidget::AdjustmentCellWidget(AdjustmentCell* cell, QWidget* parent
     };
 
     for (AdjType type : cell->displayOrder) {
+        if (type == AdjType::WhiteBalance && !whiteBalanceLabelAdded) {
+            addSectionLabel("White balance");
+            whiteBalanceLabelAdded = true;
+        }
         if (type == AdjType::Exposure && !toneLabelAdded) {
             addSectionLabel("Tone");
             toneLabelAdded = true;
@@ -203,6 +211,10 @@ AdjustmentCellWidget::AdjustmentCellWidget(AdjustmentCell* cell, QWidget* parent
         if (type == AdjType::Saturation && !colorLabelAdded) {
             addSectionLabel("Color");
             colorLabelAdded = true;
+        }
+        if (type == AdjType::Vignette && !effectsLabelAdded) {
+            addSectionLabel("Effects");
+            effectsLabelAdded = true;
         }
         if (type == AdjType::Denoise && !detailLabelAdded) {
             addSectionLabel("Detail");
@@ -311,8 +323,8 @@ void AdjustmentCellWidget::setActive(bool active)
 void AdjustmentCellWidget::updateVisualState()
 {
     if (nameEdit && nameEdit->isReadOnly() && cell) {
-        const QString displayName = (cell->data && !cell->data->name.isEmpty())
-            ? cell->data->name
+        const QString displayName = (cell->adjustmentGroup && !cell->adjustmentGroup->name.isEmpty())
+            ? cell->adjustmentGroup->name
             : QStringLiteral("Cell");
         if (nameEdit->text() != displayName) {
             nameEdit->setText(displayName);
@@ -392,7 +404,7 @@ bool AdjustmentCellWidget::eventFilter(QObject* watched, QEvent* event)
 
 void AdjustmentCellWidget::applyVisualState()
 {
-    bool isEnabled = cell && cell->data && cell->data->isEnabled;
+    bool isEnabled = cell && cell->adjustmentGroup && cell->adjustmentGroup->isEnabled;
     const QString rootTransparentChildren =
         QString("QWidget#adjustmentCellWidgetRoot QWidget { background: transparent; }")
         + QString("QWidget#adjustmentCellWidgetRoot QLabel { background: transparent; }")

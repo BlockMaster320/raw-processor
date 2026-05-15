@@ -6,6 +6,37 @@
 
 #include <algorithm>
 
+namespace {
+bool imageSharesLinkedGroupWithActiveCell(const std::shared_ptr<Image>& image,
+                                          const std::shared_ptr<AdjustmentManager>& adjustmentManager)
+{
+    if (!image || !adjustmentManager) {
+        return false;
+    }
+
+    if (!image->adjustmentCellsLoaded) {
+        image->loadAdjustmentCells(adjustmentManager.get());
+    }
+
+    auto activeCell = adjustmentManager->getActiveCell();
+    if (!activeCell || !activeCell->isLinked()) {
+        return false;
+    }
+
+    const QUuid activeId = activeCell->id;
+    for (const auto& cell : image->adjustmentCells) {
+        if (!cell.adjustmentGroup || !cell.adjustmentGroup->isLinked()) {
+            continue;
+        }
+        if (cell.adjustmentGroup->id == activeId) {
+            return true;
+        }
+    }
+
+    return false;
+}
+}
+
 int GalleryWidget::cellExtent() const
 {
     return std::max(1, height() - 2 * kVerticalPadding);
@@ -47,6 +78,16 @@ void GalleryWidget::setThumbnailLoader(std::shared_ptr<ThumbnailLoader> loader)
     connect(loader.get(), &ThumbnailLoader::thumbnailReady, this, [this]() { update(); });
 }
 
+void GalleryWidget::setAdjustmentManager(std::shared_ptr<AdjustmentManager> mgr)
+{
+    adjustmentManager = mgr;
+    if (adjustmentManager) {
+        connect(adjustmentManager.get(), &AdjustmentManager::linkedCellDataChanged,
+                this, [this](QUuid) { update(); });
+    }
+    update();
+}
+
 void GalleryWidget::paintEvent(QPaintEvent *)
 {
     if (!imageManager) return;
@@ -83,6 +124,24 @@ void GalleryWidget::paintEvent(QPaintEvent *)
             pen.setWidth(2);
             painter.setPen(pen);
             painter.drawRect(rect.adjusted(1, 1, -1, -1));
+        }
+
+        // Draw a small dot indicator if the image shares a linked adjustment group with the active cell.
+        if (imageSharesLinkedGroupWithActiveCell(img, adjustmentManager)) {
+            const int dotRadius = 5;
+            const QPoint center(rect.center().x(), rect.bottom() - dotRadius - 4);
+
+            painter.setRenderHint(QPainter::Antialiasing, true);
+            painter.setPen(Qt::NoPen);
+            painter.setBrush(QColor(79, 169, 255, 245));
+            painter.drawEllipse(center, dotRadius, dotRadius);
+
+            QPen outline(QColor(220, 240, 255, 230));
+            outline.setWidth(1);
+            painter.setPen(outline);
+            painter.setBrush(Qt::NoBrush);
+            painter.drawEllipse(center, dotRadius, dotRadius);
+            painter.setRenderHint(QPainter::Antialiasing, false);
         }
     }
 }
