@@ -22,7 +22,7 @@ Image::Image(const QString& path)
 
 bool Image::loadRawData()
 {
-	qDebug() << "----------------- START -----------------";
+	// qDebug() << "----------------- START -----------------";
 
 	clearLoadedData();
 	if (imagePath.isEmpty())

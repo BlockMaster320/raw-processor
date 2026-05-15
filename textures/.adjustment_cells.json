@@ -1,5 +1,35 @@
 {
     "cells": {
+        "{31aee327-24ea-4bff-b5bc-2ce1bddddbfc}": {
+            "adjustments": {
+                "Contrast": [
+                    0
+                ],
+                "Denoise": [
+                    0
+                ],
+                "Exposure": [
+                    0
+                ],
+                "Midpoint": [
+                    0.20000000298023224
+                ],
+                "Saturation": [
+                    0
+                ],
+                "Vignette": [
+                    0
+                ],
+                "WhiteBalance": [
+                    0.37199997901916504,
+                    0
+                ]
+            },
+            "enabled": true,
+            "id": "{31aee327-24ea-4bff-b5bc-2ce1bddddbfc}",
+            "isGlobal": false,
+            "name": "Cell 2"
+        },
         "{4f60c4fb-c276-4242-b528-a2f0e14ffd1a}": {
             "adjustments": {
                 "Contrast": [
@@ -18,7 +48,7 @@
                     0
                 ],
                 "Saturation": [
-                    0.054000020027160645
+                    0.12800002098083496
                 ],
                 "Vignette": [
                     -1
@@ -36,12 +66,72 @@
             "id": "{4f60c4fb-c276-4242-b528-a2f0e14ffd1a}",
             "isGlobal": false,
             "name": "hehe"
+        },
+        "{b79dca98-287e-483f-8048-36bd23f8500e}": {
+            "adjustments": {
+                "Contrast": [
+                    0
+                ],
+                "Denoise": [
+                    0
+                ],
+                "Exposure": [
+                    0
+                ],
+                "Midpoint": [
+                    0.20000000298023224
+                ],
+                "Saturation": [
+                    0
+                ],
+                "Vignette": [
+                    0
+                ],
+                "WhiteBalance": [
+                    0,
+                    0
+                ]
+            },
+            "enabled": true,
+            "id": "{b79dca98-287e-483f-8048-36bd23f8500e}",
+            "isGlobal": false,
+            "name": "Base"
+        },
+        "{c3071d7b-369b-4a70-bea9-ae47f5282677}": {
+            "adjustments": {
+                "Contrast": [
+                    0
+                ],
+                "Denoise": [
+                    0
+                ],
+                "Exposure": [
+                    0
+                ],
+                "Midpoint": [
+                    0.20000000298023224
+                ],
+                "Saturation": [
+                    0
+                ],
+                "Vignette": [
+                    0
+                ],
+                "WhiteBalance": [
+                    0,
+                    0
+                ]
+            },
+            "enabled": true,
+            "id": "{c3071d7b-369b-4a70-bea9-ae47f5282677}",
+            "isGlobal": false,
+            "name": "Denoise"
         }
     },
     "presets": [
         {
-            "dataId": "{4f60c4fb-c276-4242-b528-a2f0e14ffd1a}",
-            "name": "hehe"
+            "dataId": "{c3071d7b-369b-4a70-bea9-ae47f5282677}",
+            "name": "Denoise"
         }
     ]
 }

@@ -97,7 +97,13 @@ AdjustmentCellWidget::AdjustmentCellWidget(AdjustmentCell* cell, QWidget* parent
     auto* awesome = cellAwesome();
         hideBtn->setIcon(awesome->icon(fa::fa_solid, cell->isCollapsed ? fa::fa_chevron_down : fa::fa_chevron_up));
     eyeBtn->setIcon(awesome->icon(fa::fa_solid, cell->isVisible ? fa::fa_eye : fa::fa_eye_slash));
-    unlinkBtn->setIcon(awesome->icon(fa::fa_solid, fa::fa_unlink));
+    
+    // Create unlink button icon with custom disabled color
+    QVariantMap unlinkOptions;
+    unlinkOptions["color"] = QColor(255, 255, 255);  // Normal color: white
+    unlinkOptions["color-disabled"] = QColor(255, 255, 255, 77);  // Disabled color: dimmed white
+    unlinkBtn->setIcon(awesome->icon(fa::fa_solid, fa::fa_unlink, unlinkOptions));
+    
     removeBtn->setIcon(awesome->icon(fa::fa_solid, fa::fa_trash));
 
     unlinkBtn->setEnabled(cell->isLinked());
@@ -417,13 +423,32 @@ void AdjustmentCellWidget::applyVisualState()
         + QString(" }");
 
     if (!isEnabled) {
-        // Grayed out disabled state
+        // Grayed out disabled state: dim text and sliders, but keep background and blue border
         const QString disabledBorderStyle = isActive
             ? QString("2px solid %1").arg(appActiveHighlightColor)
             : QStringLiteral("none");
+        const QString disabledTextStyle =
+            QString("QWidget#adjustmentCellWidgetRoot {")
+            + QString(" color: rgba(255, 255, 255, 0.4);")
+            + QString(" }")
+            + QString("QWidget#adjustmentCellWidgetRoot QLabel {")
+            + QString(" color: rgba(255, 255, 255, 0.4);")
+            + QString(" }")
+            + QString("QWidget#adjustmentCellWidgetRoot QLineEdit {")
+            + QString(" color: rgba(255, 255, 255, 0.4);")
+            + QString(" }")
+            + QString("QWidget#adjustmentCellWidgetRoot QSlider::groove:horizontal {")
+            + QString(" background: rgba(255, 255, 255, 0.15);")
+            + QString(" }")
+            + QString("QWidget#adjustmentCellWidgetRoot QSlider::sub-page:horizontal {")
+            + QString(" background: rgba(255, 255, 255, 0.25);")
+            + QString(" }")
+            + QString("QWidget#adjustmentCellWidgetRoot QToolButton:disabled {")
+            + QString(" color: rgba(255, 255, 255, 0.3);")
+            + QString(" }");
         setStyleSheet(
             rootBaseStyle.arg(appPanelBackgroundColor, disabledBorderStyle)
-            + QString("QWidget#adjustmentCellWidgetRoot { color: rgba(255, 255, 255, 0.55); }")
+            + disabledTextStyle
             + rootTransparentChildren
         );
         setEnabled(false);

@@ -104,12 +104,14 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     btn = new QPushButton("Load images");
     btn->setStyleSheet(baseButtonStyle);
     btn->setToolTip("Select a directory containing raw images to load into the gallery");
+    btn->setCursor(Qt::PointingHandCursor);
     fileInnerLayout->addWidget(btn);
 
     exportBtn = new QPushButton("Export selected images");
     exportBtn->setStyleSheet(baseButtonStyle);
     exportBtn->setToolTip("Export the selected gallery images as JPEG files");
     exportBtn->setEnabled(false);
+    exportBtn->setCursor(Qt::PointingHandCursor);
     fileInnerLayout->addWidget(exportBtn);
 
     fileInnerLayout->addWidget(adjustmentCellManagerWidget);

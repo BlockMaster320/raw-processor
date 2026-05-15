@@ -694,7 +694,6 @@ C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesomeAnim.h
  mdp:C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesomeAnim.h
  mdp:C:/Storage/FIT/BP/raw-processor/build-release/raw-processor_autogen/moc_predefs.h
 C:/Storage/FIT/BP/raw-processor/src/core/adjustment.h
-C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesomeEnumGenerated.h
 C:/Storage/FIT/BP/raw-processor/src/core/adjustmentcell.cpp
 C:/Storage/FIT/BP/raw-processor/src/ui/mainwindow.h
  mmc:Q_OBJECT
@@ -1496,8 +1495,8 @@ C:/Storage/FIT/BP/raw-processor/src/ui/mainwindow.h
  mdp:C:/Storage/FIT/BP/raw-processor/src/ui/imageviewer.h
  mdp:C:/Storage/FIT/BP/raw-processor/src/ui/mainwindow.h
 C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesomeStringGenerated.h
+C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesomeEnumGenerated.h
 C:/Storage/FIT/BP/raw-processor/src/core/adjustmentcell.h
-C:/Storage/FIT/BP/raw-processor/src/core/adjustmentgroup.h
 C:/Storage/FIT/BP/raw-processor/src/ui/imageviewer.h
  mmc:Q_OBJECT
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QJsonObject
@@ -1930,6 +1929,7 @@ C:/Storage/FIT/BP/raw-processor/src/ui/imageviewer.h
  mdp:C:/Storage/FIT/BP/raw-processor/src/core/image.h
  mdp:C:/Storage/FIT/BP/raw-processor/src/processing/imageprocessor.h
  mdp:C:/Storage/FIT/BP/raw-processor/src/ui/imageviewer.h
+C:/Storage/FIT/BP/raw-processor/src/core/adjustmentgroup.h
 C:/Storage/FIT/BP/raw-processor/src/core/adjustmentmanager.h
  mmc:Q_OBJECT
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QJsonObject
@@ -2284,8 +2284,8 @@ C:/Storage/FIT/BP/raw-processor/src/core/adjustmentmanager.h
  mdp:C:/Storage/FIT/BP/raw-processor/src/core/adjustmentmanager.h
 C:/Storage/FIT/BP/raw-processor/src/core/image.h
 C:/Storage/FIT/BP/raw-processor/src/core/imagemanager.h
-C:/Storage/FIT/BP/raw-processor/src/core/stb_image.h
 C:/Storage/FIT/BP/raw-processor/src/ui/mainwindow.cpp
+C:/Storage/FIT/BP/raw-processor/src/core/stb_image.h
 C:/Storage/FIT/BP/raw-processor/src/core/thumbnailloader.h
  mmc:Q_OBJECT
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent/QtConcurrent
@@ -2967,8 +2967,8 @@ C:/Storage/FIT/BP/raw-processor/src/core/thumbnailloader.h
  mdp:C:/Storage/FIT/BP/raw-processor/src/core/adjustmentgroup.h
  mdp:C:/Storage/FIT/BP/raw-processor/src/core/image.h
  mdp:C:/Storage/FIT/BP/raw-processor/src/core/thumbnailloader.h
-C:/Storage/FIT/BP/raw-processor/src/core/utility.h
 C:/Storage/FIT/BP/raw-processor/src/processing/imageprocessor.cpp
+C:/Storage/FIT/BP/raw-processor/src/core/utility.h
 C:/Storage/FIT/BP/raw-processor/src/processing/exporter.h
 C:/Storage/FIT/BP/raw-processor/src/processing/imageprocessor.h
 C:/Storage/FIT/BP/raw-processor/src/ui/PieMenu.h
@@ -3347,6 +3347,7 @@ C:/Storage/FIT/BP/raw-processor/src/ui/PieMenu.h
  mdp:C:/Programs/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h
  mdp:C:/Storage/FIT/BP/raw-processor/build-release/raw-processor_autogen/moc_predefs.h
  mdp:C:/Storage/FIT/BP/raw-processor/src/ui/PieMenu.h
+C:/Storage/FIT/BP/raw-processor/src/core/adjustmentmanager.cpp
 C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentcellmanagerwidget.h
  mmc:Q_OBJECT
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QJsonObject
@@ -3775,7 +3776,6 @@ C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentcellmanagerwidget.h
  mdp:C:/Storage/FIT/BP/raw-processor/src/core/adjustmentgroup.h
  mdp:C:/Storage/FIT/BP/raw-processor/src/core/adjustmentmanager.h
  mdp:C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentcellmanagerwidget.h
-C:/Storage/FIT/BP/raw-processor/src/core/adjustmentmanager.cpp
 C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentcellwidget.h
  mmc:Q_OBJECT
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QEvent
@@ -4175,6 +4175,8 @@ C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentcellwidget.h
  mdp:C:/Storage/FIT/BP/raw-processor/src/core/adjustmentcell.h
  mdp:C:/Storage/FIT/BP/raw-processor/src/core/adjustmentgroup.h
  mdp:C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentcellwidget.h
+C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentcellmanagerwidget.cpp
+C:/Storage/FIT/BP/raw-processor/src/ui/uiconstants.h
 C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentpanelwidget.h
  mmc:Q_OBJECT
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QJsonObject
@@ -4581,8 +4583,6 @@ C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentpanelwidget.h
  mdp:C:/Storage/FIT/BP/raw-processor/src/core/adjustmentcell.h
  mdp:C:/Storage/FIT/BP/raw-processor/src/core/adjustmentgroup.h
  mdp:C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentpanelwidget.h
-C:/Storage/FIT/BP/raw-processor/src/ui/uiconstants.h
-C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentcellmanagerwidget.cpp
 C:/Storage/FIT/BP/raw-processor/src/ui/gallerywidget.h
  mmc:Q_OBJECT
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent/QtConcurrent
@@ -5287,10 +5287,10 @@ C:/Storage/FIT/BP/raw-processor/src/ui/gallerywidget.h
  mdp:C:/Storage/FIT/BP/raw-processor/src/core/thumbnailloader.h
  mdp:C:/Storage/FIT/BP/raw-processor/src/ui/gallerywidget.h
 C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesome.cpp
-C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesomeAnim.cpp
 C:/Storage/FIT/BP/raw-processor/src/core/adjustment.cpp
-C:/Storage/FIT/BP/raw-processor/src/core/adjustmentgroup.cpp
+C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesomeAnim.cpp
 C:/Storage/FIT/BP/raw-processor/src/ui/imageviewer.cpp
+C:/Storage/FIT/BP/raw-processor/src/core/adjustmentgroup.cpp
 C:/Storage/FIT/BP/raw-processor/src/core/image.cpp
 C:/Storage/FIT/BP/raw-processor/src/core/imagemanager.cpp
 C:/Storage/FIT/BP/raw-processor/src/core/thumbnailloader.cpp

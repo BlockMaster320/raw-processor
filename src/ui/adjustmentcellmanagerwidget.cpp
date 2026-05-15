@@ -247,7 +247,7 @@ void AdjustmentCellManagerWidget::setupUI() {
     auto* applyControlsLayout = new QVBoxLayout(applyControlsWidget);
     applyControlsLayout->setContentsMargins(10, 10, 10, 10);
 
-    QLabel* applyControlsTitle = new QLabel("Cell/Preset Application", applyControlsWidget);
+    QLabel* applyControlsTitle = new QLabel("Adjustment application", applyControlsWidget);
     applyControlsTitle->setObjectName("applyControlsTitle");
     applyControlsTitle->setAlignment(Qt::AlignCenter);
     applyControlsTitle->setAutoFillBackground(true);

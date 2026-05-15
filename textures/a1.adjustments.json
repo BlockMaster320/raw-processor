@@ -1,0 +1,67 @@
+{
+    "cells": [
+        {
+            "adjustments": {
+                "Contrast": [
+                    0.8999999761581421
+                ],
+                "Denoise": [
+                    0.24500000476837158
+                ],
+                "Exposure": [
+                    0.820000171661377
+                ],
+                "Midpoint": [
+                    0.22699999809265137
+                ],
+                "Saturation": [
+                    0.2359999418258667
+                ],
+                "Vignette": [
+                    -0.8999999761581421
+                ],
+                "WhiteBalance": [
+                    -0.49000000953674316,
+                    0.47200000286102295
+                ]
+            },
+            "collapsed": false,
+            "dataId": "{00000000-0000-0000-0000-000000000000}",
+            "linked": false,
+            "name": "Base",
+            "visible": true
+        },
+        {
+            "adjustments": {
+                "Contrast": [
+                    0.11000001430511475
+                ],
+                "Denoise": [
+                    0
+                ],
+                "Exposure": [
+                    0
+                ],
+                "Midpoint": [
+                    0.45500001311302185
+                ],
+                "Saturation": [
+                    0
+                ],
+                "Vignette": [
+                    0
+                ],
+                "WhiteBalance": [
+                    0,
+                    0
+                ]
+            },
+            "collapsed": false,
+            "dataId": "{00000000-0000-0000-0000-000000000000}",
+            "linked": false,
+            "name": "More contrast",
+            "visible": true
+        }
+    ],
+    "imagePath": "C:/Storage/FIT/BP/raw-processor/textures/a1.ARW"
+}
