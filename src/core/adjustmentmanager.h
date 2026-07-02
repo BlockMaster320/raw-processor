@@ -10,16 +10,6 @@
 #include <QUuid>
 #include <QObject>
 
-// Custom hash function for QUuid
-// #include <QUuid>
-// #include <QHashFunctions>
-
-// struct QUuidHasher {
-//     std::size_t operator()(const QUuid& id) const noexcept {
-//         return static_cast<std::size_t>(qHash(id));
-//     }
-// };
-
 class Image;
 
 // Scope of a preset (Local or Global)
@@ -28,14 +18,14 @@ enum class PresetScope {
     Global
 };
 
-// Represents a saved preset - a reference to shared adjustment cell data
+// Represents a saved preset - a reference to shared adjustment group
 struct Preset {
     std::shared_ptr<AdjustmentGroup> data;
     QString name;
     PresetScope scope;
 
-    Preset(std::shared_ptr<AdjustmentGroup> cellData, const QString& presetName, PresetScope presetScope)
-        : data(std::move(cellData)), name(presetName), scope(presetScope) {}
+    Preset(std::shared_ptr<AdjustmentGroup> adjustmentGroup, const QString& presetName, PresetScope presetScope)
+        : data(std::move(adjustmentGroup)), name(presetName), scope(presetScope) {}
 };
 
 // Central manager for adjustment cells, presets, and dynamic linking

@@ -1884,6 +1884,7 @@ C:/Storage/FIT/BP/raw-processor/src/core/thumbnailloader.h
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QMap
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QMutex
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QObject
+ mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QPoint
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QString
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QStringList
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QUuid
@@ -4182,6 +4183,7 @@ C:/Storage/FIT/BP/raw-processor/src/ui/gallerywidget.h
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QMap
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QMutex
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QObject
+ mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QPoint
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QRect
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QString
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QStringList
@@ -4861,6 +4863,7 @@ C:/Storage/FIT/BP/raw-processor/src/ui/imageviewer.h
  mmc:Q_OBJECT
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QJsonObject
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QObject
+ mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QPoint
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QScopedPointer
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QString
  mdp:C:/Programs/Qt/6.9.3/mingw_64/include/QtCore/QUuid

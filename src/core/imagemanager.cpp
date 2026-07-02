@@ -3,9 +3,9 @@
 #include <QFileDialog>
 #include <QDir>
 
+// Loads the collection of RAW images from the user-selected folder.
 void ImageManager::loadCollection(QWidget *parent)
 {
-
     // QFileDialog dialog;
     // dialog.setOption(QFileDialog::DontUseNativeDialog);
     // dialog.setFileMode(QFileDialog::Directory);
@@ -20,8 +20,7 @@ void ImageManager::loadCollection(QWidget *parent)
     const QString dir = QFileDialog::getExistingDirectory(parent, "Select image folder");
     if (dir.isEmpty()) return;
 
-    // Keep the selected folder so adjustment/preset persistence can initialize paths.
-    localCollectionPath = dir;
+    localCollectionPath = dir;  // keep the selected folder so adjustment/preset persistence can initialize paths
 
     QDir directory(dir);
     QStringList files = directory.entryList(

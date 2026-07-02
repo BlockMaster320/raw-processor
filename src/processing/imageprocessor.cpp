@@ -113,7 +113,11 @@ void ImageProcessor::initializeGL()
     rawToRGBProgram.enableAttributeArray(1);
     rawToRGBProgram.setAttributeBuffer(1, GL_FLOAT, 2 * sizeof(GLfloat), 2, 4 * sizeof(GLfloat));
     rawToRGBProgram.setUniformValue("imageTex", 0);
-    rawToRGBProgram.setUniformValue("cfaOffset", 0, 0);
+    {
+        const int cfaOffsetLoc = rawToRGBProgram.uniformLocation("cfaOffset");
+        if (cfaOffsetLoc >= 0)
+            glUniform2i(cfaOffsetLoc, 0, 0);
+    }
     rawToRGBProgram.release();
 
     vaoRawToRGB.release();
@@ -295,6 +299,14 @@ void ImageProcessor::uploadImage(std::shared_ptr<Image> image)
     rawToRGBProgram.setUniformValue("camToSRGB", currentImage->getCamToSrgb());
     rawToRGBProgram.setUniformValue("camToXYZ", currentImage->getCamToXyz());
     rawToRGBProgram.setUniformValue("camToRec2020", currentImage->getCamToRec2020());
+    {
+        const QPoint cfaOffset = currentImage->getBayerOffset();
+
+        const int cfaOffsetLoc = rawToRGBProgram.uniformLocation("cfaOffset");
+        if (cfaOffsetLoc >= 0)
+            glUniform2i(cfaOffsetLoc, cfaOffset.x(), cfaOffset.y());
+    }
+
     rawToRGBProgram.release();
 
     postprocessProgram.bind();

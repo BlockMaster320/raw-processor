@@ -91,8 +91,10 @@ void ImageViewer::paintGL()
 {
     imageProcessor.processImage(image);
     const GLuint processedTexture = imageProcessor.getProcessedTexture();
-    if (!processedTexture || textureWidth <= 0 || textureHeight <= 0)
+    if (!processedTexture || textureWidth <= 0 || textureHeight <= 0) {
+        glClear(GL_COLOR_BUFFER_BIT);
         return;
+    }
 
     // Display pass
     float dpr = devicePixelRatioF();                    // high-DPI display scaling

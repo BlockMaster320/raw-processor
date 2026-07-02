@@ -7,6 +7,18 @@ uniform mat3 rec2020ToSrgb;
 
 out vec4 fragColor;
 
+
+vec3 ACESFilm(vec3 x)
+{
+    float a = 2.51f;
+    float b = 0.03f;
+    float c = 2.43f;
+    float d = 0.59f;
+    float e = 0.14f;
+
+    return clamp((x*(a*x+b))/(x*(c*x+d)+e), 0.0, 1.0);
+}
+
 // ACES tone mapping by Stephen Hill (@self_shadow)
 // sRGB => XYZ => D65_2_D60 => AP1 => RRT_SAT
 // Note: Matrices are transposed from C++ row-major to GLSL column-major
@@ -46,16 +58,19 @@ vec3 ACESFitted(vec3 color)
     return color;
 }
 
+
 void main() {
     ivec2 p = ivec2(fragUV * textureSize(imageTex, 0)); // convert UV to pixel coordinates
     vec3 col = texelFetch(imageTex, p, 0).rgb;
 
     // Convert from Rec.2020 to sRGB primaries first (ACES requires sRGB primaries)
-    col = rec2020ToSrgb * col;
+    //col = rec2020ToSrgb * col;
 
     // Apply ACES tone mapping (output is in sRGB)
-    col = ACESFitted(col);
-    col *= 2.8; // boost brightness for compensate for the tone mapper dimming the image
+    //col = ACESFitted(col);
+    //col *= 2.8; // boost brightness to compensate for the tone mapper dimming the image
+
+    col = ACESFilm(col);
 
     fragColor = vec4(col, 1.0);
 }

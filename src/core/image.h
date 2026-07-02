@@ -10,6 +10,7 @@
 #include <vector>
 
 #include <QMatrix3x3>
+#include <QPoint>
 #include <QVector4D>
 #include <QImage>
 
@@ -34,6 +35,7 @@ public:
     int getImageHeight() const;
     int getLeftMargin() const;
     int getTopMargin() const;
+    QPoint getBayerOffset() const;
     const QVector4D& getBlackLevels() const;
     const QVector4D& getWbMultipliers() const;
     const QMatrix3x3& getCamToSrgb() const;
@@ -69,6 +71,7 @@ private:
     int imageHeight;
     int leftMargin;
     int topMargin;
+    QPoint bayerOffset;
 
     QVector4D blackLevels;
     QVector4D wbMultipliers;

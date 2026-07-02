@@ -9,7 +9,7 @@
                     0
                 ],
                 "Exposure": [
-                    0
+                    1.2699995040893555
                 ],
                 "Midpoint": [
                     0.20000000298023224
@@ -21,46 +21,15 @@
                     0
                 ],
                 "WhiteBalance": [
-                    -0.07200002670288086,
-                    0
-                ]
-            },
-            "collapsed": true,
-            "dataId": "{00000000-0000-0000-0000-000000000000}",
-            "linked": false,
-            "name": "Base",
-            "visible": true
-        },
-        {
-            "adjustments": {
-                "Contrast": [
-                    0
-                ],
-                "Denoise": [
-                    0
-                ],
-                "Exposure": [
-                    0
-                ],
-                "Midpoint": [
-                    0.20000000298023224
-                ],
-                "Saturation": [
-                    0
-                ],
-                "Vignette": [
-                    0
-                ],
-                "WhiteBalance": [
-                    0.37199997901916504,
+                    0.3819999694824219,
                     0
                 ]
             },
             "collapsed": false,
-            "dataId": "{31aee327-24ea-4bff-b5bc-2ce1bddddbfc}",
+            "dataId": "{261a688c-f59a-4ace-8242-299fc94aa0ac}",
             "linked": true,
-            "name": "Cell 2",
-            "visible": true
+            "name": "Cell 1",
+            "visible": false
         }
     ],
     "imagePath": "C:/Storage/FIT/BP/raw-processor/textures/2024-07-10-19-DSC05473.ARW"

@@ -48,6 +48,38 @@ bool Image::loadRawData()
 	leftMargin = rawProcessor.imgdata.sizes.left_margin;
 	topMargin = rawProcessor.imgdata.sizes.top_margin;
 
+	// Determine the Bayer pattern phase for the raw texture.
+	// Use LibRaw COLOR() at active-image coordinates (0,0) and (0,1), then add margin parity
+	// to convert to raw texture coordinates starting at (0,0).
+	const uint filters = rawProcessor.imgdata.idata.filters;
+	if (filters && filters != 9) { // skip non-Bayer (0) and X-Trans (9)
+		// COLOR() is preferred over FC()/manual bit decoding because LibRaw may use
+		// special filter encodings (e.g. filters == 1) that are not simple bit-packed Bayer.
+		// COLOR() returns 0=R, 1=G1 (green on red row), 2=B, 3=G2 (green on blue row)
+		// for the four standard Bayer patterns:
+		//   RGGB: fc(0,0)=R=0
+		//   BGGR: fc(0,0)=B=2
+		//   GRBG: fc(0,0)=G1=1, fc(0,1)=R=0
+		//   GBRG: fc(0,0)=G2=3, fc(0,1)=B=2  ← G2 because row 0 is a blue row
+		const int fc00 = rawProcessor.COLOR(0, 0);
+		const int fc01 = rawProcessor.COLOR(0, 1);
+		int baseX, baseY;
+		if (fc00 == 2) {                      // BGGR
+			baseX = 1; baseY = 1;
+		} else if (fc00 == 1 && fc01 == 0) { // GRBG
+			baseX = 1; baseY = 0;
+		} else if (fc00 == 3 && fc01 == 2) { // GBRG
+			baseX = 0; baseY = 1;
+		} else {                              // RGGB
+			baseX = 0; baseY = 0;
+		}
+		// Active image starts at (leftMargin, topMargin) in the raw texture.
+		// Add the margin parity so the offset applies to texture coords starting at (0,0).
+		bayerOffset = QPoint((baseX + leftMargin) % 2, (baseY + topMargin) % 2);
+	} else {
+		bayerOffset = QPoint(0, 0);
+	}
+
 	rawPixels.assign(rawData, rawData + (rawWidth * rawHeight));
 
 	const uint* cblack = rawProcessor.imgdata.color.cblack; // per-channel black offsets
@@ -69,6 +101,9 @@ bool Image::loadRawData()
 		rawProcessor.imgdata.color.cam_mul[2],
 		rawProcessor.imgdata.color.cam_mul[3]
 	};
+	// Some cameras (e.g. Canon) report cam_mul[3] == 0, meaning G2 = G1.
+	if (wbMul[3] == 0.0f)
+		wbMul[3] = wbMul[1];
 
 	const float greenMul = wbMul[1]; // normalize WB coefficients by the green channel value
 	for (int c = 0; c < 4; ++c)
@@ -76,7 +111,7 @@ bool Image::loadRawData()
 
 	wbMultipliers = QVector4D(wbMul[0], wbMul[1], wbMul[2], wbMul[3]);
 
-	// --  Prepare color space conversion matrices --
+	// --  PREPARE COLOR SPACE CONVERSION MATRICES --
 
 	// Construct the camera -> Rec.2020 and Rec.2020 -> camera matrices using libraw's
 	// camera->sRGB matrix (the only one provided by libraw which seem to have correct information).
@@ -123,7 +158,8 @@ bool Image::loadRawData()
 	return true;
 }
 
-// Builds a reference RGB image using LibRaw's internal processing pipeline (on CPU) with settings chosen to best match the GPU pipeline's output for direct pixel comparison.
+// Builds a reference RGB image using LibRaw's internal processing pipeline (on CPU)
+// with settings chosen to best match the GPU pipeline's output for direct comparison.
 bool Image::buildReferenceImage()
 {
 	referencePixels.clear();
@@ -200,6 +236,7 @@ int Image::getImageWidth() const { return imageWidth; }
 int Image::getImageHeight() const { return imageHeight; }
 int Image::getLeftMargin() const { return leftMargin; }
 int Image::getTopMargin() const { return topMargin; }
+QPoint Image::getBayerOffset() const { return bayerOffset; }
 const QVector4D& Image::getBlackLevels() const { return blackLevels; }
 const QVector4D& Image::getWbMultipliers() const { return wbMultipliers; }
 const QMatrix3x3& Image::getCamToSrgb() const { return camToSrgbMat; }
@@ -221,6 +258,7 @@ void Image::clearLoadedData()
 	imageHeight = 0;
 	leftMargin = 0;
 	topMargin = 0;
+	bayerOffset = QPoint(0, 0);
 	blackLevels = QVector4D();
 	wbMultipliers = QVector4D();
 	camToSrgbMat = QMatrix3x3();

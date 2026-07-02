@@ -1,5 +1,35 @@
 {
     "cells": {
+        "{261a688c-f59a-4ace-8242-299fc94aa0ac}": {
+            "adjustments": {
+                "Contrast": [
+                    0
+                ],
+                "Denoise": [
+                    0
+                ],
+                "Exposure": [
+                    1.2699995040893555
+                ],
+                "Midpoint": [
+                    0.20000000298023224
+                ],
+                "Saturation": [
+                    0
+                ],
+                "Vignette": [
+                    0
+                ],
+                "WhiteBalance": [
+                    0.3819999694824219,
+                    0
+                ]
+            },
+            "enabled": true,
+            "id": "{261a688c-f59a-4ace-8242-299fc94aa0ac}",
+            "isGlobal": false,
+            "name": "Cell 1"
+        },
         "{31aee327-24ea-4bff-b5bc-2ce1bddddbfc}": {
             "adjustments": {
                 "Contrast": [
@@ -132,6 +162,10 @@
         {
             "dataId": "{c3071d7b-369b-4a70-bea9-ae47f5282677}",
             "name": "Denoise"
+        },
+        {
+            "dataId": "{261a688c-f59a-4ace-8242-299fc94aa0ac}",
+            "name": "Cell 1"
         }
     ]
 }

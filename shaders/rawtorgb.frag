@@ -10,7 +10,7 @@ uniform vec4 blackLevels;
 uniform vec4 wbMultipliers;
 uniform ivec2 cfaOffset;
 
-uniform mat3 camToSRGB;	// color conversion matrix
+uniform mat3 camToSRGB;	// color conversion matrices
 uniform mat3 camToXYZ;
 uniform mat3 camToRec2020;
 

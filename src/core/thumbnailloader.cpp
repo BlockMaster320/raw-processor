@@ -4,6 +4,8 @@
 
 #include <QImage>
 
+
+// Loads JPEG thumbnail of the given image on a separate thread. 
 void ThumbnailLoader::requestThumbnail(std::shared_ptr<Image> img) {
     if (img->thumbnailLoaded || img->thumbnailLoading)
         return;
