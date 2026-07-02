@@ -1,0 +1,40 @@
+#include "imagemanager.h"
+
+#include <QFileDialog>
+#include <QDir>
+
+// Loads the collection of RAW images from the user-selected folder.
+void ImageManager::loadCollection(QWidget *parent)
+{
+    // QFileDialog dialog;
+    // dialog.setOption(QFileDialog::DontUseNativeDialog);
+    // dialog.setFileMode(QFileDialog::Directory);
+
+    // QString dir;
+    // if (dialog.exec()) {
+    //     dir = dialog.selectedFiles().first();
+    // }
+    // if (dir.isEmpty())
+    //     return;
+
+    const QString dir = QFileDialog::getExistingDirectory(parent, "Select image folder");
+    if (dir.isEmpty()) return;
+
+    localCollectionPath = dir;  // keep the selected folder so adjustment/preset persistence can initialize paths
+
+    QDir directory(dir);
+    QStringList files = directory.entryList(
+        {"*.ARW", "*.CR2", "*.NEF", "*.DNG"},
+        QDir::Files
+    );
+
+    images.clear();
+
+    for (const QString& file : files) {
+        const QString filePath = directory.filePath(file);
+        auto img = std::make_shared<Image>(filePath);
+        images.push_back(img);
+    }
+
+    //parent->gallery->update();              // refresh gallery after image list changed
+}

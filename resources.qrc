@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="fonts/Font Awesome 7 Brands-Regular-400.otf">QtAwesome/fonts/Font Awesome 7 Brands-Regular-400.otf</file>
+        <file alias="fonts/Font Awesome 7 Free-Regular-400.otf">QtAwesome/fonts/Font Awesome 7 Free-Regular-400.otf</file>
+        <file alias="fonts/Font Awesome 7 Free-Solid-900.otf">QtAwesome/fonts/Font Awesome 7 Free-Solid-900.otf</file>
+        <file alias="shaders/adjustment.frag">shaders/adjustment.frag</file>
+        <file alias="shaders/bilateralluma.frag">shaders/bilateralluma.frag</file>
+        <file alias="shaders/display.frag">shaders/display.frag</file>
+        <file alias="shaders/display.vert">shaders/display.vert</file>
+        <file alias="shaders/gamma.frag">shaders/gamma.frag</file>
+        <file alias="shaders/gaussianchroma.frag">shaders/gaussianchroma.frag</file>
+        <file alias="shaders/pass.vert">shaders/pass.vert</file>
+        <file alias="shaders/postprocess.frag">shaders/postprocess.frag</file>
+        <file alias="shaders/rawtorgb.frag">shaders/rawtorgb.frag</file>
+        <file alias="shaders/rawtorgb.vert">shaders/rawtorgb.vert</file>
+        <file alias="shaders/rgbtoycbcr.frag">shaders/rgbtoycbcr.frag</file>
+        <file alias="shaders/ycbcrtorgb.frag">shaders/ycbcrtorgb.frag</file>
+    </qresource>
+</RCC>
+

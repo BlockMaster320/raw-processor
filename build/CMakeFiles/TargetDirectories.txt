@@ -1,4 +1,5 @@
 C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/raw-processor.dir
+C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/portable-release.dir
 C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/edit_cache.dir
 C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/rebuild_cache.dir
 C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/list_install_components.dir

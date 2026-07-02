@@ -1,0 +1,171 @@
+{
+    "cells": {
+        "{261a688c-f59a-4ace-8242-299fc94aa0ac}": {
+            "adjustments": {
+                "Contrast": [
+                    0
+                ],
+                "Denoise": [
+                    0
+                ],
+                "Exposure": [
+                    1.2699995040893555
+                ],
+                "Midpoint": [
+                    0.20000000298023224
+                ],
+                "Saturation": [
+                    0
+                ],
+                "Vignette": [
+                    0
+                ],
+                "WhiteBalance": [
+                    0.3819999694824219,
+                    0
+                ]
+            },
+            "enabled": true,
+            "id": "{261a688c-f59a-4ace-8242-299fc94aa0ac}",
+            "isGlobal": false,
+            "name": "Cell 1"
+        },
+        "{31aee327-24ea-4bff-b5bc-2ce1bddddbfc}": {
+            "adjustments": {
+                "Contrast": [
+                    0
+                ],
+                "Denoise": [
+                    0
+                ],
+                "Exposure": [
+                    0
+                ],
+                "Midpoint": [
+                    0.20000000298023224
+                ],
+                "Saturation": [
+                    0
+                ],
+                "Vignette": [
+                    0
+                ],
+                "WhiteBalance": [
+                    0.37199997901916504,
+                    0
+                ]
+            },
+            "enabled": true,
+            "id": "{31aee327-24ea-4bff-b5bc-2ce1bddddbfc}",
+            "isGlobal": false,
+            "name": "Cell 2"
+        },
+        "{4f60c4fb-c276-4242-b528-a2f0e14ffd1a}": {
+            "adjustments": {
+                "Contrast": [
+                    0.47200000286102295
+                ],
+                "Denoise": [
+                    1
+                ],
+                "Exposure": [
+                    1.6399998664855957
+                ],
+                "Midpoint": [
+                    0.1770000010728836
+                ],
+                "PopArt": [
+                    0
+                ],
+                "Saturation": [
+                    0.12800002098083496
+                ],
+                "Vignette": [
+                    -1
+                ],
+                "WhiteBalance": [
+                    -0.2639999985694885,
+                    0.6000000238418579
+                ],
+                "WhiteBlack": [
+                    -0.2459999918937683,
+                    -0.02799999713897705
+                ]
+            },
+            "enabled": true,
+            "id": "{4f60c4fb-c276-4242-b528-a2f0e14ffd1a}",
+            "isGlobal": false,
+            "name": "hehe"
+        },
+        "{b79dca98-287e-483f-8048-36bd23f8500e}": {
+            "adjustments": {
+                "Contrast": [
+                    0
+                ],
+                "Denoise": [
+                    0
+                ],
+                "Exposure": [
+                    0
+                ],
+                "Midpoint": [
+                    0.20000000298023224
+                ],
+                "Saturation": [
+                    0
+                ],
+                "Vignette": [
+                    0
+                ],
+                "WhiteBalance": [
+                    0,
+                    0
+                ]
+            },
+            "enabled": true,
+            "id": "{b79dca98-287e-483f-8048-36bd23f8500e}",
+            "isGlobal": false,
+            "name": "Base"
+        },
+        "{c3071d7b-369b-4a70-bea9-ae47f5282677}": {
+            "adjustments": {
+                "Contrast": [
+                    0
+                ],
+                "Denoise": [
+                    0
+                ],
+                "Exposure": [
+                    0
+                ],
+                "Midpoint": [
+                    0.20000000298023224
+                ],
+                "Saturation": [
+                    0
+                ],
+                "Vignette": [
+                    0
+                ],
+                "WhiteBalance": [
+                    0,
+                    0
+                ]
+            },
+            "enabled": true,
+            "id": "{c3071d7b-369b-4a70-bea9-ae47f5282677}",
+            "isGlobal": false,
+            "name": "Denoise"
+        }
+    },
+    "presets": [
+        {
+            "dataId": "{c3071d7b-369b-4a70-bea9-ae47f5282677}",
+            "name": "Denoise"
+        },
+        {
+            "dataId": "{261a688c-f59a-4ace-8242-299fc94aa0ac}",
+            "name": "Cell 1"
+        }
+    ]
+}

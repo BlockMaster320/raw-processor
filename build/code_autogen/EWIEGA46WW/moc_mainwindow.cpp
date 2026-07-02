@@ -67,7 +67,7 @@ Q_CONSTINIT const QMetaObject Canvas::staticMetaObject = { {
     nullptr
 } };
 
-void Canvas::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void ImageViewer::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     auto *_t = static_cast<Canvas *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {

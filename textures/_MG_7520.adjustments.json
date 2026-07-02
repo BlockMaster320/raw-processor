@@ -1,0 +1,36 @@
+{
+    "cells": [
+        {
+            "adjustments": {
+                "Contrast": [
+                    0
+                ],
+                "Denoise": [
+                    0
+                ],
+                "Exposure": [
+                    1.2699995040893555
+                ],
+                "Midpoint": [
+                    0.20000000298023224
+                ],
+                "Saturation": [
+                    0
+                ],
+                "Vignette": [
+                    0
+                ],
+                "WhiteBalance": [
+                    0.2359999418258667,
+                    0
+                ]
+            },
+            "collapsed": false,
+            "dataId": "{00000000-0000-0000-0000-000000000000}",
+            "linked": false,
+            "name": "Base",
+            "visible": true
+        }
+    ],
+    "imagePath": "C:/Storage/FIT/BP/raw-processor/textures/_MG_7520.CR2"
+}

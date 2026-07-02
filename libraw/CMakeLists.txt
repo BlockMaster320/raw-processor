@@ -475,7 +475,7 @@ endif()
 
 add_library(raw ${libraw_LIB_SRCS})
 add_library(libraw::libraw ALIAS raw)
-target_compile_definitions(raw PRIVATE LIBRAW_NOTHREADS)
+target_compile_definitions(raw PRIVATE)
 
 # Flag to export library symbols
 if (WIN32)

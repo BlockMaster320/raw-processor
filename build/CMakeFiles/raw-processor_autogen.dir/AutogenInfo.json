@@ -9,7 +9,6 @@
 	[
 		"C:/Storage/FIT/BP/raw-processor/CMakeLists.txt",
 		"C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/3.29.5-msvc4/CMakeSystem.cmake",
-		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6/qt.toolchain.cmake",
 		"C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake",
 		"C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Platform/Windows-Initialize.cmake",
 		"C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/3.29.5-msvc4/CMakeCXXCompiler.cmake",
@@ -322,8 +321,26 @@
 		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateAdditionalTargetInfo.cmake",
 		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateVersionlessAliasTargets.cmake",
 		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsVersionlessAliasTargets.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Concurrent/Qt6ConcurrentConfigVersion.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Concurrent/Qt6ConcurrentConfigVersionImpl.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Concurrent/Qt6ConcurrentConfig.cmake",
+		"C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Concurrent/Qt6ConcurrentDependencies.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Concurrent/Qt6ConcurrentTargets.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Concurrent/Qt6ConcurrentTargets-relwithdebinfo.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Concurrent/Qt6ConcurrentAdditionalTargetInfo.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateConfigVersion.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateConfigVersionImpl.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateConfig.cmake",
+		"C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateDependencies.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateTargets.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateAdditionalTargetInfo.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateVersionlessAliasTargets.cmake",
+		"C:/Programs/Qt/6.9.3/mingw_64/lib/cmake/Qt6Concurrent/Qt6ConcurrentVersionlessAliasTargets.cmake",
 		"C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/GNUInstallDirs.cmake",
-		"C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/GNUInstallDirs.cmake"
+		"C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/GNUInstallDirs.cmake",
+		"C:/Storage/FIT/BP/raw-processor/resources.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "C:/Storage/FIT/BP/raw-processor",
 	"CROSS_CONFIG" : false,
@@ -332,27 +349,141 @@
 	"HEADERS" : 
 	[
 		[
-			"C:/Storage/FIT/BP/raw-processor/PieMenu.h",
+			"C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesome.h",
 			"MU",
-			"EWIEGA46WW/moc_PieMenu.cpp",
+			"3QVQ3WXC3W/moc_QtAwesome.cpp",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/mainwindow.h",
+			"C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesomeAnim.h",
 			"MU",
-			"EWIEGA46WW/moc_mainwindow.cpp",
+			"3QVQ3WXC3W/moc_QtAwesomeAnim.cpp",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/stb_image.h",
+			"C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesomeEnumGenerated.h",
 			"MU",
-			"EWIEGA46WW/moc_stb_image.cpp",
+			"3QVQ3WXC3W/moc_QtAwesomeEnumGenerated.cpp",
 			null
 		],
 		[
-			"C:/Storage/FIT/BP/raw-processor/utility.h",
+			"C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesomeStringGenerated.h",
 			"MU",
-			"EWIEGA46WW/moc_utility.cpp",
+			"3QVQ3WXC3W/moc_QtAwesomeStringGenerated.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/core/adjustment.h",
+			"MU",
+			"PRMOGMWJPH/moc_adjustment.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/core/adjustmentcell.h",
+			"MU",
+			"PRMOGMWJPH/moc_adjustmentcell.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/core/adjustmentgroup.h",
+			"MU",
+			"PRMOGMWJPH/moc_adjustmentgroup.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/core/adjustmentmanager.h",
+			"MU",
+			"PRMOGMWJPH/moc_adjustmentmanager.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/core/image.h",
+			"MU",
+			"PRMOGMWJPH/moc_image.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/core/imagemanager.h",
+			"MU",
+			"PRMOGMWJPH/moc_imagemanager.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/core/stb_image.h",
+			"MU",
+			"PRMOGMWJPH/moc_stb_image.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/core/thumbnailloader.h",
+			"MU",
+			"PRMOGMWJPH/moc_thumbnailloader.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/core/utility.h",
+			"MU",
+			"PRMOGMWJPH/moc_utility.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/processing/exporter.h",
+			"MU",
+			"5QWKTM5RRA/moc_exporter.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/processing/imageprocessor.h",
+			"MU",
+			"5QWKTM5RRA/moc_imageprocessor.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/ui/PieMenu.h",
+			"MU",
+			"YPKJ5OE7LN/moc_PieMenu.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentcellmanagerwidget.h",
+			"MU",
+			"YPKJ5OE7LN/moc_adjustmentcellmanagerwidget.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentcellwidget.h",
+			"MU",
+			"YPKJ5OE7LN/moc_adjustmentcellwidget.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentpanelwidget.h",
+			"MU",
+			"YPKJ5OE7LN/moc_adjustmentpanelwidget.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/ui/gallerywidget.h",
+			"MU",
+			"YPKJ5OE7LN/moc_gallerywidget.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/ui/imageviewer.h",
+			"MU",
+			"YPKJ5OE7LN/moc_imageviewer.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/ui/mainwindow.h",
+			"MU",
+			"YPKJ5OE7LN/moc_mainwindow.cpp",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/ui/uiconstants.h",
+			"MU",
+			"YPKJ5OE7LN/moc_uiconstants.cpp",
 			null
 		]
 	],
@@ -362,6 +493,7 @@
 	"MOC_DEFINITIONS" : 
 	[
 		"MINGW_HAS_SECURE_API=1",
+		"QT_CONCURRENT_LIB",
 		"QT_CORE_LIB",
 		"QT_GUI_LIB",
 		"QT_OPENGLWIDGETS_LIB",
@@ -383,6 +515,11 @@
 	],
 	"MOC_INCLUDES" : 
 	[
+		"C:/Storage/FIT/BP/raw-processor/src",
+		"C:/Storage/FIT/BP/raw-processor/src/core",
+		"C:/Storage/FIT/BP/raw-processor/src/processing",
+		"C:/Storage/FIT/BP/raw-processor/src/ui",
+		"C:/Storage/FIT/BP/raw-processor/QtAwesome",
 		"C:/Storage/FIT/BP/raw-processor/libraw",
 		"C:/Programs/Qt/6.9.3/mingw_64/include/QtCore",
 		"C:/Programs/Qt/6.9.3/mingw_64/include",
@@ -391,6 +528,7 @@
 		"C:/Programs/Qt/6.9.3/mingw_64/include/QtGui",
 		"C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGLWidgets",
 		"C:/Programs/Qt/6.9.3/mingw_64/include/QtOpenGL",
+		"C:/Programs/Qt/6.9.3/mingw_64/include/QtConcurrent",
 		"C:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++",
 		"C:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32",
 		"C:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward",
@@ -411,7 +549,7 @@
 	"MOC_PATH_PREFIX" : false,
 	"MOC_PREDEFS_CMD" : 
 	[
-		"c:/Programs/Qt/Tools/mingw1310_64/bin/g++.exe",
+		"C:/Programs/Qt/Tools/mingw1310_64/bin/g++.exe",
 		"-std=gnu++17",
 		"-dM",
 		"-E",
@@ -431,10 +569,74 @@
 	"SETTINGS_FILE" : "C:/Storage/FIT/BP/raw-processor/build/CMakeFiles/raw-processor_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "C:/Storage/FIT/BP/raw-processor/PieMenu.cpp", "MU", null ],
-		[ "C:/Storage/FIT/BP/raw-processor/main.cpp", "MU", null ],
-		[ "C:/Storage/FIT/BP/raw-processor/mainwindow.cpp", "MU", null ],
-		[ "C:/Storage/FIT/BP/raw-processor/utility.cpp", "MU", null ]
+		[ "C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesome.cpp", "MU", null ],
+		[
+			"C:/Storage/FIT/BP/raw-processor/QtAwesome/QtAwesomeAnim.cpp",
+			"MU",
+			null
+		],
+		[ "C:/Storage/FIT/BP/raw-processor/src/core/adjustment.cpp", "MU", null ],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/core/adjustmentcell.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/core/adjustmentgroup.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/core/adjustmentmanager.cpp",
+			"MU",
+			null
+		],
+		[ "C:/Storage/FIT/BP/raw-processor/src/core/image.cpp", "MU", null ],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/core/imagemanager.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/core/thumbnailloader.cpp",
+			"MU",
+			null
+		],
+		[ "C:/Storage/FIT/BP/raw-processor/src/core/utility.cpp", "MU", null ],
+		[ "C:/Storage/FIT/BP/raw-processor/src/main.cpp", "MU", null ],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/processing/exporter.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/processing/imageprocessor.cpp",
+			"MU",
+			null
+		],
+		[ "C:/Storage/FIT/BP/raw-processor/src/ui/PieMenu.cpp", "MU", null ],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentcellmanagerwidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentcellwidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/ui/adjustmentpanelwidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Storage/FIT/BP/raw-processor/src/ui/gallerywidget.cpp",
+			"MU",
+			null
+		],
+		[ "C:/Storage/FIT/BP/raw-processor/src/ui/imageviewer.cpp", "MU", null ],
+		[ "C:/Storage/FIT/BP/raw-processor/src/ui/mainwindow.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
